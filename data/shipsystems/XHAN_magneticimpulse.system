@@ -1,0 +1,18 @@
+{
+	"id":"XHAN_magneticimpulse",
+	"type":"STAT_MOD",
+	"aiType":"ENTROPY_AMPLIFIER",
+	
+	"statsScript":"data.shipsystems.scripts.XHAN_MagneticImpulse",
+	
+	"fadeActivationSoundOnChargedown":true,
+	"useSound":"system_quantumdisruptor",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+	}
+}
+
+
+
+

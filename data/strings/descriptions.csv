@@ -1,0 +1,359 @@
+id,type,text1,text2,text3,notes
+# Weapons,,,,,
+,,,,,
+,,,,,
+Occuklop_Decimator,WEAPON,"The Occuklops built in weapon is an auto-loading tube array of large high explosive proximity-burst shells. The Decimator can effectively strip armor and even destroy smaller craft in a single well aimed volley. If used at an in-opportune time, the high burst of flux buildup can put an un-weary captain at a disadvantage.",Anti Armor,,
+,,,,,
+Xhan_Agmad,WEAPON,"An frighteningly efficient burst fire energy pulse weapon, The Agmad can deliver ruinous bursts of fire. However, even the Pharreks powerbanks do not allow to take advantage of its potential sustained fire rate.",Anti Armor,,
+,,,,,
+Xhan_Ertshan,WEAPON,"The Ertshan is an array of missile fabrication tubes connected to the Pharreks central power core. Confounding to both the Emperors finest engineers and the greater sectors best scientists, it seems to simply generate new micro-missiles using some form of energy to matter system.",General,,
+,,,,,
+Xhan_Pharrekcore,WEAPON,"The Pharrek can periodically release pulses of stored energy to intercept missiles and fightercraft. A boogeyman among fighter pilots across the sector. The existence of such a weapons system seems to constantly weave from myth, to terrifying first hand account. ",Point Defense,,
+,,,,,
+XHAN_Szar_Point_Defense,WEAPON,An effective point defense laser seemingly focused through an entirely opaque metalloid material.,Point Defense,,
+,,,,,
+Xhan_ShockTail,WEAPON,Discharge from the ships temporal generator is focused down into an electron rod and dissipated. However if enemy missiles or craft are in range the grounding can be disabled to allow repeated temporal discharge strikes.,Point Defense,,
+,,,,,
+Stolb_Demo_charge,WEAPON,"The Stolb fires heavy explosive charges that operate on a timer, rather than impact or proximity fuse like other comparable weapons of its class. 
+
+Originally it was designed by XhanTech for heavy demolitions work and has even seen use in asteroid mining operations. Unsurprisingly it was easily re-purposed as an anti ship weapon. The weapon system itself tends to confound inexperienced captains, as the slow moving charges are completely harmless until they detonate.",Area Denial,,
+,,,,,
+Gorel_Plas_Proj,WEAPON,"The Gorel fires superheated globs of synth plastoid capable of melting though even exceptionally thick armor plating. The localized plasma channel generated due to the incredible heat is even able to disrupt ship systems at the point of impact. 
+
+Like all third generation weapons the Gorels internal systems are essentially impenetrable even to experienced engineers. It is only the true savants of the Xhan Empire that have the honor of maintaining such weapons. It is rumored and spoken in hushed tones that the Divine Emperor himself posses an intimate understanding of even the most complex AGI divined systems. ",General,,
+,,,,,
+Zakrep_Prox_Burst,WEAPON,"A reliable heavy auto-cannon that fires high explosive burst shells. While not explicitly designed to do so, the Zakrep can be used to manually intercept missiles and fighters.
+
+The Zakrep was designed as a simple heavy weapons system capable of filling most required roles. As a XhanTech product it never achieved much success in the export market due to its lack of specialization.",Anti Armor,,
+,,,,,
+Steizok_Autogun,WEAPON,"Firing consistent and accurate bursts of high explosive shells, the Steizok can quickly strip armor and destroy hull when used en-mass. 
+
+A powerful autogun that sees extensive use within the Xhan Empire. It is generally seen as the Xhan standard weapon for its proliferation and ease of use.",Anti Armor,,
+,,,,,
+Igol_point_def,WEAPON,"The Igol can quickly saturate any location with a hail of fragmentation rounds, incredibly effective at stopping even large swarms of smaller missiles. 
+
+While famed for its ability to swat large swathes of missiles with ease, the Igol struggles when forced to engage other ships and armored fighters. The low caliber fragmentation rounds can do little against even a modest amount of armor.",Point Defense,,
+,,,,,
+Ugol_Plas_Spit,WEAPON,"Firing bursts of heated plastoid shards, the Ugol provides effective ranged suppression against most targets.
+
+The synth plastoids used within the Ugol are of an organic nature. The weapon system is able to produce them automatically by scrubbing the ships waste and  power systems for trace organic matter. ",General,,
+,,,,,
+Sharik_Demo_Torp,WEAPON,"The Sharik is a heavy cluster missile designed primarily for large asteroid demolition and mining. As it turns out, high explosive cluster shells are also incredibly effective at demolishing ship hulls. 
+
+Often used as a last resort or finisher weapon by Xhan Empire captains. While it is ineffective against large shields, it can easily cripple or even outright destroy many lighter ships.",Finisher,,
+,,,,,
+Xhan_Yazer,WEAPON,"The Yazer is a supremely advanced energy weapon that deals an incredible amount of damage in a short burst. Because of its high energy requirements it uses a limited number of energy charges to supplement the ships main power systems when firing.
+
+One of the most advanced weapons divined by the Xhan Empire. The Yazer is capable of atomically evaporating most known elements in a manner that should be impossible according to all known laws of thermodynamics. Effectively, every use of the Yazer is a heinous act of entropy. If there is a god, then man has found a way to make him bleed.",Strike,,
+,,,,,
+Chok_point_def,WEAPON,"A light; flak based point defense system. The Chok can efficiently intercept most missiles, but struggles against fast, laterally moving targets.
+
+It is so easy to produce and replace the Chok that engineers do no bother with repairs. Indeed the Chok is produced as an entirely closed system, with no human access to internal systems available.",Point Defense,,
+,,,,,
+Shtir_Autocannon,WEAPON,"The Shtir is a light auto-cannon that provides good long range kinetic suppression, but is outclassed in terms of damage by other kinetics of comparable cost.
+
+An invaluable weapon to most Xhan Empire commanders, its long range allows it to continually press faster ships that may attempt to harass slower Xhan forces and then retreat.",Anti Shield,,
+,,,,,
+Xhan_Palik,WEAPON,"The Palik fires mirco-shards of hot plastoid material. Even with poor per-shot damage and accuracy, it can still provide relentless long range supressive fire.
+
+A deceptively advanced design, the Palik has impressive range for a projectile energy weapon of its size. Many Xhan commanders find that it compliments the Ugol well. ",General,,
+,,,,,
+Xhan_Drob,WEAPON,"The Drob Decimator fires devastating high explosive proximity burst shells, but is unable to fire accurately due to the immense stresses placed upon the barrel.
+
+Without doubt one of the largest weapons ever to be affixed onto a small modular mount, albeit at a high cost in flux. Rumor has it that it was meant to be sold to anti domain resistance groups; as it could be fitted even onto lightly armed civilian ships. ",Anti Armor,,
+,,,,,
+Xhan_Shtir_Twinlink,WEAPON,"A twin-linked variant of the venerable long range Shtir Autocannon. The fire rate is effectively doubled, and the larger housing allows for more efficient flux dissipation systems.",Anti Shield,,
+,,,,,
+Xhan_Syr,WEAPON,"The Syr is an advanced missile system that uses synth plastoid chemical propellants and warheads. This allows the missiles to be effective against both shields and armor at the expense of raw damage.
+
+The Syr was devised primarily as an anti frigate system by Xhantech. The fast missiles could not be easily avoided, nor could they be resisted by shields like most traditional anti fighter missiles.",General,,
+,,,,,
+Xhan_Hezek,WEAPON,"The Hezek fires high velocity fragmentation rounds that are heinously effective against exposed hull. Capable of shredding lightly armored targets, but has very limited effectiveness against shields and heavy armor.
+
+An extremely situational weapon from early in Xhantechs weapons development program. It never saw widespread adoption but there are some hotshot captains that swear by its ruthless capabilities. ",General,,
+,,,,,
+Xhan_Uogek,WEAPON,Using an internal array of projection conduits the Goggergeck can fire an unstable gravitic toroid of phased electrons. Briefly magnetizing the target and causing electromagnetic disruptions to ship systems even through shields.,General,,
+,,,,,
+Xhan_Tsebrek,WEAPON,The Tsebrek is a XhanTech kinetic cannon that was developed in response the proliferation of well shielded but lightly armored ships. Though this multi functionality comes at the cost of flux efficiency. ,Anti Shield,,
+,,,,,
+Xhan_Zarukel,WEAPON,"An experimental weapon capable of operating comfortably in any role. With a built in PD targeting system, it can effectively free up additional slots on a ship that may normally have been used for point defense. Though it is quite expensive to mount and less efficient than more specialized weapons.",Omni-Weapon,,
+,,,,,
+Xhan_Luzna,WEAPON,"A crescent shaped cluster missile designed to immobilize ships with a multi pronged attack. Sophisticated and hard to defend against, but expensive to mount.",Anti Engine,,
+,,,,,
+Xhan_Zhuk,WEAPON,Developed proactively to better deal with ships equipped with stronger shield emitters. The Zhuk is a neutron catalyzed chemical plastoid torpedo. It can be used in a strike role against shields while still being reasonably effective against heavy armor.,Torpedo,,
+,,,,,
+Xhan_Bloz_small,WEAPON,Tough fragmentation missiles with effective tracking thrusters. High damage potential and effective against thin skinned craft. However they are rather easily absorbed by heavy armor and shields. ,Anti Hull Missile,,
+,,,,,
+Xhan_Bloz_medium,WEAPON,"A reloading rack of Bloz fragmentation missiles. With an ample ammo supply, it is a threat to lightly armored ships and can even pressure larger craft. ",Anti Hull Missile,,
+,,,,,
+Xhan_Bloz_large,WEAPON,Internal autoloading missile tubes mounted to a robust turret base; ensures this missile battery never needs to stop firing. The constant fire rate allows this weapon to simply pummel enemy ships without ever letting up. ,Anti Hull Missile,,
+,,,,,
+Xhan_Kobraz,WEAPON,"A technologically sophisticated weapon. The Kobraz fires guided nano-needles controlled by the weapons internal targeting system. If a specific target is not locked, the needles will seek the nearest hostile ship.",General,,
+,,,,,
+Xhan_Grokan,WEAPON,"The ruinous damage output of this Chemical-Fusion blaster is matched only by its hunger for flux. The existence of such a brutal weapon shows that The Ivo Technocrats; Erudite and reserved as they may have been, were no strangers to violence. ",General,,
+,,,,,
+Xhan_bogul,WEAPON,A dangerous hybrid energy weapon. Its high damage output is only tempered by its relative flux inefficiency against shields and armor.,General,,
+,,,,,
+Xhan_svech,WEAPON,"A focused gamma ray burst point-defense weapon. While the crew of most space-faring craft are well insulated against radiation, it is still capable of causing interferences in external systems, as well as disabling unprotected missiles and fighters. Once used in ancient ground warfare as anti-infantry weapons, they seemed to fall out of favor quickly due to the excess suffering they caused.",Point Defense,,
+,,,,,
+# Ships,,,,,
+,,,,,
+,,,,,
+XHAN_OieHou,SHIP,The OieHou is a second generation XhanTech heavy frigate designed primarily for operations in hazardous environments such as heavy planetary demolition sites. Of course like many XhanTech vessels classed for demolition work it is incredibly easy to refit to serve in a combat capacity. Its heavy armor and damper system allow it to soak up a surprising volume of enemy fire and draw fire away from other ships in the fleet.,,,
+,,,,,
+XHAN_Boulo,SHIP,The Boulo is a light combat frigate with a troubled design history. An intermediary between first and second generation XhanTech ship design; while not really fully embracing the design philosophy of either. It makes up for this by being a relatively cheap attacker that can also also be used as a fast missile artillery platform.,,,
+,,,,,
+XHAN_Ubellop,SHIP,"All third generation XhanTech ships are regarded as being somewhat occult, divined from an inhuman intelligence. As a phase craft the Ubellop compounds the mysticism of AI designed craft with the unknowns of phase technology. A craft relatively unlike most others of the Xhan Empire. Whereas most combat ships act as plodding executors of the Emperors absolute will, the Ubellop is a vivisector; dismantling the enemies of the Divine Emperor with surgical precision.",,,
+,,,,,
+XHAN_Pharrek,SHIP,"Surely such a craft must have come about in some sort of divine accident. The usual production of XhanTech AI designed ships corrupted in some manner and left to metastasize in a dark corner of the universe? A black project come back to haunt the sector? Whatever its origins may have been, its existence cannot be questioned now. 
+
+The operation of a Pharrek is a ritual within itself. Potential pilots are carefully selected to ensure mental compatibility with the ships on-board bio-synthetic intelligence. The time eventually comes when pilots must disrobe and enter its wet, skin supping innards. Peristaltically moved into the control pod, embraced by dozens of bio-sythetic pedipalps, and neurologically linked with the ships systems.
+
+Pilots are completely nourished and physically maintained by the Pharreks systems while inside. Even intellectual and social needs are met by the ships bio-synthetic intelligence. Most pilots develop an extreme attachment to the ship and will disembark with extreme reluctance.",,,
+,,,,,
+XHAN_Kassarek,SHIP,"The relical shield of the Xhan Empire, a gift from an inhuman benefactor, or perhaps the very cutting edge of pre-collapse armor and structural technology. Whatever its origin may be, no one holds any doubts about its purpose. For the enemies of the Divine Emperor are many, and they must first break upon his shield if he is to plunge his dagger into the heart of the old Domain. 
+
+Kassarek pilots; encased deep beneath layers of metaloid composite, overlapping plasteen plating and pockets of impact dissipation fluids, make it their mission to draw as much enemy firepower as is possible. Only those pilots willing to give up absolutely everything in service to the Divine Emperor are selected for the role. 
+
+The materials science involved in the crafts construction is completely incomprehensible even to the top scientists of the sector. Its origin, and the sort of mind involved in its divination, become easy to infer. ",,,
+,,,,,
+XHAN_Meiche,SHIP,"The Meiche is an incredibly old XhanTech design that has remained in constant service due to its ease of maintenance and reliability. While perhaps not as efficient as other fuel haulers, its heavy armor and military grade systems make it ideal for combat patrols. Even if ambushed, the tanker is likely to survive most encounters. It is unlikely to be of much use in combat however, due to its single token weapon mount intended for light point defense.",,,
+,,,,,
+XHAN_Olkzan,SHIP,"The Olkzan is a second generation XhanTech heavy destroyer designed for planetary and installation defense. While it was never a particularity popular export item, it nonetheless saw extensive use within XhanTech itself. With its heavy armor and firepower, the destroyer is well suited to direct confrontation. With fleet support, it can make short work of most other ships of its class in a head to head engagement. Overzealous Xhan Empire captains are known to readily engage much larger classes of ship, and are often able to tar pit the enemy long enough for support to arrive. However due to its poor maneuverability and unreliable rear defenses the Olkzan may fare relatively poorly when alone.",,,
+,,,,,
+XHAN_Ketsil,SHIP,"A combat troop carrier capable of atmospheric operations. The ketsil is equipped with a fully functional fighter bay and is capable of supporting marine operations. While not explicitly designed for it the task, it is capable of hauling a small amount of freight. ",,,
+,,,,,
+XHAN_Doskan,SHIP,"The Doskan is a first generation XhanTech design focused towards providing heavy missile firepower on a cheap, light destroyer platform. According to certain pre-collapse rumors, a number of these ships were sold to anti-domain agitators and rebel worlds. What may have once been a tool of subversion, now serves to further the total authority of the Divine Emperor.",,,
+,,,,,
+XHAN_Ketsil_export,SHIP,The Ketsil export model is retooled to function as a combat freighter instead of troop transport. Marine accommodations and equipment storage facilities have been removed to allow for greater cargo space. It is equipped with a fully functional fighter bay and is surprisingly capable in a combat role.,,,
+,,,,,
+XHAN_Olkzan_export,SHIP,"An export model of the Olkzan that was produced by Xhantech pre-collapse. Generally considered inferior to models produced by the Xhan Empire due to the use of cheaper materials as a cost saving measure. The Olkzan is a second generation XhanTech heavy destroyer designed for planetary and installation defense. While it was never a particularity popular export item, it nonetheless saw extensive use within XhanTech itself. With its heavy armor and firepower, the destroyer is well suited to direct confrontation. With fleet support, it can make short work of most other ships of its class in a head to head engagement. Overzealous Xhan Empire captains are known to readily engage much larger classes of ship, and are often able to tar pit the enemy long enough for support to arrive. However due to its poor maneuverability and unreliable rear defenses the Olkzan may fare relatively poorly when alone.",,,
+,,,,,
+XHAN_Olkzan_pirate,SHIP,"An extensive modification of the Olkzan created by pirates, seemingly focused entirely on maximizing firepower with little regard for anything else. The Olkzan is a second generation XhanTech heavy destroyer designed for planetary and installation defense. While it was never a particularity popular export item, it nonetheless saw extensive use within XhanTech itself. With its heavy armor and firepower, the destroyer is well suited to direct confrontation. With fleet support, it can make short work of most other ships of its class in a head to head engagement. Overzealous Xhan Empire captains are known to readily engage much larger classes of ship, and are often able to tar pit the enemy long enough for support to arrive. However due to its poor maneuverability and unreliable rear defenses the Olkzan may fare relatively poorly when alone.",,,
+,,,,,
+XHAN_Olkzan_Carrier,SHIP,"A total carrier conversion of the Olkzan destroyer, designed post collapse by the Xhan Empire. The (C) class is so extensively modified that it is cheaper to produce as such. The structural integrity and armor plating is reduced in order to fit adequate flight decks. While the weapons loadout and flux capacity is reduced in order to compensate for fighter production. Despite this it is usually more capable in a direct confrontation than other carriers of its class. Though it is still unlikely to survive long against dedicated combat ships.",,,
+,,,,,
+XHAN_Vukan,SHIP,"An early pet project of the Pan-Medai Defense Systems Trust. The Vukan is a heavy strike destroyer capable of limited atmospheric skimming and strategic bombardment. A transitional design of the early Midline doctrine, with potent missile firepower and mobility for its class. It is a large target and quite thin skinned, with poor flux venting capacity.
+
+Procured by the domain in limited numbers, primarily for pacification strikes against rebel worlds. A small number of production chips had made their way into the Persean sector before the collapse. ",,,
+,,,,,
+XHAN_Vukan_S,SHIP,"A special command variant, equipped with experimental systems from the “Domain Heroes” project. An early pet project of the Pan-Medai Defense Systems Trust. The Vukan is a heavy strike destroyer capable of limited atmospheric skimming and strategic bombardment. A transitional design of the early Midline doctrine, with potent missile firepower and mobility for its class. It is a large target and quite thin skinned, with poor flux venting capacity.
+
+Procured by the domain in limited numbers, primarily for pacification strikes against rebel worlds. A small number of production chips had made their way into the Persean sector before the collapse. ",,,
+,,,,,
+XHAN_Cheborog,SHIP,"An indomitable heavy cruiser, the Cheborog is perhaps the oldest XhanTech ship to still see service. There is no ship less blunt in its purpose within the ranks of the Xhan Empire. With withering ballistic firepower, size, and armor comparable to some battleships; it is an incredibly effective force multiplier for any fleet. Though by design, it is utterly mono-minded and as such is exceptionally vulnerable when faced with a more maneuverable opponent that can slip past its cone of fire. Having no easy way to escape danger, the Cheborog must always stand and fight, for better or for worse.",,,
+,,,,,
+XHAN_Ennik,SHIP,"This second generation cruiser was XhanTechs attempt to capitalize on the Domains doctrine shift towards faster attack craft. Well armored for a ship of its class; as is typical of most XhanTech vessels, the Ennik nonetheless managed to maintain a respectable top speed. This allowed it to keep up with most of its contemporaries, albeit at the cost of maneuverability. Unfortunately the Ennik was never widely adopted within the Domain. With an overproduction of export models, many were later sold at a bargain price to frontier worlds looking to bulk up their fleets.
+
+Within the Xhan Empire ambitious captains are often found at the helm of the Ennik, eager to prove their devotion to the Divine Emperor.",,,
+,,,,,
+XHAN_Ennik_export,SHIP,"An Export variant of the Ennik cruiser. This second generation cruiser was XhanTechs attempt to capitalize on the Domains doctrine shift towards faster attack craft. Well armored for a ship of its class; as is typical of most XhanTech vessels, the Ennik nonetheless managed to maintain a respectable top speed. This allowed it to keep up with most of its contemporaries, albeit at the cost of maneuverability. Unfortunately the Ennik was never widely adopted within the Domain. With an overproduction of export models, many were later sold at a bargain price to frontier worlds looking to bulk up their fleets.
+
+Within the Xhan Empire ambitious captains are often found at the helm of the Ennik, eager to prove their devotion to the Divine Emperor.",,,
+,,,,,
+XHAN_Ouggom,SHIP,"A light phase cruiser with heavy firepower; the Ouggom is a third generation XhanTech craft capable of baffling even the most experienced engineers. Often considered to be the absolute worst ship to be stationed on within the entire Xhan Empire. Its crew quarters are cramped and inhospitable; seemingly not a single flat floor in the entire ship. Certain rooms are connected not by hallways; but pipelike tubes that crew must crawl though on their stomach. The ship is also extremely sensitive, its systems needing to be calibrated after even short operations. Its internals are so tightly packed, heavy damage often causes them to spew forth like the viscera of a gored animal.
+
+Yet, one must not forget that the Ouggom class is a deadly tool. Many enemies of the Xhan Empire have found themselves at the total mercy of the Divine Emperor after underestimating this ship.",,,
+,,,,,
+XHAN_Karoba,SHIP,"The Karoba is an unremarkable military grade cargo hauler in service with the Xhan Empire. While the domain gates collapsed, nations rose and died; the Karobas role has not changed. As it was in service of XhanTech so shall it be under the Divine Emperor.",,,
+,,,,,
+XHAN_Cheborog_Carrier,SHIP,"Based on the incredibly sturdy hull of the Cheborog, the (C) class retains much of the armor and structural integrity of the original. Sacrificing large ballistic hardpoints and the required support subsystems for an array of carrier bays. it ends up being an incredibly survivable carrier platform, but with many of the same weaknesses as the original Cheborog.",,,
+,,,,,
+XHAN_Occuklop,SHIP,"The first of the Third Generation XhanTech ships, the Occuklop was principally designed by artificial intelligence for human use. The tradition, as illegal as it may be; has continued both within XhanTech and the Xhan Empire. While most illicit users of AGIs prize them for their inhuman managerial and organizational ability, the Xhan seem far more interested in their capacity for creativity. 
+
+Their use of AI can be compared to something of a divining ritual, a conduit for otherworldly influence to summon an inhuman artifact. The design philosophy and functionality of the Occuklop itself reflects its nature. Seemingly created specifically for redundancy and the capacity for Omni-engagement. There is simply no safe angle to attack the Occuklop without being caught in its alien firing envelopes. Internally, the ships halls and living quarters twist and curve in an intestinal manner, yet somehow remain navigable by humans. Its internal systems are said to be unimaginably convoluted and even disturbing in nature. Engineers often develop eccentric psychological traumas attempting to cope with maintenance needs, only persisting out of fanatical loyalty towards the Divine Emperor. 
+
+Without doubt the Luddic church and fanatical Pathers consider these ships an affront against humanity. Indeed even to the layman, the very nature of such craft is shrouded in both a legal ambiguity and moral taboo. ",,,
+,,,,,
+XHAN_Panrelka,SHIP,"The Panrelka is a high-end second generation battlecruiser developed by XhanTech. Somewhat of a departure from typical XhanTech designs, it is focused on maneuverability and skirmishing capability. Its efficient flux dissipation systems and powerful engines allow it to effectively hunt down smaller ships. It has found new use within the Xhan Empires battle doctrine as a command ship of sorts, allowing captains to pick and choose engagements. 
+
+Outside of the Xhan Empire the ship is desired by many collectors and loathed by the enemies of the Divine Emperor. Its simple but aesthetically pleasing design is universally appreciated, but cannot so easily be divorced from the regime it represents.",,,
+,,,,,
+XHAN_Goggergeck,SHIP,"An utterly bizarre ship used by the Xhan Empire as a terror and demoralization weapon. Its origins are completely unknown, though it can be assumed to have crawled from the same Inhuman womb that produced the Pharrek. It must have been another clandestine project from the eccentric inner circle of XhanTech. To think that it may have been born post collapse; is a thought the rest of the sector dare not entertain. A thorn in the side of Hegemony fleet captains, an enchanting curiosity to the R&D divisions of Tri-Tachyon, and the evils of artificial Intelligence made manifest to the followers of Ludd.
+
+Having ambushed many a fleet of those who dare to resist the will of the Divine Emperor, it has proven itself effective in its role. Even tempering the bravado of those who have never even seen it. After all, If this is what is available to the warriors of the Xhan Empire? Then perhaps the future belongs to the Divine Emperor. ",,,
+,,,,,
+PAMED_buffalo,SHIP,"A buffalo painted in Pamedian Livery, very patriotic! 
+
+The go-to choice for medium cargo hauling in the Sector, the Buffalo-class freighter exemplifies the ""Load-n-Pray"" principle prevalent in Sector shipping.
+
+Sporting just a single small weapon emplacement, the hull of the ship is no more than a large engine with a tiny crew quarters section and cargo grapplers. A captain taking this ship out without a convoy rarely gets to make the same mistake twice. Incapable of anything resembling a combat maneuver, the lateral thrusters on Buffalo-class ships are designed to merely enable it to dock when (and if) it reaches its destination.
+
+The ship engines are the greatest contributor to hull cost, which, while low, is still within the norms for a medium freighter. The greatest contributing factor to its ubiquity is the fact that the blueprint for this ship is usually hardcoded into every orbital shipyard's blueprint database.",,,
+,,,,,
+PAMED_drover,SHIP,"Pamedian doctrinal and societal values put them at odds with carrier tactics, since those often depend on having an expendable force of pilots. When carrier ships must be fielded, the Drover is used. Retrofitted with a focus on pilot safety, and painted in the Pamedian military livery.
+
+The Drover design was ordered by a new Cruiser-school-dominated Domain Naval Procurement Committee to provide a strategically versatile (though tactically limited) fighter platform with a low logistical overhead. The contract was won by Orion Shipyards, the traditional Armada ship-builder, in an effort to recover lost market share from the newer naval producers. The result was the 'flying landing strip' design, maligned by Domain officers as a command more fitting for a logistics bureaucrat than a fighting ship-captain. Complaints in the lower ranks were used by elements in the navy who followed the old Capital-school to send the Drover back to committee, citing insufficient firepower for the ship weight class to meet standard guidelines (which were not written to account for strike potential of new classes of fighters). Set up to take the fall for a massive overspend, the committee simply ordered an enormous number of simple missile hardpoints installed on the front of the Drover - this met the firepower requirements handily and allowed the Drover programme to proceed with only minor alteration.
+
+The fighter complement of the Drover is unmatched for its size, which is as designed. The unanticipated development of Drover command is its role as something of a test of character for junior officers; will they use the fearsome alpha-strike potential to seize victory in a sudden attack or hold back and use the potential of its threat to curtail aggressive moves by the opposition?",,,
+,,,,,
+PAMED_odonata,SHIP,"An experimental “phase glider” that can slip into p-space using wing like structures, allowing it to more efficiently reduce flux buildup. Exceptionally well armed for a phase frigate, with a suite of advanced features and systems. The Odonata is fragile, but practically impossible to pin down. Indeed its only truly limiting factor is a short peak performance time.
+
+It is rumored to be an AI designed craft, though the evidence for this is not particularly substantial. The occasional fear-mongering of a Luddic preacher, or conspiratorial holo-vid centered around the ships appearance. While these rumors go mostly ignored, they do sometimes speculate on UTONA Shipyards previous business relations with Xhan Tech. Though as these entities no longer exist within the sector, this information is only really of much interest to corporate historians.",,,
+,,,,,
+PAMED_anuran,SHIP,"As is typical of UTONA designs, the Anuran is a technologically advanced and extravagant frigate. With serious bite for its class, it is easily able to contend with larger ships. Though this is unsurprising, as the Anuran sports the cost and logistical profile of a high-end destroyer.
+
+Of course United Pamed is willing to shoulder such expenses. Not only is the protection of crew a priority, but displays of opulence from such a small polity do well to legitimize Pamed as a political and military force.",,,
+,,,,,
+PAMED_ultra233,SHIP,"An exercise in excess. How this ship functions without immediately turning into an explosive slurry of exotic particles and atomic dust upon firing is a mystery. Absolutely impenetrable in its design, maintenance is more akin to an unending antimatter-catalyzed bomb defusal than ship repair. Engineer turnover is extremely common, as are minor workplace accidents such as ""full body liquification"" and ""atomic de-stitching.""  
+
+It seems United Pamed is willing to go through with this obligate pampering, at least in very limited numbers. This technological test bed and crowd stunner has become the preferred ship of Pamedian Elite ""hero"" pilots.",,,
+,,,,,
+PAMED_urodelan,SHIP,"The Urodelan is a UTONA shipyards design focused around defensive and escort operations. With a powerful - low profile shield and deep flux pool, it is extremely difficult to break through its defenses. Used during Pameds pre-collapse days as a security craft for rich visitors to the pleasure world. In service under United Pamed it fulfills a similar role, though with markedly more patriotic fervor. ",,,
+,,,,,
+PAMED_carillon,SHIP,"A top of the line UTONA shipyards design, visitors to Pamed were assured that their safety was guaranteed with these technologically overstuffed cruisers in orbit. Indeed with its potent generators and flux banks it has the capability to simply out muscle many ships of its class. Its firepower might seem deceptively lacking considering its deployment costs, but measured use of the ship system easily compensates for any such perceived weaknesses. 
+
+As United Pamed is the only polity possessing UTONA production chips it is rare to see these ships outside their military. Though this is also in no small part due to the ships extremely prohibitive cost. For these reasons, it is mostly used by Corporate leaders and well off industrial moguls who can shoulder the expense.",,,
+,,,,,
+XHAN_Svil,SHIP,"On its own the Svil may be little more than a nuisance, unable to contend with proper manned craft. However, it would be foolish to disregard it. A simple but aggressive artificial intelligence packed into a sleek and agile frame, enemy craft may find it difficult to pin down. Capable of rapidly rotating in and out of engagements, one could imagine what a swarm of such craft could accomplish.
+
+The Svil seems specifically designed for mass production, the bulk of its hull structure is composed of only a few interlocking components. These being easily extruded by its Hiveships autofactory and rapidly assembled. A fleet of hiveships could; within only a few cycles, theoretically produce enough craft to suppress minor colonies. Why the Ivo Technocrats required such a potential volume of ships is unknown.  ",,,
+,,,,,
+XHAN_Lurr,SHIP,"The Lurr appears to be a fire support Drone designed to assist other drone-craft by delivering the required firepower to destroy larger targets. With its energy optimization system it is able to use weapons with flux requirements normally too restrictive for other frigates. Alone it is practically defenseless, with little recourse if targeted by missiles or fighters. It must rely on the screening provided by other craft to be effective. 
+
+Oddly enough, it appears that the Lurr was also developed to assist its Hiveship in mining operations. Possessing some amount of cargo space inside its squat hullform. It seems that the Ivo Technocrats intended for the logistical capacity of these Hiveship fleets to improve in tandem with growing upkeep requirements. ",,,
+,,,,,
+XHAN_Hassak,SHIP,"The most advanced drone-craft produced by Alvarium Doctrine Hiveships, the Hassak is a fully fledged phase ship. Able bring significant energy firepower to bear, it is an extreme threat to other craft of its class. When used to assist other drone-craft it can more easily capitalize on openings in enemy defenses, or act as a distraction; allowing its allies to attack unfettered.
+
+Possessing an aggressive hunter killer AI, it is obvious that the Hassak was not just created to bolster existing forces. Indeed with its hiveship a group of these drones could engage in extended guerrilla warfare for many cycles, with no required support from a centralized staging area. Any force possessing even a small number of Alvarium Doctrine craft could render entire systems essentially unconquerable without first committing to comprehensive and sustained military sweeps.",,,
+,,,,,
+XHAN_Velloun,SHIP,"A sophisticated multi-role destroyer developed by the Ivo Technocrats, this relatively new design was rumored to have been engaged in clandestine operations within the sector as the collapse transpired. Possessing an internal autoforge capable of producing advanced bio-plastic drone craft out of organic material. 
+
+The Velloum is designed to engage in long term, covert, disruptive warfare. With a retinue of elite drone ships it can carry out strategic attacks against high-value targets. Though it must be asked what use would such a thing be to the Ivo technocrats? Indeed such a strategic platform seems like the perfect tool for a rebel group engaged in guerrilla warfare, but the Technocrats displayed no sympathies towards Anti-Domain groups. In fact they seemed completely uninterested in the internal political machinations of Domain society. 
+
+Considered for many cycles to be a completely lost design, perhaps it would have best been kept as such.",,,
+,,,,,
+XHAN_Uvello,SHIP,"The Uvello was one of the Ivo Technocrats most recent pet projects, designed shortly preceding the collapse and delivered in limited numbers to the Persean sector. Ostensibly an exotic command ship with favorable logistical capability and acceptable combat performance. Its true value is derived from its sophisticated internal autoforge, allowing it to manufacture bio-plastic drones out of organic material.
+
+As the Linchpin of the Alvarium Doctrine, the Uvellos primary purpose is to facilitate the decentralized and rapid production of easily maintainable drone ships. Theoretically, given enough time and resources; even a single ship could produce a significant military force.  
+
+The technologies produced by the Ivo Technocrats were often for internal use, created simply as an artistic venture of sorts. Though sometimes they would be commissioned by wealthy patrons and corporations to develop usable designs for them. It is rumored the Technocrats were extremely selective of who they would work with.",,,
+,,,,,
+XHAN_Brakad,SHIP,"A dated but somewhat unconventional ship design, The Brakad was never produced in large numbers and as such is rarely found in the sector today. Grim but indomitable fleet anchors designed primarily for defensive operations. Notably a small number of these ships saw use as part of a civilian volunteer regiment in support of the Hegemony during the Second AI War.
+
+Originally designed by Nakar Opul, former member of the Ivo Technocrats. He would eventually leave the group on bad terms, stemming primarily from his disagreement with the Ivo Technocrats ""hands off"" policy regarding Domain politics. Nakar Opul saw the technocrats, and by extension himself as far more capable leaders than politicians of the time. The Brakad was his effort to ingratiate himself with the Domain naval engineers and admiralty. It is unknown what position he reached in the Domain hierarchy within his lifetime, such records have been lost. However, the Ivo Technocrats made known their distaste for the man in equal measure. Though these colorful statements have also unfortunately been lost. ",,,
+,,,,,
+XHAN_Brakad_S,SHIP,"Without doubt, this is the personal flagship of Aman Cuzhitsky. Leader of the civilian volunteer regiment that supported the Hegemony during the Second AI War. Aside from environmental wear and damage, The ship seems to be completely intact. Onboard modifications have been made to better protect the craft and its systems against energy weapons. Oddly; no traces of the crew can be found, and its onboard escape shuttle is still docked within. 
+
+Cuzhitsky distinguished himself in multiple battles and was known to be absolutely ruthless in his destruction of Tri-Tachyon AI warships. Eventually he was even recognized by the Hegemony admiralty and made an honorary military member. While discussion surrounding the man has died down in recent cycles, you might still find some Hegemony old salts willing to recount his battles over a couple drinks.
+
+It is known that Aman Cuzhitsky continued to hunt down remnants of the AI fleet, even after the war had ended and victory was declared over the AI threat. Keeping this up for many cycles; his support would eventually dwindle, with only his flagship and its fanatical crew remaining. Personal accounts describe him gradually losing his nerve. It seemed every time he would return from one of his extermination campaigns, some of his previous stoicism would be left behind. In its stead seemed to fester a deep obsession with the destruction of AGIs. 
+
+Before his eventual disappearance and presumed death he seemed to be very nearly completely deranged. Ranting to anyone who would listen. In many such conversations he would describe disturbing; seemingly personal accounts of psychological torture that would then lead to surreal orgies of voluptuous inhuman forms. All exacted upon him by a malicious force that his words would never give form. Whatever it was that had happened to him in deep space, Aman Cuzhitsky seemed almost eager to experience it again. ",,,
+,,,,,
+XHAN_Cronosos,SHIP,"An experimental design developed by several prominent members of the Ivo Technocrats. Fusing highly controversial causality violating technology with a specialized phase array at the tail end of the pre-collapse era.
+
+Allegedly it was initially developed as a purely scientific vessel without armament and was later modified for an affluent client. As the Technocrats were notably very selective of who they would work with; much debate has been had by the conspiracy minded on this topic. It is known that only two examples of this craft were ever produced, and delivered explicitly to the Persean sector. This could well mean that a client of the Ivo Technocrats had operated or still operates post-collapse.",,,
+,,,,,
+# Fighters,,,,,
+,,,,,
+,,,,,
+XHAN_Zahkhan,SHIP,"A reliable heavy fighter that employs dual Igol point defense autocannons. Unlike the Igol, the Zahkhan employs more damaging solid shot ammunition as opposed to proximity burst shells. ",,,
+,,,,,
+XHAN_Palka,SHIP,The Palka is an exceedingly fast fighter armed with a stripped down version of the Steizok autogun. The craft itself is little more than an armored cockpit attached to a gun and maneuvering system. This has gained them a reputation as suicide craft for only the most fanatical Xhan pilots.,,,
+,,,,,
+XHAN_Shnerk,SHIP,"An advanced Third Generation bomber design, the Shnerk is built around an overcharged, miniaturized Gorel plasma projector. With enough charge for only one shot, the Shnerk relies on its heavy armor get close enough to deliver its payload.",,,
+,,,,,
+XHAN_Vil,SHIP,"Slaved to their Hiveships central command system, the primary function of these drones is to transport Drone-craft components from their hosts cargo holds and subsequently assemble said Drone-craft entirely in the vacuum of space. Armed with a flexible Plasma cutter, the Vil will also attempt to ""disassemble"" enemy ships.   ",,,
+,,,,,
+# Systems,,,,,
+,,,,,
+,,,,,
+xhan_maneuvering,SHIP_SYSTEM,Activates additional retro-thrusters and bolsters engine power with collected flux runoff gasses generated though normal operation of ship systems.,Movement,Enhances the speed and manuverabilty of the vessel for a short time.,
+,,,,,
+xhan_microburn,SHIP_SYSTEM,"Shuts down ship movement and shield systems for a brief moment, then uses flux runoff gasses built up in auxiliary engine fuel tanks to blast the ship forward with great but brief speed.",Movement,Provides a brief but extremely quick burst of speed.,
+,,,,,
+xhan_phasecloak,SHIP_SYSTEM,"Temporarily moves the ship into an alternate dimension known as p-space. The ship can still be detected by its phase coil emissions, but can not be hit by any weapons. Flux can not be dissipated in p-space, resulting in a constant buildup that forces the ship to come back to normal space eventually. Subjective time passes more quickly for the ship and its crew while in p-space.
+
+The phase cloak generator is large and has significant power requirements, and so generally replaces shields as a ship's primary means of defense.",Special,Moves the ship into an alternate dimension where time passes more quickly. Ship can not be hit by any weapons; builds up hard flux while active.,
+,,,,,
+xhan_skipdrive,SHIP_SYSTEM,"Instantly tears the Pharrek from one part of space and places it into another. The levels of energy involved in the process should simply atomize the ship and its immediate surroundings. Yet it always remains unharmed, and even more surprisingly; pilots report no noticeable ill effects from the process.",Movement,Instantaneously transports the vessel to another location.,
+,,,,,
+xhan_empflare,SHIP_SYSTEM,"XhanTech EMP flares are based on Active Flares, but forgo the notion of being a defensive system. Each flare is packed with an electromagnetic pulse explosive and fitted with advanced guidance systems. While still capable of confusing enemy point defense, they lose the ability to affect missile targeting systems.",Offensive,Fires ship seeking flares packed with electromagnetic pulse charges.,
+,,,,,
+xhan_blastflare,SHIP_SYSTEM,"XhanTech blast flares are packed with explosives. While fully functional as regular flares, they are capable of damaging fighters and even other ships",Defensive,Fires defensive flares packed with explosives.,
+,,,,,
+XHAN_magneticimpulse,SHIP_SYSTEM,"By directing a a pulse of electromagnetic energy through a phase channel, a target ship can be instantly and violently magnetized. Pulling nearby ships and fighters toward the target, as well as causing some minor electromagnetic disruptions to the target and nearby craft. An interesting quirk of the system is that the larger the target ship, the stronger the magnetic effect.",Offensive,"Violently magnetizes the target ship for a brief moment. The larger the target, the stronger the magnetic effect.",
+,,,,,
+XHAN_TemporalLock,SHIP_SYSTEM,"By projecting a powerful directed gravitic phase field, the target ship will be pulled constantly pulled between p-space and real-space. The flow of time is effectively paused onboard the target ship, if only for the brief duration of the effect. This also causes the targeted ship to become intangible in real-space.",Offensive,Freezes the target ship in time and renders it intangible by pulling it between p-space and real-space.,
+,,,,,
+xhan_hyperforge,SHIP_SYSTEM,"Developed under the Domain Heroes project. The system functions much like a regular autoforge, turning specialized feedstock into usable missiles. However, it is capable of generating new feedstock through an extremely flux intensive energy to matter conversion process that shuts down both weapon and shield systems.",Special,Replenishes missile ammunition when used. Shuts down shield and weapon systems when in use.,
+,,,,,
+XHAN_ElectroChargedShields,SHIP_SYSTEM,"Overcharges shield generators for a short time, increasing their efficiency and shunting excess energy in the form of arcing EMP pulses.",Defensive,Increases shield efficiency for a short time and creates EMP pulses.,
+,,,,,
+PAMED_holodecoy,SHIP_SYSTEM,Launches small plastidrones powered by unstable phase anomalies that confuse missiles and enemy point defense while existing in p-space.,Defensive,Launches intangible phase anomalies that confuse enemy missiles and point defense.,
+,,,,,
+PAMED_Teleport,SHIP_SYSTEM,"A lower grade variation of the phase teleporter. With short range and a cooldown, this reserves it for tactical use.",Movement,Allows the ship to teleport a short distance.,
+,,,,,
+PAMED_TemporalDistortion,SHIP_SYSTEM,"Provides shuttering temporal acceleration in a localized area, allowing the ship a brief moment of extremely sped up time flow.",Special,Provides an extreme increase in timeflow for a brief moment.,
+,,,,,
+XHAN_EnergyOpti,SHIP_SYSTEM,An onboard capacitor array that halves energy weapon flux requirements when activated.,Offensive,Halves energy weapon flux requirements when activated.,
+,,,,,
+XHAN_PhaseHop,SHIP_SYSTEM,"A low grade version of the Phase Skimmer, allows the ship to teleport in the direction it is travelling.",Movement,Teleports the ship in the direction it is travelling.,
+,,,,,
+xhan_Chemflare,SHIP_SYSTEM,Fires a burst of bio-chemical flares.,Special,Fires rechargable chemical flares.,
+,,,,,
+xhan_FlareReserves,SHIP_SYSTEM,"Fires a large burst of flares, fed from a deep internal reserve pool.",Special,Fires flares from a reserve pool.,
+,,,,,
+xhan_damper,SHIP_SYSTEM,Surrounds the ship with a gravitationally stabilized superheated plasma channel that diffuses incoming enemy fire.,Special,Surrounds the ship with a plasma shield.,
+,,,,,
+XHAN_ChronoPhase,SHIP_SYSTEM,"An experimental phase array with an accelerated timescale, its unique construction makes tinkering difficult even for experienced phase craft engineers.",Special,Moves the ship into an alternate dimension where time passes more quickly. Ship can not be hit by any weapons; builds up hard flux while active.,
+,,,,,
+#Worlds,,,,,
+,,,,,
+,,,,,
+xhan_orbital_one,CUSTOM,The harsh conditions of Orbital One make it a less than desirable place to be stationed within the Xhan Empire; as such it has become home to many penal labor colonies and a favorite of ambitious administrators looking to increase efficiency. Its conditions turn many workers and even administrative staff to more illicit means of entertainment. This high level of illegal commodities is somewhat more tolerated than on other Xhan worlds because of the importance of Orbital One in the processes of heavy industry.,,,
+,,,,,
+xhan_cluster,CUSTOM,"The Cluster is was one of XhanTechs many clandestine projects, initially designed as an omni-structure to house tens of billions of workers, soldiers, and produce all needed commodities on site. Construction is estimated to have begun many hundreds of cycles before the collapse. The project languished under poor management and construction delays, workers were left in cryopods for dozens of cycles longer than they were supposed to, heavy equipment was lost or never arrived. The Cluster, mostly complete but remaining in a half operable state was soon to be deemed a failure. Any sort of decommission order was never received, due to the collapse of the Domain gates.
+
+The project found new life when workers were rallied by the Divine Emperors political charisma, working with a religious fervor to ensure their survival without XhanTechs resource supply chain. The Cluster as it exists today is an engineering marvel without compare. Nearly the entire surface of Orbital Two is covered in an expansive automated archaeology. Most of The Cluster is unpopulated, expanses spanning many thousands of miles silently operate under AI network control without human presence or supervision. Outskirts of populated areas are sometimes host to micro-pockets of squatters and devolved bio-engineered pest animals.
+
+Such communities are never around for long, punishment is harsh within the Xhan Empire. Those who stand against the ideals of the Divine Emperor or attempt to shirk their duties are summarily sent to the protein bank; a series of  disquieting facilities that extract human organs for purposes may serve the Divine emperor and recycle whatever remains into usable organic material. ",,,
+,,,,,
+xhan_orbital_three,CUSTOM,"Orbital Three is the main food production world for the Xhan Empire, ultimately an unremarkable world with relatively poor properties for mass agriculture. The production is bolstered by AI driven systems employed by the Xhan Empire. Many low ranking officers who do not have the privileges to be housed in a private luxury argi-environment on The Cluster live on Orbital Three.",,,
+,,,,,
+xhan_orbital_four,CUSTOM,Orbital Four houses the primary volatile extraction facilities of the Xhan Empire. Historically it has not seen particularly intensive use due to the Xhan Empire existing as a primarily secretive and isolationist power. Only in recent times has production volume has increased to meet the demands of the new Xhan wartime doctrine.,,,
+,,,,,
+xhan_orbital_four_alpha,CUSTOM,The small rocky satellite of Orbital Four. Contains the ruins of a failed XhanTech forward operations facility. Has been deemed to be of no tactical value to the Xhan Empire,,,
+,,,,,
+Pamed,CUSTOM,"Pamed is said to be one of the “jewel worlds” terraformed by the Ivo Technocrats. Originally hot and desertic; its life only existing within oceans, in something similar to a “Precambrian” stage of development. Its transformation is considered a true miracle. 
+
+The calls of exotic, genetically uplifted, aero-invertebrate wildlife can heard over the gentle lapping of aquamarine ocean waves. Soft, creamy, white sand warmed to the perfect temperature by a lazy sun. Wild, twisting trees grow in abundance. Bearing voluptuous and impossibly sweet fruits. Is it any surprise that Pamed was once a famous pleasure world?
+
+Yet upon its idyllic surface, the turmoil of recent cycles can be seen. Unnatural valleys and blast craters scar the continents. Dead cities and war-machines can be found all over Pamed, slowly being reclaimed by the planets biosphere. Memories of wars that the Pamedian people vow never to forget ",,,
+,,,,,
+pamed_oka,CUSTOM,"This now famous world was; unbelievably, overlooked by Tri-tachyon and the league. Pre-collapse Domain survey records were apparently falsified, claiming Oka contained no extractable resources of value. It is rumored that this was done by Utona shipyards; who had purchased mining rights to the world. 
+
+This allowed a reunified Pamed ample time to set up industry without arousing much attention from the established powers of the sector. Turning this clerically defamed world into the beating heart of Pamedian economic and military development.",,,
+,,,,,
+P_Dobus,CUSTOM,"A useless little world, colonized by Tri-tachyon as a goodwill gesture towards United Pamed, and to snub similar efforts made by the Persean League. Additionally; this checkpoint is operated at a profit loss to facilitate better trade logistics between Pamed and Tri-tachyon.",,,
+,,,,,
+,,,,,
+#Custom,,,,,
+,,,,,
+xhan_empty_sleeper,CUSTOM,"The cryosleeper that delivered the XhanTech cluster workforce to Xhan Prime many hundreds of years ago. 
+
+Most workers were contracted under a generational pre-employment, chartered by XhanTech and agreed upon by their forebears. By paying large lump sums to genetically desirable laborers for exclusive work rights to their next of kin, XhanTech was able to amass tens of millions of such legally bound employees. Being raised in XhanTech worker communities ensured their they held at least a baseline degree of corporate loyalty to XhanTech itself. ",,"Having been long since served its purpose, your scans detect no remaining workers or usable salvage within the empty cryosleeper. ",
+,,,,,
+xhan_mine,CUSTOM,"An enormous anti-ship mine deployed by XhanTech as a precaution, should their blacksite be discovered. The massive mines were once capable of turning entire fleets to atoms, now they are little more than empty shells. Their immense generators and fissile materials re-purposed for use in Xhan Empire planetary installations.",,,
+,,,,,
+,,,,,
+,,,,,
+xhanempire,FACTION,"The Xhan Empire is a dogmatic autocracy; born from the remnants of the XhanTech corporation left in the Persean sector after the collapse. The focus of XhanTech pre-collapse was mainly on planetary-scale demotions and construction. Though this did not stop them from engaging in numerous black projects; hidden away from the eyes of the greater public. Among these projects was a planetary mega-structure situated in the outer reaches of the Persean sector. Known as The Cluster, it now forms the seat of power for the Xhan Empire.
+
+Until recently the Xhan Empire has existed relatively under the radar of most major post collapse factions. Primarily due to their distance from the core worlds and self imposed isolation. Rumors abound that their entrance into the greater sector is due resource shortages in their home system. Whatever the reason may be, the Xhan Empire has made its mission statement very clear; the complete subjugation of all those who may oppose the total authority of their Divine Emperor.
+
+The Xhan Empires rise to power is often attributed one man; Okkatrid Zetnon, the so called “Divine Emperor”. His history is subject to much speculation, all that is known concretely is that he was alive during the pre-collapse era and may have held some high ranking position within XhanTech itself. While his capabilities as a leader are undoubtedly played up by Xhan propaganda, Xhan prisoners and defectors all unanimously describe him as having a totally all encompassing force of personality. Additionally possessing savant level organizational skills and military tactics. Without question, he is a truly dangerous human being.",,,
+,,,,,
+unitedpamed,FACTION,"  United Pamed is one of the smallest polities to be recognized as a distinct political entity by the greater sector. Possessing impressive resource wealth and an effective defense force. For its size, Pamed is an economic powerhouse and can afford its citizens some of the best luxuries found throughout the sector. While outwardly agreeable and willing to deal with most factions on good terms, Pamedians are still deeply mistrustful of foreigners and look out primarily for themselves.
+
+  Pamed was high class pleasure world pre-collapse. With millions of tourists visiting every cycle and hundreds of millions of permanent residents. Following the collapse of the gate network Pamed was engulfed a series of brutal food riots and skirmishes. As it was almost completely reliant on an external Domain supply chain for survival. Eventually the Golden Stars Army was formed in a cooperative effort between the planets most influential residents, and the previously contracted UTONA shipyards planetary security force. This brutal dictatorial oligarchy forced hard labor upon the previous resident workers and “tourists” ostensibly for their own good. Impressive industrial and infrastructural development took place under this regime. A planetary blockade was established, forbidding off-world travel.
+
+  For decades the Golden Stars Army would funnel ever more resource and material wealth directly towards the new ruling class. Simply to maintain a standard of living for themselves that was closer to that of the pre-collapse. The Reds; once an insurgent force that opposed the Golden Stars, had grown into a full blown workers movement. Supported by defectors from the Golden Stars that were sympathetic to their cause, the Reds were able to organize into a developed political party. The first Pamedian civil war soon followed, both sides would retool shipyard forges to produce in-atmosphere war-machines and weapons. The death toll would be in the tens of millions before the war ended. The Reds had carved out their own borders and beat back the Golden Stars, becoming the second ever Pamedian planetary nation.
+
+  Soon after, the successive sect wars between the Pamedian planetary nations would begin. The Ivory Dawn would emerge as a third nation, erudite people of science dedicated to reestablishing contact with the greater sector. Their intellect allowed them to justify many atrocities in the coming conflicts. The Golden Stars Army, Reds, and Ivory Dawn would over the course of the next hundred cycles, reduce Pameds population to just a few million. During this time a few refugees would manage to leave the planet and seek help from the Persean League, a newly emerging power at the time.
+
+  It is alleged by these refugees and several third party corroborators that the League deemed Pamed an extremely de-civilized world not worth stabilizing. Moreover there were rumors that one of the Leagues member polities had planned to simply wait until the Pamedian sect wars destroyed the planetary nations completely, and that they would colonize Pamed themselves after subjugating the remaining population. 
+
+  The sect wars would soon end however, and the planetary nations would emerge as United Pamed. With most of the population dead the Pamedian people simply saw no reason to continue wars meant to ensure the political goals of a population that no longer existed. Lead by a military council formed chiefly by the descendants of the Ivory Dawn, United Pamed would go on to rebuild its infrastructure and improve the quality of life for all its people. Though they would not forget the Leagues plans, and still mistrust its member polities. The League members involved deny the validity of these allegations.",,,
+,,,,,

@@ -1,0 +1,10 @@
+{
+	"id":"XhanEmpire",
+	"name":"Xhan Empire",
+	"author":"Peplat",
+	"version":"2.3 Stirring",
+	"description":"The Xhan Empire.",
+	"gameVersion":"0.95.1a-RC5",
+	"jars":["jars/XhanEmpire.jar"],
+	"modPlugin":"data.scripts.XhanEmpireModPlugin",
+}

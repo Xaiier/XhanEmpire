@@ -1,0 +1,2 @@
+name,id,planetary,decivRemove,script,desc,icon,order
+Planetary Megastructure,xhan_planetary_megastructure,,,data.scripts.campaign.econ.XhanPlanetaryMegastructure,"$market is completely covered by a vast, sprawling arcology-type megastructure, its atmosphere pierced by towering spires, the raw surface of the planet visible only in a few scattered patches near its poles.",graphics/icons/markets/xhan_planetary_megastructure.png,1

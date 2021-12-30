@@ -1,0 +1,9 @@
+name,id,tags,rarity,base price,stack size,cargo space,icon,sound id,sound id drop,plugin,plugin params,desc,order
+Xhantech Basic Weapons Package,Xhanbasicweapons_package,package_bp,,20000,1000,1,graphics/icons/cargo/Xhan_bp.png,ui_chip_pickup,ui_bp_package_drop,com.fs.starfarer.api.campaign.impl.items.MultiBlueprintItemPlugin,XhanDemolitions_bp,Enables heavy industry to construct a number of unique weapons made by the Xhan Empire.,9001
+Xhantech Advanced Weapons Package,Xhanadvancedweapons_package,package_bp,,34000,1000,1,graphics/icons/cargo/Xhan_bp.png,ui_chip_pickup,ui_bp_package_drop,com.fs.starfarer.api.campaign.impl.items.MultiBlueprintItemPlugin,XhanWartech_bp,Enables heavy industry to construct a number of unique weapons and by the Xhan Empire.,9002
+,,,,,,,,,,,,,
+Xhantech First Generation Ships Package,Xhanlowtechships_package,package_bp,,50000,1000,1,graphics/icons/cargo/Xhan_bp.png,ui_chip_pickup,ui_bp_package_drop,com.fs.starfarer.api.campaign.impl.items.MultiBlueprintItemPlugin,XhanLowtech_bp,Enables heavy industry to construct a number of first generation XhanTech ships.,9003
+Xhantech Second Generation Ships Package,Xhanmidtechships_package,package_bp,,60000,1000,1,graphics/icons/cargo/Xhan_bp.png,ui_chip_pickup,ui_bp_package_drop,com.fs.starfarer.api.campaign.impl.items.MultiBlueprintItemPlugin,XhanMidtech_bp,Enables heavy industry to construct a number of second generation XhanTech ships.,9004
+,,,,,,,,,,,,,
+Xhantech Fightercraft Package,Xhanfighters_package,package_bp,,20000,1000,1,graphics/icons/cargo/Xhan_bp.png,ui_chip_pickup,ui_bp_package_drop,com.fs.starfarer.api.campaign.impl.items.MultiBlueprintItemPlugin,Xhanfighters_bp,Enables heavy industry to construct fighter LPCs made by the Xhan Empire.,9005
+,,,,,,,,,,,,,

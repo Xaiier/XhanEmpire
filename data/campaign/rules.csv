@@ -1,0 +1,96 @@
+id,trigger,conditions,script,text,options,notes
+greetingxhanempireFriendly,OpenCommLink,"$faction.id == xhanempire
+$faction.friendlyToPlayer","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""May the light of the Divine Emperor fall upon you.""
+OR
+""All Glory to the everlasting Empire""",,
+greetingxhanempireHostileWeaker,OpenCommLink,"$faction.id == xhanempire
+$entity.isHostile
+$entity.relativeStrength < 0","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""Transgressions against the Xhan Empire are not soon forgotten. Hostile action will not be to your benefit.""
+OR
+""The Xhan Empire may yet extend its infinite mercy to you. Do not commit to making this error.""",,
+greetingxhanempireHostileWeakerDefiant,OpenCommLink,"$faction.id == xhanempire
+$entity.isHostile
+$entity.relativeStrength < 0
+$entity.weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"""The Xhan Empire shall stand eternal. Glory to the Divine Emperor!""
+OR
+""I fear nothing, for the might of the Xhan Empire stands behind me.""",cutCommLink:Cut the comm link,
+greetingxhanempireHostileStronger,OpenCommLink,"$faction.id == xhanempire
+$entity.isHostile
+$entity.relativeStrength >= 0",$ignorePlayerCommRequests = true 1,"""May The mercy of the Divine Emperor fall upon you.""
+OR
+""Your transgressions against the Xhan Empire and its people shall now cease, prepare for the end. ""
+OR
+""For your crimes against the Xhan Empire you and your men are sentenced to have your individual lives terminated.""",cutCommLink:Cut the comm link,
+greetingxhanempireNeutral,OpenCommLink,"$faction.id == xhanempire
+$faction.neutralToPlayer","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""What do you require from an enforcer of the Divine Emperors will?""
+OR
+""At this the Xhan Empire extends its inifnite hospitality to you. Ensure that you and your crew pay proper respects to the Divine Emperor""",,
+flavorTextMarketxhanempire,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == xhanempirescore:4","AddText ""Xhan market description"" marketFlavorTextColor",,,
+flavorTextMarketxhanempirecluster,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == xhanempire
+$market.id == xhanempire_cluster_market score:5
+$id == xhanempire_cluster","AddText ""Xhan Cluster Description"" marketFlavorTextColor",,,
+,,,,,,
+bar_descxhanempire,BarPrintDesc,"$faction.id == xhanempire
+$market.id != xhanempire_cluster_market",ShowImageVisual space_bar,"The bar like most other Xhan architecture is spartan and bare. A a seemingly purely utilitarian installation, uniformed citizens and military personel sit in orderly even spaced groupings. Electronic screens slowly scrawl production statistics and commodity availability from adjacent facilites. The closest thing to any form of entertainment is a video screen displaying a gaudily dressed member of the Divine Emperors entourage listing todays citizens of merit. ",,
+,,,,,,
+CMSNTextRejectHostile_xhanempire,CMSNTextRejectHostile,$faction.id == xhanempire,,"""You have been identified as a transgressor against the Xhan Empire, may the mercy of the Divine Emperor fall upon you.""",,
+CMSNTextHasOther_xhanempire,CMSNTextHasOther,$faction.id == xhanempire,,"""The Xhan Empire has no place for foreign agents, forsake all of your erroneous alliances of circumstance and return when you have proven yourself loyal only to the Divine Emperor.""",,
+CMSNTextUnsuited_xhanempire,CMSNTextUnsuited,$faction.id == xhanempire,,"""You must first prove yourself loyal to the Xhan Empire. Then we may consider your ordination in the future.""",,
+CMSNTextSuitedPart1_xhanempire,CMSNTextSuitedPart1,$faction.id == xhanempire,,"""You have proven that you are aligned with and willing to carry out the will of the Divine Emperor. There is no greater honor than to serve the Xhan Empire.""",,
+CMSNTextSuitedPart2_xhanempire,CMSNTextSuitedPart2,$faction.id == xhanempire,,"""Your ordination can begin immediately if your personal preparations are complete.""",,
+CMSNTextWelcomePart1_xhanempire,CMSNTextWelcomePart1,$faction.id == xhanempire,,"""You are now an extension of the Divine Emperors hand, his will shall be as your own.""",,
+CMSNTextWelcomePart2_xhanempire,CMSNTextWelcomePart2,$faction.id == xhanempire,,"""Now you carry the authority of our eternal empire, each of your actions shall be backed by the full might of the Xhan Empire.""",,
+CMSNTextChangeMind_xhanempire,CMSNTextChangeMind,$faction.id == xhanempire,,"""Your reluctance to serve the Divine Emperor completely has been noted. It is of no matter, as the stars are liberated from tyranny by the Xhan Empire you shall be inducted regardless.""",,
+CMSNResignAskToConfirm_xhanempire,CMSNResignAskToConfirm,$faction.id == xhanempire,,"""Do you truly question the will of the Divine Emperor? You are aware of the severity of such transgression are you not?""",,
+CMSNResignConfirmed_xhanempire,CMSNResignConfirmed,$faction.id == xhanempire,,"""You have betrayed the infinite mercy of the Xhan Empire and the Divine Emperor himself. This shall not be forgotten""",,
+CMSNResignCancelled_xhanempire,CMSNResignCancelled,$faction.id == xhanempire,,"""Do not allow your will to falter again, may the light of the Divine Emperor fall upon you.""",,
+,,,,,,
+greetingunitedpamedFriendly,OpenCommLink,"$faction.id == unitedpamed
+$faction.friendlyToPlayer","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""Keep it up. We fly for Pamed.""
+OR
+""Everyones eyeing us, we're just resources for those roaches. I know it. Stay safe out there.""",,
+greetingunitedpamedHostileWeaker,OpenCommLink,"$faction.id == unitedpamed
+$entity.isHostile
+$entity.relativeStrength < 0","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""Think about what you are doing!""
+OR
+""Why must the Pamedian people suffer?""",,
+greetingunitedpamedHostileWeakerDefiant,OpenCommLink,"$faction.id == unitedpamed
+$entity.isHostile
+$entity.relativeStrength < 0
+$entity.weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"""We'll fight to the last, just to keep Pamed safe.""
+OR
+""If we must die for the Pamedian people to finally know peace, then so be it.""",cutCommLink:Cut the comm link,
+greetingunitedpamedHostileStronger,OpenCommLink,"$faction.id == unitedpamed
+$entity.isHostile
+$entity.relativeStrength >= 0",$ignorePlayerCommRequests = true 1,"""We do this for all Pamedians back home, your death ensures their safety.""
+OR
+""The crimes you have perpetrated against Pamed cannot be forgiven.""
+OR
+""Warmongering vermin like you deserve to be crushed.""",cutCommLink:Cut the comm link,
+greetingunitedpamedNeutral,OpenCommLink,"$faction.id == unitedpamed
+$faction.neutralToPlayer","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""What do you need? Trade agreements and commission inquiry should be taken up with Pamedian planetary command.""
+OR
+""You know spacer, most Pamedian beach resorts arent fully booked for this cycle yet. You should come visit!""",,
+,,,,,,
+bar_descunitedpamed,BarPrintDesc,"$faction.id == unitedpamed
+$market.id != unitedpamed_Pamed_Market",ShowImageVisual space_bar,"The bar spacious and lavishly decorated with artwork made by genuine human craftsmen. Tourists and traders on layover walk about lackadaisically in complimentary resort style clothing. Others are mingling on the go; weaving between immense ivory pillars, no real destination in mind. If for but a brief moment, it is possible to stop and imagine. What must have life been like at the apex of Domain society?",,
+,,,,,,
+CMSNTextRejectHostile_unitedpamed,CMSNTextRejectHostile,$faction.id == unitedpamed,,"""What? You're a wanted criminal! Are you mocking us?! The Pamedian people wont forget this! We wont let you get away!""",,
+CMSNTextHasOther_unitedpamed,CMSNTextHasOther,$faction.id == unitedpamed,,"""You are currently commissioned by another faction! How can we be sure you will be a friend to Pamed if you are serving other interests?""",,
+CMSNTextUnsuited_unitedpamed,CMSNTextUnsuited,$faction.id == unitedpamed,,"""I am sorry, but why should we trust you? What have you done for the Pamedian people? If you truly wish to help, then go out an do so!""",,
+CMSNTextSuitedPart1_unitedpamed,CMSNTextSuitedPart1,$faction.id == unitedpamed,,"""You’ve done a lot for us, and it hasn’t gone unnoticed. You are welcome to fly with Pameds finest, and we guarantee you’ll be treated like any other native born Pamedian citizen.""",,
+CMSNTextSuitedPart2_unitedpamed,CMSNTextSuitedPart2,$faction.id == unitedpamed,,"""We can swear you in right now, as an official member of the Pamedian navy!""",,
+CMSNTextWelcomePart1_unitedpamed,CMSNTextWelcomePart1,$faction.id == unitedpamed,,"""Be prepared to serve the Pamedian people! You are now their guardian.""",,
+CMSNTextWelcomePart2_unitedpamed,CMSNTextWelcomePart2,$faction.id == unitedpamed,,"""In turn, Pamed shall give back to you. When you fly with us, you are never alone!""",,
+CMSNTextChangeMind_unitedpamed,CMSNTextChangeMind,$faction.id == unitedpamed,,"""While it is unfortunate that you will not be joining us, we understand it can be a big commitment. Especially for a non-native like yourself, nevertheless the Pamedian people will accept you with open arms if you do change your mind.""",,
+CMSNResignAskToConfirm_unitedpamed,CMSNResignAskToConfirm,$faction.id == unitedpamed,,"""Are you sure you want to betray the trust the Pamedian people have placed in you?""",,
+CMSNResignConfirmed_unitedpamed,CMSNResignConfirmed,$faction.id == unitedpamed,,"""This is unfortunate. Do do not expect us to so easily trust you in the future if you regret this decision.""",,
+CMSNResignCancelled_unitedpamed,CMSNResignCancelled,$faction.id == unitedpamed,,"""The service takes its toll on all of us, but we must steel ourselves. For Pamed, and its people.""",,

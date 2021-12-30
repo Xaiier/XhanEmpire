@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="XhanEmpire:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/XhanEmpire_jar</output-path>
+    <root id="archive" name="XhanEmpire.jar">
+      <element id="module-output" name="XhanEmpire" />
+    </root>
+  </artifact>
+</component>
