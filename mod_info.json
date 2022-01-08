@@ -2,9 +2,9 @@
 	"id":"XhanEmpire",
 	"name":"Xhan Empire",
 	"author":"Peplat",
-	"version":"2.3 Stirring",
+	"version":"2.4 Thousand Eyes",
 	"description":"The Xhan Empire.",
-	"gameVersion":"0.95.1a-RC5",
+	"gameVersion":"0.95.1a-RC6",
 	"jars":["jars/XhanEmpire.jar"],
 	"modPlugin":"data.scripts.XhanEmpireModPlugin",
 }

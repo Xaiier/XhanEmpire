@@ -41,6 +41,7 @@ XHAN_Lurr,ship,,1,normal,graphics/ships/normals/Xhan_Lurr_normal.png
 XHAN_Hassak,ship,,1,normal,graphics/ships/normals/Xhan_Hassak_normal.png
 XHAN_Velloun,ship,,1,normal,graphics/ships/normals/Xhan_Velloun_normal.png
 XHAN_Uvello,ship,,1,normal,graphics/ships/normals/Xhan_Uvello_normal.png
+XHAN_Myrianous,ship,,1,normal,graphics/ships/normals/Xhan_Myrianous_normal.png
 ,,,,,
 Occuklop_Decimator,turret,,1,normal,graphics/weapons/normals/Occuklop_Decimator_normal.png
 Occuklop_Decimator,hardpoint,,1,normal,graphics/weapons/normals/Occuklop_Decimator_HARDPOINT_normal.png
@@ -90,8 +91,14 @@ Xhan_Kobraz,hardpoint,,1,normal,graphics/weapons/normals/Xhan_Plasteen_Kobraz_HA
 Xhan_Grokan,turret,,1,normal,graphics/weapons/normals/Xhan_Plasteen_Grokan_TURRET_normal.png
 Xhan_Grokan,hardpoint,,1,normal,graphics/weapons/normals/Xhan_Plasteen_Grokan_HARDPOINT_normal.png
 ,,,,,
+Xhan_Zhun,turret,,1,normal,graphics/weapons/normals/Xhan_Zhun_TURRET_normal.png
+Xhan_Zhun,hardpoint,,1,normal,graphics/weapons/normals/Xhan_Zhun_HARDPOINT_normal.png
+,,,,,
 Xhan_svech,turret,,1,normal,graphics/weapons/normals/Xhan_plasteen_Svech_TURRET_normal.png
 Xhan_svech,hardpoint,,1,normal,graphics/weapons/normals/Xhan_plasteen_Svech_HARDPOINT_normal.png
+,,,,,
+Xhan_Erlekhkeyt,turret,,1,normal,graphics/weapons/normals/Xhan_Erlekhkeyt_TURRET_BASE_normal.png
+Xhan_Erlekhkeyt,hardpoint,,1,normal,graphics/weapons/normals/Xhan_Erlekhkeyt_HARDPOINT_BASE_normal.png
 ,,,,,
 Stolb_Demo_charge,turret,,1,normal,graphics/weapons/normals/Stolb_Demolition_charge_TURRET_normal.png
 Stolb_Demo_charge,turretbarrel,,1,normal,graphics/weapons/normals/Stolb_Barrel_TURRET_normal.png
@@ -142,3 +149,9 @@ Xhan_bogul,turret,,1,normal,graphics/weapons/normals/Xhan_Plasteen_Bogul_TURRET_
 Xhan_bogul,turretbarrel,,1,normal,graphics/weapons/normals/Xhan_Plasteen_Bogul_TURRET_BARREL_normal.png
 Xhan_bogul,hardpoint,,1,normal,graphics/weapons/normals/Xhan_Plasteen_Bogul_HARDPOINT_normal.png
 Xhan_bogul,hardpointbarrel,,1,normal,graphics/weapons/normals/Xhan_Plasteen_Bogul_HARDPOINT_BARREL_normal.png
+,,,,,
+Xhan_Shpizak,turret,,1,normal,graphics/weapons/normals/Xhan_Shpizak_TURRET_BASE_normal.png
+Xhan_Shpizak,turretbarrel,,1,normal,graphics/weapons/normals/Xhan_Shpizak_TURRET_BARREL_normal.png
+Xhan_Shpizak,hardpoint,,1,normal,graphics/weapons/normals/Xhan_Shpizak_HARDPOINT_BASE_normal.png
+Xhan_Shpizak,hardpointbarrel,,1,normal,graphics/weapons/normals/Xhan_Shpizak_HARDPOINT_BARREL_normal.png
+,,,,,

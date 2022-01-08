@@ -70,4 +70,31 @@
 		"renderCircleIndicator":true,
 		"renderCircleIndicatorSelectionFlash":true,
 	},
+		"xhan_destroyed_station":{
+		"defaultName":"Abandoned Research Station", # used if name=null in addCustomEntity()
+		"nameInText":"Abandoned Research Station",
+		"shortName":"Abandoned Research Station",
+		"aOrAn":"an",
+		"isOrAre":"is",
+		"defaultRadius":96, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"xhan_destroyed_station",
+		"interactionImage":"graphics/illustrations/abandoned_station.jpg",
+		"icon":"graphics/icons/station_broken.png",
+		"iconWidth":32,
+		"iconHeight":32,
+		"sprite":"graphics/stations/Xhan_destroyed_station.png",
+		"spriteWidth":92,
+		"spriteHeight":112,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"scaleIconWithZoom":true,
+		"tags":["has_interaction_dialog", "neutrino_high"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+		"renderCircleIndicator":false,
+		"renderCircleIndicatorSelectionFlash":true,
+    },
 }

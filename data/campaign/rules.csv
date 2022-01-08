@@ -94,3 +94,24 @@ CMSNTextChangeMind_unitedpamed,CMSNTextChangeMind,$faction.id == unitedpamed,,""
 CMSNResignAskToConfirm_unitedpamed,CMSNResignAskToConfirm,$faction.id == unitedpamed,,"""Are you sure you want to betray the trust the Pamedian people have placed in you?""",,
 CMSNResignConfirmed_unitedpamed,CMSNResignConfirmed,$faction.id == unitedpamed,,"""This is unfortunate. Do do not expect us to so easily trust you in the future if you regret this decision.""",,
 CMSNResignCancelled_unitedpamed,CMSNResignCancelled,$faction.id == unitedpamed,,"""The service takes its toll on all of us, but we must steel ourselves. For Pamed, and its people.""",,
+,,,,,,
+# Myrianous Encounter,,,,,,
+,,,,,,
+Myrianous_encounterDescScanned,BeginFleetEncounter,"$Myrianous score:1000
+!$printedDesc
+$showAfterScanIntro",," As you maneuver to approach the unidentified craft a gradual unease and anxiety seems to build. Fleet officers report a growing unrest among the crew. 
+
+ Finally; in an instant, you feel your thoughts sized. Each of your memories; elaborate and granular, picked over in an instant. A lifetime relived and vivisected so thoroughly you can almost glimpse fleeting divinity within churning miasma. 
+
+ And just as quickly, you are released. As you regain composure, reports come in from your fleet officers of crew breakdown and demands for retreat. Whatever is to come, it will be unlike anything this sector has ever known. ",,
+Myrianous_encounterDesc1,BeginFleetEncounter,"$Myrianous score:1000
+!$printedDesc
+!$showAfterScanIntro","$printedDesc = true 0
+$fidpi_addContinue = true 0"," As you maneuver to approach the unidentified craft a gradual unease and anxiety seems to build. Fleet officers report a growing unrest among the crew. 
+
+ Finally; in an instant, you feel your thoughts sized. Each of your memories; elaborate and granular, picked over in an instant. A lifetime relived and vivisected so thoroughly you can almost glimpse fleeting divinity within churning miasma. 
+
+ And just as quickly, you are released. As you regain composure, reports come in from your fleet officers of crew breakdown and demands for retreat. Whatever is to come, it will be unlike anything this sector has ever known. ",,
+Myrianous_commsOpen,OpenCommLink,$Myrianous score:1000,EndConversation,"The connection request hangs for some time then a wave of holo-noise flickers through the main display before generating a series of error codes. Your comms officer works their console in consternation. 
+
+The soft sounds of the error notifications align just so, almost forming a melody you must have heard somewhere once. Or perhaps not. You return your attention to your command. No time for daydreaming.",,

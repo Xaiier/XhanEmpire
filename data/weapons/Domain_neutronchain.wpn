@@ -9,13 +9,11 @@
 	#"hardpointGunSprite":"graphics/weapons/assault_chaingun_hardpoint_recoil.png",	
 	#"visualRecoil":4.0,  # the gun sprites are only used if this is non-0
 	#"renderHints":[RENDER_BARREL_BELOW],
-	"turretSprite":"graphics/weapons/rotary/rotary_cannon_turret_base00.png",
-	"hardpointSprite":"graphics/weapons/rotary/rotary_cannon_hardpoint_base00.png",	
-	"numFrames":4,	
-	"frameRate":20,
-	"turretOffsets":[18, 0],
+	"turretSprite":"",
+	"hardpointSprite":"",	
+	"turretOffsets":[0, 0],
 	"turretAngleOffsets":[0],
-	"hardpointOffsets":[29, 0],
+	"hardpointOffsets":[0, 0],
 	"hardpointAngleOffsets":[0],	
 	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or alternate.
 	"animationType":"MUZZLE_FLASH",  # NONE, GLOW, MUZZLE_FLASH, SMOKE

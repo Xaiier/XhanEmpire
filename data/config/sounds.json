@@ -127,6 +127,10 @@
 		"XHAN_PSYBLAST_FIRE_SOUND":[
                 {"file":"sounds/XhanSounds/XhanPsyBlastFireSound.ogg","pitch":1,"volume":9},   
         ],
+		"XHAN_MYRIANOUS_MUSIC":[
+                {"file":"sounds/XhanSounds/XhanMyrianousMusic.ogg","pitch":1,"volume":1},   
+        ],
+
 
 
 

@@ -17,14 +17,14 @@ public class Xhan_Psy_Buster_Bomb_AI implements MissileAIPlugin
     private static final float FRAG_VELOCITY_MOD_MAX = 400f;
     private static final float FRAG_VELOCITY_MOD_MIN = 20f;
     private static final float EXPLOSION_SIZE_OUTER = 2500f;
-    private static final float EXPLOSION_SIZE_INNER = 800f;
-    private static final float EXPLOSION_DAMAGE_MAX = 4500f;
+    private static final float EXPLOSION_SIZE_INNER = 100f;
+    private static final float EXPLOSION_DAMAGE_MAX = 3500f;
     private static final float EXPLOSION_DAMAGE_MIN = 1f;
     private static final float EXPLOSION_DURATION = 10.2f;
     private static final float PARTICLE_DURATION = 10.2f;
     private static final int PARTICLE_COUNT = 50;
     private static final int PARTICLE_SIZE_MIN = 5;
-    private static final int PARTICLE_SIZE_RANGE = 10;
+    private static final int PARTICLE_SIZE_RANGE = 20;
     private static final String FRAG_WEAPON_ID = "Xhan_PsyDischarge_gun";
     private static final float TIMER_LENGTH = 0.001f;
     private static final Color VFX_COLOR = new Color(255, 23, 89, 198);

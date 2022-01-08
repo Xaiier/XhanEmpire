@@ -10,11 +10,14 @@
 			"xhan_trail_innerfoam":"graphics/fx/Xhan_innerfoam_trail.png",
 			"xhan_trail_uogek":"graphics/fx/Xhan_uogek_trail.png",
 			"xhan_Gorel_Splat":"graphics/fx/Xhan_Gorel_splat.png",
+			"Xhan_shieldIN":"graphics/fx/Xhan_PsyShield_inner.png", 			
+            "Xhan_shieldOUT":"graphics/fx/Xhan_PsyShield_Rim.png", 
 		},
 	"characters":{
                 "Xhan_Veka":"graphics/portraits/HVBP/Xhan_Veka.png",
 				"Xhan_Mendoza":"graphics/portraits/HVBP/Xhan_Mendoza.png",
 				"Xhan_Zekor":"graphics/portraits/HVBP/Xhan_Zekor.png",
+				"Xhan_Vos":"graphics/portraits/HVBP/Xhan_Vos.png",
         },
 	},
 	"designTypeColors":{

@@ -14,6 +14,7 @@ import java.awt.Color;
 import data.scripts.campaign.XHAN_DerelictShipsSpawner;
 import data.scripts.campaign.XHAN_DroneshipEliteProductionListener;
 import data.scripts.campaign.XHAN_DroneshipProductionListener;
+import data.scripts.world.XhanProcGen;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
@@ -63,6 +64,7 @@ public class XhanEmpireModPlugin extends BaseModPlugin
 
     public static final String XHAN_FACTION_ID = "xhanempire";
     public static final String PAMED_FACTION_ID = "unitedpamed";
+    public static final String Myrianous_System_ID = "XhanMyrianousSystem";
 
     public static boolean EXERELIN_LOADED;
     public static Set<String> EXERELIN_ACTIVE = new HashSet<>();
@@ -115,17 +117,12 @@ public class XhanEmpireModPlugin extends BaseModPlugin
 
 
     @Override
-    public void onNewGame()
-    {
-        if (EXERELIN_LOADED)
-        {
-            if (!SectorManager.getCorvusMode())
-            {
-                // return here because we don't want to generate our handcrafted systems if we're in an exerelin random sector
-                return;
-            }
+    public void onNewGame() {
+        boolean haveNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
+        if (!haveNexerelin || SectorManager.getManager().isCorvusMode()) {
+            new XhanEmpireGen().generate(Global.getSector());
         }
-        genSystem();
+        new XhanProcGen().generate(Global.getSector());
     }
 
     @Override

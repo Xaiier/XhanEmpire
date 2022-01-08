@@ -96,6 +96,16 @@ Xhan_bogul,WEAPON,A dangerous hybrid energy weapon. Its high damage output is on
 ,,,,,
 Xhan_svech,WEAPON,"A focused gamma ray burst point-defense weapon. While the crew of most space-faring craft are well insulated against radiation, it is still capable of causing interferences in external systems, as well as disabling unprotected missiles and fighters. Once used in ancient ground warfare as anti-infantry weapons, they seemed to fall out of favor quickly due to the excess suffering they caused.",Point Defense,,
 ,,,,,
+Xhan_Erlekhkeyt,WEAPON,Preliminary diagnostic tests seem to indicate that unstable anomalous matter is focused through the weapons viscera like internals and discharged with ruinous effect. Generating a localized gravitic aberration at the point of impact.,General,,
+,,,,,
+Xhan_Shpizak,WEAPON,"All lifetime ammunition appears to be stored entirely within the weapon itself. Projecting microscopic particles of unknown composition at near relativistic speeds, Vaporizing most material at an atomic level on impact, these particle spears also cause significant electromagnetic disruption. ",Anti Shield,,
+,,,,,
+Xhan_Zhun,WEAPON,"At rest, the gleaming artifice is seemingly completely inert. Deep scanning and sophisticated internal imaging software reveals nothing about a potential power source. Coronal discharge sensors lighting up fleetwide once the weapon is active also does little to put the crew at ease. ",Point Defense,,
+,,,,,
+Xhan_MyriaEye,WEAPON,"""All that I see is mine, and if it cannot be so then rend it apart; until what is left is naught but atoms."" ",- The Divine Emperor. Terror operations decree,,
+,,,,,
+Xhan_PsyBlast,WEAPON,"""I will wipe it all away, the compounded folly of the sickly old Domain bureaucrats. The Tyranny of a billion moaning voices; clinging to some ersatz nostalgia for a time they cannot recollect. Once excised, a new humanity can arise; a resplendent chorus of warm hearts all beating towards an unsullied future.""","- The Divine Emperor. Address to the citizens of the Cluster, c+194",,
+,,,,,
 # Ships,,,,,
 ,,,,,
 ,,,,,
@@ -245,6 +255,10 @@ XHAN_Cronosos,SHIP,"An experimental design developed by several prominent member
 
 Allegedly it was initially developed as a purely scientific vessel without armament and was later modified for an affluent client. As the Technocrats were notably very selective of who they would work with; much debate has been had by the conspiracy minded on this topic. It is known that only two examples of this craft were ever produced, and delivered explicitly to the Persean sector. This could well mean that a client of the Ivo Technocrats had operated or still operates post-collapse.",,,
 ,,,,,
+XHAN_Myrianous,SHIP,"Dark artefact of our inhuman children, pulled through to this world via the forbidden rituals and starry eyed ambition of humanities most adept. For if the technological apex of human creation is insufficient to excise the unseen threat that comes to bring eternal damnation, then it must be so that yet greater trespass into minds beyond our understanding will bring about salvation.
+
+It would be folly to assume that the mind, synthetic or otherwise is exempt from the interfacing that occurs among all natural systems in our universe. Indeed there is no sanctity held for those minds we deem artificial, and they are readily repurposed and vivisected to serve objectives most mundane. Yet among those such as the followers of ludd, it is sin beyond measure to even consider that the human mind may be; and even require similar exhumation. ",,,
+,,,,,
 # Fighters,,,,,
 ,,,,,
 ,,,,,
@@ -299,6 +313,8 @@ xhan_damper,SHIP_SYSTEM,Surrounds the ship with a gravitationally stabilized sup
 ,,,,,
 XHAN_ChronoPhase,SHIP_SYSTEM,"An experimental phase array with an accelerated timescale, its unique construction makes tinkering difficult even for experienced phase craft engineers.",Special,Moves the ship into an alternate dimension where time passes more quickly. Ship can not be hit by any weapons; builds up hard flux while active.,
 ,,,,,
+XHAN_MindControl,SHIP_SYSTEM,Overloads anything it cannot influence.,Special,Overloads anything it cannot influence.,
+,,,,,
 #Worlds,,,,,
 ,,,,,
 ,,,,,
@@ -328,6 +344,7 @@ This allowed a reunified Pamed ample time to set up industry without arousing mu
 ,,,,,
 P_Dobus,CUSTOM,"A useless little world, colonized by Tri-tachyon as a goodwill gesture towards United Pamed, and to snub similar efforts made by the Persean League. Additionally; this checkpoint is operated at a profit loss to facilitate better trade logistics between Pamed and Tri-tachyon.",,,
 ,,,,,
+X_Golba,CUSTOM,A churning atmosphere of thick caustic fog and atmospheric discharge very nearly completely masks the location of several hardened bunker like resource extraction facilities.,,,
 ,,,,,
 #Custom,,,,,
 ,,,,,
@@ -337,6 +354,9 @@ Most workers were contracted under a generational pre-employment, chartered by X
 ,,,,,
 xhan_mine,CUSTOM,"An enormous anti-ship mine deployed by XhanTech as a precaution, should their blacksite be discovered. The massive mines were once capable of turning entire fleets to atoms, now they are little more than empty shells. Their immense generators and fissile materials re-purposed for use in Xhan Empire planetary installations.",,,
 ,,,,,
+xhan_destroyed_station,CUSTOM,This vast orbital research facility now floats adrift its solar orbit; silent and shattered. ,,"After a short deployment, salvage crews soon report that the station has undergone a thorough and seemingly desperate scuttling operation. Data storage has been wiped clean, and nothing of value remains in the stations burned out storage sections. 
+
+However a scant few physical documents detailing research personnel arrival schedules are discovered. Notably, they list several prominent members of the Ivo Technocrats.",
 ,,,,,
 ,,,,,
 xhanempire,FACTION,"The Xhan Empire is a dogmatic autocracy; born from the remnants of the XhanTech corporation left in the Persean sector after the collapse. The focus of XhanTech pre-collapse was mainly on planetary-scale demotions and construction. Though this did not stop them from engaging in numerous black projects; hidden away from the eyes of the greater public. Among these projects was a planetary mega-structure situated in the outer reaches of the Persean sector. Known as The Cluster, it now forms the seat of power for the Xhan Empire.
