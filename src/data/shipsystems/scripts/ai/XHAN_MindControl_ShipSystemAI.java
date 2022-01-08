@@ -30,7 +30,6 @@ public class XHAN_MindControl_ShipSystemAI implements ShipSystemAIScript {
     @Override
     public void advance(float amount, Vector2f missileDangerDir, Vector2f collisionDangerDir, ShipAPI target) {
         tracker.advance(amount);
-        Vector2f shipLoc = ship.getLocation();
 
         if (tracker.intervalElapsed()) {
             if (!AIUtils.canUseSystemThisFrame(ship)) {
@@ -40,10 +39,6 @@ public class XHAN_MindControl_ShipSystemAI implements ShipSystemAIScript {
             ship.setShipTarget(findTarget(ship));
 
             if (ship.getShipTarget() == null) return;
-
-            if (MathUtils.getDistance(ship, ship.getShipTarget()) > XHAN_MindControl.getMaxRange(ship)) {
-                //ship.getAIFlags().setFlag(ShipwideAIFlags.AIFlags.MOVEMENT_DEST, );
-            }
 
             boolean shouldUseSystem = ship.getShipTarget() != null;
 
@@ -85,12 +80,13 @@ public class XHAN_MindControl_ShipSystemAI implements ShipSystemAIScript {
     }
 
     protected float determineStrength(ShipAPI ship) {
-        float strengthValue = ship.getHullSpec().getSuppliesPerMonth();
+        //base strength is FP
+        float strengthValue = ship.getHullSpec().getFleetPoints();
 
         //subtract remaining time from our strength value so we only prefer strong "ally" ships that are nearly out of time
         if (ship.getCustomData().get("XHAN_MindControl") != null) {
             XHAN_MindControl.MindControlData mindControlData = (XHAN_MindControl.MindControlData) ship.getCustomData().get("XHAN_MindControl");
-            strengthValue -= (mindControlData.durationEnd - mindControlData.elaspedAfterInState) / 2f;
+            strengthValue -= (mindControlData.durationEnd - mindControlData.elapsedAfterInState) / 2f;
         }
 
         //weight by remaining hull

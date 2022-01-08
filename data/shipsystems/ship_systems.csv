@@ -36,4 +36,4 @@ Plasma Shell,xhan_damper,1,,,,,,,4,0.05,0.25,5,0.25,0,,,,,,,,,TRUE,TRUE,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Chrono Phase Coils,XHAN_ChronoPhase,,,,,,,,,,0.6,,0.4,1.1,TRUE,,TRUE,TRUE,TRUE,,,,TRUE,,TRUE,,graphics/icons/hullsys/phase_cloak.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Mind Control,XHAN_MindControl,,,,,,0.1,,3,0.1,0.25,,0.25,0,,,,,,,,,,,,,graphics/icons/hullsys/interdictor_array.png
+Mind Control,XHAN_MindControl,,,,,,0.1,,,,0.25,,0.25,10,,,,,,,,,,,,,graphics/icons/hullsys/interdictor_array.png

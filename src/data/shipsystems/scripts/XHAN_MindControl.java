@@ -11,6 +11,7 @@ import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.util.MagicAnim;
 import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.combat.AIUtils;
 import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
@@ -20,48 +21,35 @@ public class XHAN_MindControl extends BaseShipSystemScript {
 
     private final boolean DEBUG = true;
 
-    public static final Color JITTER_COLOR = new Color(255, 155, 255, 75);
     public static final Color JITTER_UNDER_COLOR = new Color(255, 155, 255, 155);
+    public static final Color JITTER_COLOR = new Color(255, 155, 255, 75);
+    private static final float JITTER_MAX_RANGE_BONUS = 25f;
+
     public static Color TEXT_COLOR = new Color(255, 155, 255, 255);
-    private static final Color CHARGEUP_GLOW_COLOUR = new Color(213, 28, 255, 255);
+
+    private static final Color TARGET_EXPLOSION_EFFECT_COLOUR = new Color(213, 130, 255, 164);
+    private static final float TARGET_JITTER_RANGE = 25f;
+
+    private static final float TARGET_JITTER_MIN = 0.4f;
 
     protected static float RANGE = 1500f;
+    protected static float CD_FP_MODIFIER = 1f;
 
     public static float getMaxRange(ShipAPI ship) {
         return ship.getMutableStats().getSystemRangeBonus().computeEffective(RANGE);
     }
 
-    public static void changeSides(ShipAPI ship) {
-        if (ship.getOwner() == 100) return; //dead ships
-
-        final int newOwner = (ship.getOwner() == 0 ? 1 : 0);
-
-        if (newOwner == 0) {
-            ship.setAlly(true);
+    public static ShipAPI getBaseModule(ShipAPI ship) {
+        if (ship.isStationModule()) {
+            return getBaseModule(ship.getParentStation());
         } else {
-            ship.setAlly(false);
-        }
-
-        // Switch to the opposite side
-        ship.setOwner(newOwner);
-        //ship.setOriginalOwner(newOwner); //I think this affects post-battle recovery
-
-        // Force AI to re-evaluate surroundings
-        if (ship.getShipAI() != null) {
-            ship.getShipAI().forceCircumstanceEvaluation();
-        }
-
-        // Also switch sides of any drones (doesn't affect any new ones)
-        if (ship.getDeployedDrones() != null) {
-            for (ShipAPI drone : ship.getDeployedDrones()) {
-                drone.setOwner(newOwner);
-                drone.getShipAI().forceCircumstanceEvaluation();
-            }
+            return ship;
         }
     }
 
     @Override
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
+        //not sure why we need to check for the ship this way, but this is how vanilla does it
         ShipAPI ship = null;
         if (stats.getEntity() instanceof ShipAPI) {
             ship = (ShipAPI) stats.getEntity();
@@ -69,24 +57,34 @@ public class XHAN_MindControl extends BaseShipSystemScript {
             return;
         }
 
-        //make sure we only apply the effect once - this method will be called multiple times during IN state
+        //make sure we only apply the effect once - this method may be called multiple times during IN state
         if (state == State.IN && ship.getCustomData().get("XHAN_MindControl_applied") == null) {
             ship.setCustomData("XHAN_MindControl_applied", ""); //set applied flag
 
-            final ShipAPI target = findTarget(ship);
+            ShipAPI target = findTarget(ship);
             if (target != null) { //possibility findTarget no longer has a valid target when this is called
-
                 MindControlData mindControlData = (MindControlData) target.getCustomData().get("XHAN_MindControl");
                 if (mindControlData == null) {
+                    target = getBaseModule(target); //if we've targeted a submodule, change the target to the base module
                     mindControlData = new MindControlData(ship, target);
                     target.setCustomData("XHAN_MindControl", mindControlData);
-                } else {
-                    mindControlData = (MindControlData) target.getCustomData().get("XHAN_MindControl");
+
+                    ship.getSystem().setCooldown(target.getHullSpec().getFleetPoints() * CD_FP_MODIFIER); //system cooldown is dependent on target FP
                 }
 
                 //draw floating text
                 if (target.getFluxTracker().showFloaty() || ship == Global.getCombatEngine().getPlayerShip() || target == Global.getCombatEngine().getPlayerShip()) {
-                    target.getFluxTracker().showOverloadFloatyIfNeeded("Mind Controlled!", TEXT_COLOR, 4f, true);
+                    target.getFluxTracker().showOverloadFloatyIfNeeded("Mind Controlled!", TEXT_COLOR, 6f, true);
+                }
+
+                //draw expanding circle
+                for (int i = 0; i < 360; i++) {
+                    Vector2f loc = MathUtils.getPointOnCircumference(target.getLocation(), target.getShieldRadiusEvenIfNoShield(), i);
+                    Vector2f vel = Vector2f.sub(loc, target.getLocation(), new Vector2f());
+                    vel.normalise();
+                    vel.scale(1200f);
+
+                    Global.getCombatEngine().addSmoothParticle(loc, vel, 70f, 1f, 0.3f, TARGET_EXPLOSION_EFFECT_COLOUR);
                 }
 
                 final MindControlData mindControlDataFinal = mindControlData; //for use within inline BaseEveryFrameCombatPlugin
@@ -94,71 +92,67 @@ public class XHAN_MindControl extends BaseShipSystemScript {
                     mindControlDataFinal.targetEffectPlugin = new BaseEveryFrameCombatPlugin() {
 
                         @Override
-                        public void init(CombatEngineAPI engine) {
-                            changeSides(mindControlDataFinal.target);
-                            for (FighterWingAPI wing : mindControlDataFinal.target.getAllWings()) {
-                                wing.setWingOwner(mindControlDataFinal.target.getOwner());
-                            }
-                        }
-
-                        @Override
                         public void advance(float amount, List<InputEventAPI> events) {
                             if (Global.getCombatEngine().isPaused()) return;
 
-                            mindControlDataFinal.elaspedAfterInState += amount;
+                            //fix for buggy missiles, hopefully more efficient than everyframe spam
+                            for (MissileAPI missile : AIUtils.getNearbyEnemyMissiles(mindControlDataFinal.controlledShip, mindControlDataFinal.controlledShip.getCollisionRadius() * 2f)) {
+                                missile.setOwner(missile.getSource().getOwner());
+                            }
 
-                            if (DEBUG) Global.getCombatEngine().addFloatingText(mindControlDataFinal.target.getLocation(), Math.floor((mindControlDataFinal.durationEnd - mindControlDataFinal.elaspedAfterInState)) + "s", 50f, Color.white, mindControlDataFinal.target, 0f, 2f);
+                            mindControlDataFinal.elapsedAfterInState += amount;
 
-                            Vector2f delta = new Vector2f();
-                            Vector2f.sub(mindControlDataFinal.target.getLocation(), mindControlDataFinal.ship.getLocation(), delta);
-                            if (MathUtils.getRandomNumberInRange(0, 10) == 0) Global.getCombatEngine().addSmoothParticle(MathUtils.getRandomPointInCircle(mindControlDataFinal.ship.getShieldCenterEvenIfNoShield(), mindControlDataFinal.target.getShieldRadiusEvenIfNoShield() / 2f),
-                                                                                                                         delta,
-                                                                                                                         10f,
-                                                                                                                         0.5f,
-                                                                                                                         0.5f,
-                                                                                                                         1f,
-                                                                                                                         CHARGEUP_GLOW_COLOUR);
+                            if (DEBUG) {
+                                Global.getCombatEngine().addFloatingText(mindControlDataFinal.controlledShip.getLocation(),
+                                        Math.floor((mindControlDataFinal.durationEnd - mindControlDataFinal.elapsedAfterInState)) + "s",
+                                        50f,
+                                        Color.white,
+                                        mindControlDataFinal.controlledShip,
+                                        0f,
+                                        2f
+                                );
+                            }
 
+                            float jitterLevel = 1.0f - (mindControlDataFinal.elapsedAfterInState / mindControlDataFinal.durationEnd);
+                            jitterLevel = MagicAnim.offsetToRange(jitterLevel, TARGET_JITTER_MIN, 1.0f);
 
-                            float jitterLevel = 1.0f - (mindControlDataFinal.elaspedAfterInState / mindControlDataFinal.durationEnd);
-                            jitterLevel = MagicAnim.offsetToRange(jitterLevel, 0.4f, 1.0f);
+                            float jitterRangeBonus = jitterLevel * TARGET_JITTER_RANGE;
 
-                            float maxRangeBonus = 25f;
-                            float jitterRangeBonus = jitterLevel * maxRangeBonus;
+                            mindControlDataFinal.controlledShip.setJitterUnder(this, JITTER_UNDER_COLOR, jitterLevel, 11, 0f, 3f + jitterRangeBonus);
+                            mindControlDataFinal.controlledShip.setJitter(this, JITTER_COLOR, jitterLevel, 4, 0f, 0 + jitterRangeBonus);
 
-                            mindControlDataFinal.target.setJitterUnder(this, JITTER_UNDER_COLOR, jitterLevel, 11, 0f, 3f + jitterRangeBonus);
-                            mindControlDataFinal.target.setJitter(this, JITTER_COLOR, jitterLevel, 4, 0f, 0 + jitterRangeBonus);
-
-                            if ((mindControlDataFinal.elaspedAfterInState > mindControlDataFinal.durationEnd || !mindControlDataFinal.ship.isAlive()) && mindControlDataFinal.target.isAlive()) { //duration over or controlling ship dies, but target is still alive
-                                mindControlDataFinal.target.removeCustomData("XHAN_MindControl");
-                                changeSides(mindControlDataFinal.target);
-                                for (FighterWingAPI wing : mindControlDataFinal.target.getAllWings()) {
-                                    wing.setWingOwner(mindControlDataFinal.target.getOwner());
-                                }
+                            if ((mindControlDataFinal.elapsedAfterInState > mindControlDataFinal.durationEnd || !mindControlDataFinal.controllingShip.isAlive()) && mindControlDataFinal.controlledShip.isAlive()) { //duration over or controlling ship dies, but target is still alive
+                                mindControlDataFinal.controlledShip.removeCustomData("XHAN_MindControl");
+                                mindControlDataFinal.restoreOwnership();
                                 Global.getCombatEngine().removePlugin(mindControlDataFinal.targetEffectPlugin);
-                            } else if (!mindControlDataFinal.target.isAlive()) { //target is dead
+                            } else if (!mindControlDataFinal.controlledShip.isAlive()) { //target is dead
                                 Global.getCombatEngine().removePlugin(mindControlDataFinal.targetEffectPlugin);
                             }
                         }
                     };
-                    Global.getCombatEngine().addPlugin(mindControlDataFinal.targetEffectPlugin);
+                    Global.getCombatEngine().addPlugin(mindControlData.targetEffectPlugin);
                 } else {
-                    mindControlDataFinal.ApplyDuration(); //another charge being applied to a ship that is already under mind control
+                    mindControlData.applyDuration(); //another charge being applied to a ship that is already under mind control
                 }
             }
         }
 
+        //visuals for ship
         float jitterLevel = effectLevel;
         if (state == State.OUT) {
             jitterLevel *= jitterLevel;
             ship.removeCustomData("XHAN_MindControl_applied");
         }
-        float maxRangeBonus = 25f;
-        float jitterRangeBonus = jitterLevel * maxRangeBonus;
+        float jitterRangeBonus = jitterLevel * JITTER_MAX_RANGE_BONUS;
 
         ship.setJitterUnder(this, JITTER_UNDER_COLOR, jitterLevel, 11, 0f, 3f + jitterRangeBonus);
         ship.setJitter(this, JITTER_COLOR, jitterLevel, 4, 0f, 0 + jitterRangeBonus);
 
+        if (DEBUG) {
+            Vector2f offset = new Vector2f(0f, -100f);
+            Vector2f.add(offset, ship.getLocation(), offset);
+            Global.getCombatEngine().addFloatingText(offset, "CD: " + ship.getSystem().getCooldownRemaining(), 50f, Color.white, ship, 0f, 2f);
+        }
     }
 
     @Override
@@ -166,7 +160,9 @@ public class XHAN_MindControl extends BaseShipSystemScript {
         if (system.isOutOfAmmo()) return null;
         if (system.getState() != ShipSystemAPI.SystemState.IDLE) return null;
 
-        Vector2f target = ship.getMouseTarget();
+        ShipAPI targetShip = findTarget(ship);
+        Vector2f target = null;
+        if (targetShip != null) target = targetShip.getLocation();
         if (target != null) {
             float dist = Misc.getDistance(ship.getLocation(), target);
             float max = getMaxRange(ship) + ship.getCollisionRadius();
@@ -192,18 +188,17 @@ public class XHAN_MindControl extends BaseShipSystemScript {
         ShipAPI controlledTarget = null;
         if (target == null) {
             //no target
-        }
-        else if (target.getHullSize() == ShipAPI.HullSize.FIGHTER) {
+        } else if (target.getHullSize() == ShipAPI.HullSize.FIGHTER) {
             //target is a fighter, invalid
             target = null;
-        }
-        else if (ship.getOwner() == target.getOwner() && target.getCustomData().get("XHAN_MindControl") != null) {
+        } else if (ship.getOwner() == target.getOwner() && target.getCustomData().get("XHAN_MindControl") != null) {
             //target is an "ally" that is already under mind control
             //save this for later to in case there's no other valid targets in range
             controlledTarget = ship.getShipTarget();
-        }
-        else if (ship.getOwner() == target.getOwner()) {
+        } else if (ship.getOwner() == target.getOwner()) {
             //target is a regular ally, invalid
+            target = null;
+        } else if (ship.isHulk()) {
             target = null;
         }
         if (target != null) {
@@ -235,20 +230,74 @@ public class XHAN_MindControl extends BaseShipSystemScript {
     }
 
     public static class MindControlData {
-        public ShipAPI ship;
-        public ShipAPI target;
+        public ShipAPI controllingShip;
+        public ShipAPI controlledShip;
+        public int formerOwner;
+        public boolean formerAlly;
         public EveryFrameCombatPlugin targetEffectPlugin;
-        public float elaspedAfterInState = 0f;
+        public float elapsedAfterInState = 0f;
         public float durationEnd = 0f;
 
-        public MindControlData(ShipAPI ship, ShipAPI target) {
-            this.ship = ship;
-            this.target = target;
-            ApplyDuration();
+        public MindControlData(ShipAPI controllingShip, ShipAPI controlledShip) {
+            this.controllingShip = controllingShip;
+            this.controlledShip = controlledShip;
+            this.formerOwner = controlledShip.getOwner();
+            this.formerAlly = controlledShip.isAlly();
+            applyDuration();
         }
 
-        public void ApplyDuration() {
-            this.durationEnd += Math.pow(100f - this.target.getHullSpec().getSuppliesPerMonth(), 1.4f) / 14f;
+        public void applyDuration() {
+            this.durationEnd += 50f - this.controlledShip.getHullSpec().getFleetPoints();
+
+            //the player and stations are simply disabled instead of being taken over
+            if (this.controlledShip == Global.getCombatEngine().getPlayerShip() || this.controlledShip.isStation()) {
+                recursiveDisable(this.controlledShip);
+            } else {
+                changeSides(controlledShip, controlledShip.getOriginalOwner() == 0 ? 1 : 0, controlledShip.getOriginalOwner() == 1); //this ensures stacks don't cause weird shenanigans
+            }
+        }
+
+        private void changeSides(ShipAPI ship, int newOwner, boolean ally) {
+            //changes to the player side should be allies to prevent shenanigans
+            ship.setAlly(ally);
+
+            ship.setOwner(newOwner);
+
+            //switch sides of newly deployed fighters
+            for (FighterWingAPI wing : ship.getAllWings()) {
+                wing.setWingOwner(ship.getOwner());
+            }
+
+            //also switch sides of any drones (doesn't affect any new ones)
+            if (ship.getDeployedDrones() != null) {
+                for (ShipAPI drone : ship.getDeployedDrones()) {
+                    drone.setOwner(newOwner);
+                    drone.getShipAI().forceCircumstanceEvaluation();
+                }
+            }
+
+            //recurse downwards for all submodules
+            for (ShipAPI child : ship.getChildModulesCopy()) {
+                changeSides(child, newOwner, ally);
+            }
+
+            //force AI to re-evaluate surroundings
+            if (ship.getShipAI() != null) {
+                ship.getShipAI().forceCircumstanceEvaluation();
+            }
+        }
+
+        public void restoreOwnership() {
+            changeSides(controlledShip, formerOwner, formerAlly);
+        }
+
+        private void recursiveDisable(ShipAPI s) {
+            s.getFluxTracker().forceOverload(0f);
+            s.getEngineController().forceFlameout(true);
+
+            for (ShipAPI child : s.getChildModulesCopy()) {
+                recursiveDisable(child);
+            }
         }
     }
 }
