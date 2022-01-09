@@ -6,8 +6,10 @@ package data.shipsystems.scripts;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.input.InputEventAPI;
+import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.util.MagicAnim;
 import org.lazywizard.lazylib.MathUtils;
@@ -32,8 +34,7 @@ public class XHAN_MindControl extends BaseShipSystemScript {
 
     private static final float TARGET_JITTER_MIN = 0.4f;
 
-    protected static float RANGE = 1500f;
-    protected static float CD_FP_MODIFIER = 1f;
+    protected static float RANGE = 2000f;
 
     public static float getMaxRange(ShipAPI ship) {
         return ship.getMutableStats().getSystemRangeBonus().computeEffective(RANGE);
@@ -69,7 +70,7 @@ public class XHAN_MindControl extends BaseShipSystemScript {
                     mindControlData = new MindControlData(ship, target);
                     target.setCustomData("XHAN_MindControl", mindControlData);
 
-                    ship.getSystem().setCooldown(target.getHullSpec().getFleetPoints() * CD_FP_MODIFIER); //system cooldown is dependent on target FP
+                    ship.getSystem().setCooldown(Math.min((float) (Math.sqrt(target.getHullSpec().getFleetPoints()) * 3f), 20f)); //system cooldown is dependent on target FP
                 }
 
                 //draw floating text
@@ -283,6 +284,17 @@ public class XHAN_MindControl extends BaseShipSystemScript {
 
             //force AI to re-evaluate surroundings
             if (ship.getShipAI() != null) {
+
+                //cancel orders so the AI doesn't get confused
+                DeployedFleetMemberAPI member_a = Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship);
+                if (member_a != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(false).orderSearchAndDestroy(member_a, false);
+
+                DeployedFleetMemberAPI member_aa = Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship);
+                if (member_aa != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(true).orderSearchAndDestroy(member_aa, false);
+
+                DeployedFleetMemberAPI member_b = Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getDeployedFleetMember(ship);
+                if (member_b != null) Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getTaskManager(false).orderSearchAndDestroy(member_b, false);
+
                 ship.getShipAI().forceCircumstanceEvaluation();
             }
         }

@@ -42,7 +42,7 @@ public class XHAN_MindControl_ShipSystemAI implements ShipSystemAIScript {
 
             boolean shouldUseSystem = ship.getShipTarget() != null;
 
-            shouldUseSystem = shouldUseSystem && MathUtils.getRandomNumberInRange(0, 2) == 0;
+            //shouldUseSystem = shouldUseSystem && MathUtils.getRandomNumberInRange(0, 2) == 0;
 
             if (ship.getSystem().isActive() ^ shouldUseSystem) {
                 ship.useSystem();
