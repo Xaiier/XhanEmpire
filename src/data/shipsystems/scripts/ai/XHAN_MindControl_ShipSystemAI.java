@@ -13,6 +13,7 @@ import org.lazywizard.lazylib.combat.AIUtils;
 import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class XHAN_MindControl_ShipSystemAI implements ShipSystemAIScript {
@@ -90,7 +91,22 @@ public class XHAN_MindControl_ShipSystemAI implements ShipSystemAIScript {
         }
 
         //weight by remaining hull
-        strengthValue *= ship.getHullLevel();
+        //for ships with modules, average hull level is used as an approximation
+        ArrayList<Float> hullLevel = new ArrayList<Float>();
+        hullLevel.add(ship.getHullLevel());
+        for (ShipAPI child : ship.getChildModulesCopy()) {
+            hullLevel.add(child.getHullLevel());
+        }
+        float sum = 0f;
+        for (float f : hullLevel) {
+            sum += f;
+        }
+        strengthValue *= sum / hullLevel.size();
+
+        //weight by distance
+        float distanceFactor = MathUtils.getDistance(this.ship, ship) / XHAN_MindControl.getMaxRange(this.ship);
+        distanceFactor = -2 * distanceFactor + 2; //bias towards closer enemies weighted appropriately for typical vanilla FP
+        strengthValue *= distanceFactor;
 
         if (DEBUG) {
             Vector2f offset = new Vector2f(0f, 100f);
