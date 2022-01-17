@@ -8,7 +8,9 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.ShieldAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.loading.HullModSpecAPI;
 import data.scripts.util.MagicRender;
+import org.dark.shaders.distortion.RippleDistortion;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -24,6 +26,15 @@ public class XHAN_BubbleShield extends BaseHullMod {
     private static final float ACTUAL_RADIUS = 256f / 239f;
 
     private ShieldState shieldState = null;
+
+    public static boolean GRAPHICSLIB_LOADED = false;
+
+    @Override
+    public void init(HullModSpecAPI spec) {
+        this.spec = spec;
+
+        GRAPHICSLIB_LOADED = Global.getSettings().getModManager().isModEnabled("shaderLib");
+    }
 
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
@@ -65,8 +76,15 @@ public class XHAN_BubbleShield extends BaseHullMod {
                                 true
                         );
                     }
-                }
 
+                    if (GRAPHICSLIB_LOADED) {
+                        DistortionWrapper.addDistortion(ship, DURATION, FADE_TIME, ACTUAL_RADIUS);
+                    }
+                }
+                if (GRAPHICSLIB_LOADED && ship.getCustomData().get("bubbleripple") != null) {
+                    RippleDistortion ripple = (RippleDistortion) ship.getCustomData().get("bubbleripple");
+                    ripple.setLocation(ship.getShieldCenterEvenIfNoShield());
+                }
                 shieldState.advance(amount);
                 float radius = shieldState.onlineTimer * shieldState.shieldRadius;
                 shield.setRadius(radius);
@@ -74,6 +92,9 @@ public class XHAN_BubbleShield extends BaseHullMod {
                 ship.setCustomData("bubbleshield", shieldState);
             } else if (shield.isOff()) {
                 ship.removeCustomData("bubbleshield");
+                if (GRAPHICSLIB_LOADED) {
+                    ship.removeCustomData("bubbleripple");
+                }
             }
         }
     }
