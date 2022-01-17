@@ -8,6 +8,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.ShieldAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
+import data.scripts.util.MagicRender;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -15,9 +16,14 @@ import java.awt.*;
 
 public class XHAN_BubbleShield extends BaseHullMod {
 
-    private static final Color EFFECT_COLOUR = new Color(213, 130, 255, 164);
+    private static final float FADE_TIME = 0.7f;
+    private static final float BIAS = 0.2f;
+    private static final float DURATION = 1f;
+    private static final int INTENSITY = 20;
 
-    ShieldState shieldState = null;
+    private static final float ACTUAL_RADIUS = 256f / 239f;
+
+    private ShieldState shieldState = null;
 
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
@@ -32,30 +38,41 @@ public class XHAN_BubbleShield extends BaseHullMod {
         if (shield != null) {
             if (shield.isOn()) {
                 if (shieldState == null) {
-                    shieldState = new ShieldState(1f, ship.getHullSpec().getShieldSpec().getRadius());
+                    shieldState = new ShieldState(DURATION, ship.getHullSpec().getShieldSpec().getRadius());
                     shield.setActiveArc(360f);
 
-                    //TODO: draw differently
-                    /*
-                    //draw expanding circle
-                    for (int i = 0; i < 360; i++) {
-                        Vector2f loc = MathUtils.getPointOnCircumference(ship.getLocation(), ship.getHullSpec().getShieldSpec().getRadius(), i);
-                        Vector2f vel = Vector2f.sub(loc, ship.getLocation(), new Vector2f());
-                        vel = Vector2f.sub(vel, ship.getVelocity(), vel);
-                        //vel.normalise();
-                        vel.scale(-1f);
+                    Vector2f offset = new Vector2f();
+                    offset = Vector2f.sub(ship.getShieldCenterEvenIfNoShield(), ship.getLocation(), offset);
 
-                        Global.getCombatEngine().addSmoothParticle(ship.getLocation(), vel, 20f, 1f, 1.3f, EFFECT_COLOUR);
+                    Color rc = shield.getRingColor();
+                    Color c = new Color(rc.getRed(), rc.getGreen(), rc.getBlue(), 255);
+
+                    for (int i = 1; i < INTENSITY; i++) {
+                        MagicRender.objectspace(Global.getSettings().getSprite("fx", "Xhan_shieldOUT"),
+                                ship,
+                                offset,
+                                new Vector2f(),
+                                new Vector2f(),
+                                new Vector2f(ship.getHullSpec().getShieldSpec().getRadius() * 2f * ACTUAL_RADIUS / DURATION, ship.getHullSpec().getShieldSpec().getRadius() * 2f * ACTUAL_RADIUS / DURATION),
+                                MathUtils.getRandomNumberInRange(0f, 360f),
+                                0f,
+                                false,
+                                shield.getRingColor(),
+                                true,
+                                0f,
+                                DURATION / i + BIAS,
+                                FADE_TIME - BIAS,
+                                true
+                        );
                     }
-                    */
                 }
-                shieldState.advance(amount);
 
+                shieldState.advance(amount);
                 float radius = shieldState.onlineTimer * shieldState.shieldRadius;
                 shield.setRadius(radius);
+
                 ship.setCustomData("bubbleshield", shieldState);
-            }
-            else if (shield.isOff()) {
+            } else if (shield.isOff()) {
                 ship.removeCustomData("bubbleshield");
             }
         }
