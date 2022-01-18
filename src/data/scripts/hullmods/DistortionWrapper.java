@@ -6,9 +6,7 @@ infinite thanks to SafariJohn for working out this issue
 
 package data.scripts.hullmods;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.ShipAPI;
-import org.dark.shaders.distortion.DistortionAPI;
 import org.dark.shaders.distortion.DistortionShader;
 import org.dark.shaders.distortion.RippleDistortion;
 import org.lwjgl.util.vector.Vector2f;

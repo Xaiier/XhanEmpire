@@ -58,7 +58,8 @@ public class Xhan_Psy_Buster_Bomb_AI implements MissileAIPlugin
         Global.getCombatEngine().removeEntity(missile);
  
         // This spawns some custom vfx stacked with the "normal" ones done by spawnDamagingExplosion
-        Global.getCombatEngine().spawnExplosion(missile.getLocation(), missile.getVelocity(), VFX_COLOR, EXPLOSION_SIZE_INNER, EXPLOSION_DURATION);
+        Global.getCombatEngine().spawnExplosion(missile.getLocation(), new Vector2f(), VFX_COLOR, EXPLOSION_SIZE_INNER, EXPLOSION_DURATION);
+        Global.getCombatEngine().spawnExplosion(missile.getLocation(), new Vector2f(), VFX_COLOR, EXPLOSION_SIZE_OUTER, EXPLOSION_DURATION);
  
         // This spawns the damaging explosion
         /*
@@ -78,7 +79,7 @@ public class Xhan_Psy_Buster_Bomb_AI implements MissileAIPlugin
          */
         DamagingExplosionSpec boom = new DamagingExplosionSpec(
                 EXPLOSION_DURATION,
-                EXPLOSION_SIZE_OUTER,
+                EXPLOSION_SIZE_OUTER / 2f,
                 EXPLOSION_SIZE_INNER,
                 EXPLOSION_DAMAGE_MAX,
                 EXPLOSION_DAMAGE_MIN,
@@ -92,10 +93,10 @@ public class Xhan_Psy_Buster_Bomb_AI implements MissileAIPlugin
                 VFX_COLOR
         );
         boom.setDamageType(DamageType.KINETIC);
-        boom.setShowGraphic(true);
+        boom.setShowGraphic(false);
         boom.setSoundSetId(SOUND_ID);
         Global.getCombatEngine().spawnDamagingExplosion(boom, missile.getSource(), missile.getLocation(), false);
- 
+
         // This spawns the frag, also distributing them in a nice even 360 degree arc
         Vector2f vel = new Vector2f();
         for (int i = 0; i < FRAG_COUNT; i++)
