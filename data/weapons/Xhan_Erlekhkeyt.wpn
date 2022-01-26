@@ -32,11 +32,11 @@
   "barrelMode": "ALTERNATING",
   "animationType": "GLOW_AND_FLASH",
   "muzzleFlashSpec": {
-    "length": 35,
-    "spread": 20,
+    "length": 50,
+    "spread": 100,
     "particleSizeMin": 20,
     "particleSizeRange": 10,
-    "particleDuration": 0.22,
+    "particleDuration": 0.92,
     "particleCount": 12,
     "particleColor": [
       70,

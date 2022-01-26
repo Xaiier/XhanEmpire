@@ -8,7 +8,8 @@
   "quality": 0,
   "permaMods": [],
   "hullMods": [
-    "missleracks"
+    "missleracks",
+	"targetingunit"
   ],
   "weaponGroups": [
     {

@@ -5,7 +5,8 @@
   "goalVariant": true,
   "hullId": "XHAN_Panrelka",
   "hullMods": [
-    "missleracks"
+    "missleracks",
+	"targetingunit"
   ],
   "permaMods": [],
   "quality": 0,

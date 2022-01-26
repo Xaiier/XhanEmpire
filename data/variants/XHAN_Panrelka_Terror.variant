@@ -6,6 +6,7 @@
   "hullId": "XHAN_Panrelka",
   "hullMods": [
     "unstable_injector",
+	"targetingunit",
     "magazines"
   ],
   "permaMods": [],

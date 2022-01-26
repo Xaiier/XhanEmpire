@@ -5,7 +5,8 @@
   "goalVariant": true,
   "hullId": "XHAN_Olkzan",
   "hullMods": [
-    "armoredweapons"
+    "armoredweapons",
+	"targetingunit"
   ],
   "permaMods": [],
   "quality": 0,

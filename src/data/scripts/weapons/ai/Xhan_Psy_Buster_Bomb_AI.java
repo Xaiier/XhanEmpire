@@ -17,8 +17,8 @@ public class Xhan_Psy_Buster_Bomb_AI implements MissileAIPlugin
     private static final float FRAG_VELOCITY_MOD_MAX = 400f;
     private static final float FRAG_VELOCITY_MOD_MIN = 20f;
     private static final float EXPLOSION_SIZE_OUTER = 2500f;
-    private static final float EXPLOSION_SIZE_INNER = 100f;
-    private static final float EXPLOSION_DAMAGE_MAX = 3500f;
+    private static final float EXPLOSION_SIZE_INNER = 400f;
+    private static final float EXPLOSION_DAMAGE_MAX = 6000f;
     private static final float EXPLOSION_DAMAGE_MIN = 1f;
     private static final float EXPLOSION_DURATION = 10.2f;
     private static final float PARTICLE_DURATION = 10.2f;

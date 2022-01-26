@@ -9,8 +9,8 @@
 	"canUseWhileRightClickSystemOn":true,
 
 	"fadeActivationSoundOnChargedown":true,
-	"useSound":"system_interdictor",
-	"outOfUsesSound":"gun_out_of_ammo",
+	"useSound":"XHAN_MIND_CONTROL_SOUND",
+	"outOfUsesSound":"system_phase_cloak_collision",
 
 	"aiHints":{
 		"threatRange":1500,

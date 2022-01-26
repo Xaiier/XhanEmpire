@@ -130,6 +130,12 @@
 		"XHAN_MYRIANOUS_MUSIC":[
                 {"file":"sounds/XhanSounds/XhanMyrianousMusic.ogg","pitch":1,"volume":1},   
         ],
+		"XHAN_MIND_CONTROL_SOUND":[
+                {"file":"sounds/XhanSounds/XhanMindControlSound.ogg","pitch":1,"volume":1},   
+        ],
+		"XHAN_NOUS_CHARGE_SOUND":[
+                {"file":"sounds/XhanSounds/XhanNousDischarge.ogg","pitch":1,"volume":1},   
+        ],
 
 
 

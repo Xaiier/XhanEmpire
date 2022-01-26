@@ -18,7 +18,7 @@ import java.util.List;
 
 public class XHAN_MindControl_ShipSystemAI implements ShipSystemAIScript {
 
-    private final boolean DEBUG = true;
+    private final boolean DEBUG = false;
 
     private final IntervalUtil tracker = new IntervalUtil(1f, 2f);
     private ShipAPI ship;

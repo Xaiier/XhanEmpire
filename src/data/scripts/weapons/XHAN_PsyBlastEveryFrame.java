@@ -24,11 +24,11 @@ public class XHAN_PsyBlastEveryFrame implements EveryFrameWeaponEffectPlugin {
 
     private static final float EMP_RATE = 5f; // 1/5
     private static final float EMP_THICKNESS_SCALE = 10f;
-    private static final float JITTER_INTENSITY = 0.25f;
-    private static final float MAX_UNDER_JITTER_RANGE = 50f;
+    private static final float JITTER_INTENSITY = 0.35f;
+    private static final float MAX_UNDER_JITTER_RANGE = 80f;
 
-    private static final String CHARGE_SOUND = "XHAN_PSYBLAST_CHARGE_SOUND";
-    private static final String EMP_SOUND = "system_emp_emitter_impact";
+    private static final String CHARGE_SOUND = "XHAN_NOUS_CHARGE_SOUND";
+    private static final String EMP_SOUND = "realitydisruptor_emp_impact";
 
     private IntervalUtil particleInterval = new IntervalUtil(0.000001f, 0.000001f);
     private boolean hasFired = false;

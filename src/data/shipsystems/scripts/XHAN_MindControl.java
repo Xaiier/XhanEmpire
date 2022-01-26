@@ -21,15 +21,15 @@ import java.util.List;
 
 public class XHAN_MindControl extends BaseShipSystemScript {
 
-    private final boolean DEBUG = true;
+    private final boolean DEBUG = false;
 
-    public static final Color JITTER_UNDER_COLOR = new Color(255, 155, 255, 155);
-    public static final Color JITTER_COLOR = new Color(255, 155, 255, 75);
+    public static final Color JITTER_UNDER_COLOR = new Color(115, 76, 255, 155);
+    public static final Color JITTER_COLOR = new Color(119, 43, 255, 164);
     private static final float JITTER_MAX_RANGE_BONUS = 25f;
 
-    public static Color TEXT_COLOR = new Color(255, 155, 255, 255);
+    public static Color TEXT_COLOR = new Color(129, 0, 255, 121);
 
-    private static final Color TARGET_EXPLOSION_EFFECT_COLOUR = new Color(213, 130, 255, 164);
+    private static final Color TARGET_EXPLOSION_EFFECT_COLOUR = new Color(120, 42, 255, 62);
     private static final float TARGET_JITTER_RANGE = 25f;
 
     private static final float TARGET_JITTER_MIN = 0.4f;
@@ -73,19 +73,14 @@ public class XHAN_MindControl extends BaseShipSystemScript {
                     ship.getSystem().setCooldown(Math.min((float) (Math.sqrt(target.getHullSpec().getFleetPoints()) * 3f), 20f)); //system cooldown is dependent on target FP
                 }
 
-                //draw floating text
-                if (target.getFluxTracker().showFloaty() || ship == Global.getCombatEngine().getPlayerShip() || target == Global.getCombatEngine().getPlayerShip()) {
-                    target.getFluxTracker().showOverloadFloatyIfNeeded("Mind Controlled!", TEXT_COLOR, 6f, true);
-                }
-
                 //draw expanding circle
                 for (int i = 0; i < 360; i++) {
                     Vector2f loc = MathUtils.getPointOnCircumference(target.getLocation(), target.getShieldRadiusEvenIfNoShield(), i);
                     Vector2f vel = Vector2f.sub(loc, target.getLocation(), new Vector2f());
                     vel.normalise();
-                    vel.scale(1200f);
+                    vel.scale(310f);
 
-                    Global.getCombatEngine().addSmoothParticle(loc, vel, 70f, 1f, 0.3f, TARGET_EXPLOSION_EFFECT_COLOUR);
+                    Global.getCombatEngine().addSmoothParticle(loc, vel, 40f, 0.1f, 0.7f, TARGET_EXPLOSION_EFFECT_COLOUR);
                 }
 
                 final MindControlData mindControlDataFinal = mindControlData; //for use within inline BaseEveryFrameCombatPlugin

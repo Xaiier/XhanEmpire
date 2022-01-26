@@ -5,7 +5,8 @@
   "goalVariant": true,
   "hullId": "XHAN_Panrelka",
   "hullMods": [
-    "targetingunit"
+    "targetingunit",
+	"heavyarmor"
   ],
   "permaMods": [],
   "quality": 0,

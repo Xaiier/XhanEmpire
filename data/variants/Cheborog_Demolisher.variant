@@ -5,6 +5,7 @@
   "goalVariant": true,
   "hullId": "XHAN_Cheborog",
   "hullMods": [
+    "targetingunit",
     "missleracks"
   ],
   "permaMods": [],

@@ -5,6 +5,7 @@
   "goalVariant": true,
   "hullId": "XHAN_Olkzan",
   "hullMods": [
+    "targetingunit",
     "heavyarmor"
   ],
   "permaMods": [],

@@ -9,6 +9,7 @@
   "permaMods": [],
   "hullMods": [
     "armoredweapons",
+	"heavyarmor",
     "targetingunit"
   ],
   "weaponGroups": [
