@@ -6,7 +6,6 @@ package data.shipsystems.scripts;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.mission.FleetSide;
@@ -96,6 +95,14 @@ public class XHAN_MindControl extends BaseShipSystemScript {
                                 missile.setOwner(missile.getSource().getOwner());
                             }
 
+                            //handle player taking over ship as it is mind controlled
+                            if (mindControlDataFinal.controlledShip == Global.getCombatEngine().getPlayerShip()
+                                    && !mindControlDataFinal.controlledShip.getFluxTracker().isOverloaded()
+                                    && mindControlDataFinal.controlledShip.getOwner() != 0) {
+                                mindControlDataFinal.recursiveDisable(mindControlDataFinal.controlledShip);
+                                mindControlDataFinal.restoreOwnership();
+                            }
+
                             mindControlDataFinal.elapsedAfterInState += amount;
 
                             if (DEBUG) {
@@ -161,8 +168,8 @@ public class XHAN_MindControl extends BaseShipSystemScript {
         if (targetShip != null) target = targetShip.getLocation();
         if (target != null) {
             float dist = Misc.getDistance(ship.getLocation(), target);
-            float max = getMaxRange(ship) + ship.getCollisionRadius();
-            if (dist > max) {
+            float radSum = ship.getCollisionRadius() + targetShip.getCollisionRadius();
+            if (dist > getMaxRange(ship) + radSum) {
                 return "OUT OF RANGE";
             } else {
                 return "READY";
@@ -181,27 +188,12 @@ public class XHAN_MindControl extends BaseShipSystemScript {
         float range = getMaxRange(ship);
         boolean player = ship == Global.getCombatEngine().getPlayerShip();
         ShipAPI target = ship.getShipTarget();
-        ShipAPI controlledTarget = null;
-        if (target == null) {
-            //no target
-        } else if (target.getHullSize() == ShipAPI.HullSize.FIGHTER) {
-            //target is a fighter, invalid
-            target = null;
-        } else if (ship.getOwner() == target.getOwner() && target.getCustomData().get("XHAN_MindControl") != null) {
-            //target is an "ally" that is already under mind control
-            //save this for later to in case there's no other valid targets in range
-            controlledTarget = ship.getShipTarget();
-        } else if (ship.getOwner() == target.getOwner()) {
-            //target is a regular ally, invalid
-            target = null;
-        } else if (ship.isHulk()) {
-            target = null;
-        }
+
         if (target != null) {
             float dist = Misc.getDistance(ship.getLocation(), target.getLocation());
             float radSum = ship.getCollisionRadius() + target.getCollisionRadius();
-            if (dist > range + radSum) target = null;
-        } else {
+            if (dist > range + radSum) target = null; //our valid target is out of range, invalid
+        } else { //no target selected, try to find something
             if (player) {
                 target = Misc.findClosestShipEnemyOf(ship, ship.getMouseTarget(), ShipAPI.HullSize.FRIGATE, range, true);
             } else {
@@ -218,8 +210,18 @@ public class XHAN_MindControl extends BaseShipSystemScript {
             }
         }
 
-        if (target == null) { //target to apply stacks if there's nothing else in range
-            target = controlledTarget;
+        //invalidate unacceptable targets
+        if (target == null) {
+            //no target, or selected target is out of range or no targets in range
+        } else if (target.getHullSize() == ShipAPI.HullSize.FIGHTER) {
+            //target is a fighter, invalid
+            target = null;
+        } else if (ship.getOwner() == target.getOwner() && target.getCustomData().get("XHAN_MindControl") == null) {
+            //target is a regular ally, invalid
+            target = null;
+        } else if (target.isHulk()) {
+            //target is already dead
+            target = null;
         }
 
         return target;
@@ -243,10 +245,11 @@ public class XHAN_MindControl extends BaseShipSystemScript {
         }
 
         public void applyDuration() {
-            this.durationEnd += 50f - this.controlledShip.getHullSpec().getFleetPoints();
+            float fp = this.controlledShip.getHullSpec().getFleetPoints();
+            this.durationEnd += 50f - fp;
 
-            //the player and stations are simply disabled instead of being taken over
-            if (this.controlledShip == Global.getCombatEngine().getPlayerShip() || this.controlledShip.isStation()) {
+            //the player, stations, and overpowered mod ships are simply disabled instead of being taken over
+            if (this.controlledShip == Global.getCombatEngine().getPlayerShip() || this.controlledShip.isStation() || fp >= 50f) {
                 recursiveDisable(this.controlledShip);
             } else {
                 changeSides(controlledShip, controlledShip.getOriginalOwner() == 0 ? 1 : 0, controlledShip.getOriginalOwner() == 1); //this ensures stacks don't cause weird shenanigans
