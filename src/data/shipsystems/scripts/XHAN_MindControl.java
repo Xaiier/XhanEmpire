@@ -76,8 +76,10 @@ public class XHAN_MindControl extends BaseShipSystemScript {
                 for (int i = 0; i < 360; i++) {
                     Vector2f loc = MathUtils.getPointOnCircumference(target.getLocation(), target.getShieldRadiusEvenIfNoShield(), i);
                     Vector2f vel = Vector2f.sub(loc, target.getLocation(), new Vector2f());
-                    vel.normalise();
-                    vel.scale(310f);
+                    if (vel.lengthSquared() != 0f) { //fix crash with zero radius shields I guess?
+                        vel.normalise();
+                        vel.scale(310f);
+                    }
 
                     Global.getCombatEngine().addSmoothParticle(loc, vel, 40f, 0.1f, 0.7f, TARGET_EXPLOSION_EFFECT_COLOUR);
                 }
