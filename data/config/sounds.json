@@ -136,6 +136,9 @@
 		"XHAN_NOUS_CHARGE_SOUND":[
                 {"file":"sounds/XhanSounds/XhanNousDischarge.ogg","pitch":1,"volume":1},   
         ],
+		"XHAN_GROMM_FIRE_SOUND":[
+                {"file":"sounds/XhanSounds/XhanGrommFire.ogg","pitch":1,"volume":1},
+        ],
 
 
 

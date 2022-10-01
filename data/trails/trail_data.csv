@@ -16,3 +16,11 @@ Zhun_trail1,Xhan_Zhun_shot,xhan_trail_beam,1,0,0,0.8,8,1,"[255,235,71]","[255,0,
 Shpizak_trail1,Xhan_Shpizak_shot,xhan_trail_beam,10,0,0,0.7,15,1,"[74,140,255]","[213,74,255]",1,400,-300,0,0,1,TRUE,FALSE,TRUE,0,0,0,30,10,50,true,false
 Erlekhkeyt_trail1,Xhan_Erlekhkeyt_Shot,xhan_trail_uogek,0,0,0,0.4,28,50,"[50,36,255]","[255,0,0]",0.9,550,-300,0,9,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 PsyDischarge_trail1,Xhan_PsyDischarge,xhan_trail_uogek,0,0,0,0.5,35,15,"[50,36,255]","[255,0,0]",0.9,550,-300,0,9,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Gromm_trail1,Xhan_Gromm_Shot,base_trail_heavySmoke,10,0.2,0.3,0.8,20,40,"[50,50,50]","[20,20,20]",0.5,300,5,-50,2,1,TRUE,FALSE,FALSE,0,0,0,0,0,0,TRUE,TRUE
+Gromm_trail2,Xhan_Gromm_Shot,base_trail_heavyBurn,10,0,0,0.6,10,5,"[255,50,50]","[204,50,50]",0.5,300,5,20,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
+Gromm_trail6,Xhan_Gromm_Shot,xhan_trail_sparks,0,0,0,0.5,15,70,"[255,58,28]","[255,0,0]",1,550,0,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+Gromm_trail3,Xhan_Gromm_Shot,xhan_trail_beam,10,0,0,0.4,30,2,"[255,50,50]","[255,50,50]",0.4,300,-300,2,5,1,TRUE,FALSE,TRUE,0,0,0,30,10,50,true,false
+Gromm_trail4,Xhan_Gromm_Shot,base_trail_heavySmoke,10,0,0,0.4,25,35,"[50,50,50]","[50,10,10]",0.4,200,5,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
+Gromm_trail5,Xhan_Gromm_Shot,base_trail_heavySmoke,10,0.05,0.1,0.2,20,30,"[180,120,100]","[50,10,10]",0.3,200,5,10,0,1,TRUE,FALSE,TRUE,10,30,0.3,0,0,80,TRUE,FALSE
+Gromm_trail7,Xhan_Gromm_Shot,xhan_trail_sparks,0,0,0,0.3,15,40,"[252,20,114]","[255,142,56]",1,300,-100,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false

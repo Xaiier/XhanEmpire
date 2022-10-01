@@ -11,6 +11,7 @@ Bio-Chemical Flare,Xhan_ChemFlare_Launcher,,,,350,,10,100,,,,,0,,ENERGY,0,0,0,0.
 Szar Point Defense Laser,XHAN_Szar_Point_Defense,0,,600,500,90,,,0,360,4,,,,ENERGY,,80,0,0.25,,,,,,,3000,,,,,"PD, ANTI_FTR, SYSTEM","pd9, beam6",,Prime Divination,,Point Defense,,,,,,,,,,15.6
 Electron Rod,Xhan_ShockTail,0,,,360,,50,350,0,360,0,12,2,12,ENERGY,25,,0,0.16,1,,,,,,,10000,,,,"PD, ANTI_FTR, SYSTEM",25,,High Tech,,Unknown,,Point Defense,,,,Perfect,Fires an EMP arc at the nearest target close to the weapon's current facing. The arc always hits.,,,
 Eye Of Myria,Xhan_MyriaEye,0,,,650,,200,350,0,660,0,25,3.5,25,ENERGY,150,,0,0.13,1,,,,,,,10000,,,,"PD, ANTI_FTR, SYSTEM",25,,Transcendent Divination,,Unknown,,Point Defense,,,,Perfect,Fires an EMP arc at the nearest target close to the weapon's current facing. The arc always hits.,,,
+Gromm Artillery Battery,Xhan_Gromm,0,,3000,1400,,1500,,300,14,16,,,,HIGH_EXPLOSIVE,1500,,0,8,2,0.7,0,8,3,10,,1000,,,9000,"SYSTEM, NO_TURN_RATE_BOOST_WHEN_IDLE",he18,,Xhan Tech,,Anti Armor,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Pharrek Pulse Core,Xhan_Pharrekcore,,,3500,320,,300,0,40,80,0,,,,ENERGY,200,,0.4,2,1,,,,,,,600,,,100,"SYSTEM, PD",energy20,,Prime Divination,,Point Defense,,,,,,,,,,8.018
 Pharrek Frag gun,Xhan_pharrek_fraggun,,,1800,300,,50,,1,70,12,,,,FRAGMENTATION,4,,0,0.02,1,,0,10,2,10,,600,,,8,SYSTEM,,,Prime Divination,,Point Defense,,,,,,,,,,8.020
