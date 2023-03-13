@@ -1,0 +1,19 @@
+{
+	"id":"XHAN_EmergencyRepairs",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+    "aiScript":"data.shipsystems.scripts.ai.XHAN_EmergencyRepairs_ShipSystemAI",
+
+	"statsScript":"data.shipsystems.scripts.XHAN_EmergencyRepairs",
+
+	"fadeActivationSoundOnChargedown":true,
+	"useSound":"XHAN_KLAXON",
+	"outOfUsesSound":"system_phase_cloak_collision",
+
+	"aiHints":{
+	}
+}
+
+
+
+

@@ -1,6 +1,8 @@
 /*
 code by Xaiier
 
+this class exists because Java will not allow unloaded methods that use other mod's parameters (LightAPI in this case) to exist within a class, even if the logical path would never actually call said method
+this allows for optional support of GraphicsLib
 infinite thanks to SafariJohn for working out this issue
 */
 

@@ -139,6 +139,15 @@
 		"XHAN_GROMM_FIRE_SOUND":[
                 {"file":"sounds/XhanSounds/XhanGrommFire.ogg","pitch":1,"volume":1},
         ],
+        "XHAN_KLAXON":[
+                {"file":"sounds/XhanSounds/XhanKlaxon.ogg","pitch":1,"volume":1},
+        ],
+        "XHAN_TORCHDRIVE_LOOP":[
+          {"file":"sounds/XhanSounds/TorchDriveLoop.ogg","pitch":1,"volume":1},
+        ],
+        "XHAN_TORCHDRIVE_ACTIVATE":[
+          {"file":"sounds/XhanSounds/TorchDriveActivate.ogg","pitch":1,"volume":1},
+        ],
 
 
 

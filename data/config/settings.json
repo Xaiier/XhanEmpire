@@ -12,7 +12,11 @@
 			"xhan_trail_sparks":"graphics/fx/Xhan_sparks_trail.png",
 			"xhan_Gorel_Splat":"graphics/fx/Xhan_Gorel_splat.png",
 			"Xhan_shieldIN":"graphics/fx/Xhan_PsyShield_inner.png", 			
-            "Xhan_shieldOUT":"graphics/fx/Xhan_PsyShield_Rim.png", 
+            "Xhan_shieldOUT":"graphics/fx/Xhan_PsyShield_Rim.png",
+            "Xhan_gridCellLarge":"graphics/fx/Xhan_gridCellLarge.png",
+            "Xhan_gridCellSmall":"graphics/fx/Xhan_gridCellSmall.png",
+            "Xhan_flare":"graphics/fx/xhan_flare.png",
+            "Xhan_klaxon":"graphics/fx/xhan_klaxon.png",
 		},
 	"characters":{
                 "Xhan_Veka":"graphics/portraits/HVBP/Xhan_Veka.png",

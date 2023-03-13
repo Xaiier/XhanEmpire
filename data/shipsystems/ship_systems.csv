@@ -39,3 +39,7 @@ Chrono Phase Coils,XHAN_ChronoPhase,,,,,,,,,,0.6,,0.4,1.1,TRUE,,TRUE,TRUE,TRUE,,
 Nous Field Manipulator,XHAN_MindControl,,,,,,0.1,,,,0.25,,0.25,10,,,,,,,,,,,,,graphics/icons/hullsys/interdictor_array.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Turboburn,XHAN_TurboBurn,1,,,,,,,,,2,,1,10,TRUE,,,,,,,TRUE,TRUE,,,,graphics/icons/hullsys/burn_drive.png
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Emergency Repairs,XHAN_EmergencyRepairs,,,,,,,,3,,1,10,1,10,,,,,,,,,,,,,graphics/icons/hullsys/interdictor_array.png
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Torch Drive,XHAN_TorchDrive,1,,,,,,,,,2,3,1,20,FALSE,,,,,,TRUE,TRUE,,,,,graphics/icons/hullsys/burn_drive.png
