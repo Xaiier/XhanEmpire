@@ -106,6 +106,8 @@ Xhan_MyriaEye,WEAPON,"""All that I see is mine, and if it cannot be so then rend
 ,,,,,
 Xhan_PsyBlast,WEAPON,"""I will wipe it all away, the compounded folly of the sickly old Domain bureaucrats. The Tyranny of a billion moaning voices; clinging to some ersatz nostalgia for a time they cannot recollect. Once excised, a new humanity can arise; a resplendent chorus of warm hearts all beating towards an unsullied future.""","- The Divine Emperor. Address to the citizens of the Cluster, c+194",,
 ,,,,,
+Xhan_Gromm,WEAPON,"An archaic long range weapon battery originally developed as a planetary defense installation by the Xhantech corporation. Its experimental propellant charges were found to pose a significant ecological hazard when used in atmosphere, as such it has only seen use on some dedicated craft and defensive orbital platforms.",Anti Armor,,
+,,,,,
 # Ships,,,,,
 ,,,,,
 ,,,,,
@@ -243,7 +245,7 @@ XHAN_Brakad,SHIP,"A dated but somewhat unconventional ship design, The Brakad wa
 
 Originally designed by Nakar Opul, former member of the Ivo Technocrats. He would eventually leave the group on bad terms, stemming primarily from his disagreement with the Ivo Technocrats ""hands off"" policy regarding Domain politics. Nakar Opul saw the technocrats, and by extension himself as far more capable leaders than politicians of the time. The Brakad was his effort to ingratiate himself with the Domain naval engineers and admiralty. It is unknown what position he reached in the Domain hierarchy within his lifetime, such records have been lost. However, the Ivo Technocrats made known their distaste for the man in equal measure. Though these colorful statements have also unfortunately been lost. ",,,
 ,,,,,
-XHAN_Brakad_S,SHIP,"Without doubt, this is the personal flagship of Aman Cuzhitsky. Leader of the civilian volunteer regiment that supported the Hegemony during the Second AI War. Aside from environmental wear and damage, The ship seems to be completely intact. Onboard modifications have been made to better protect the craft and its systems against energy weapons. Oddly; no traces of the crew can be found, and its onboard escape shuttle is still docked within. 
+XHAN_Brakad_S,SHIP,"Without doubt, this is the personal flagship of Aman Cuzhitsky. Leader of the civilian volunteer regiment that supported the Hegemony during the AI War. Aside from environmental wear and damage, The ship seems to be completely intact. Onboard modifications have been made to better protect the craft and its systems against energy weapons. Oddly; no traces of the crew can be found, and its onboard escape shuttle is still docked within. 
 
 Cuzhitsky distinguished himself in multiple battles and was known to be absolutely ruthless in his destruction of Tri-Tachyon AI warships. Eventually he was even recognized by the Hegemony admiralty and made an honorary military member. While discussion surrounding the man has died down in recent cycles, you might still find some Hegemony old salts willing to recount his battles over a couple drinks.
 
@@ -258,6 +260,16 @@ Allegedly it was initially developed as a purely scientific vessel without armam
 XHAN_Myrianous,SHIP,"Dark artefact of our inhuman children, pulled through to this world via the forbidden rituals and starry eyed ambition of humanities most adept. For if the technological apex of human creation is insufficient to excise the unseen threat that comes to bring eternal damnation, then it must be so that yet greater trespass into minds beyond our understanding will bring about salvation.
 
 It would be folly to assume that the mind, synthetic or otherwise is exempt from the interfacing that occurs among all natural systems in our universe. Indeed there is no sanctity held for those minds we deem artificial, and they are readily repurposed and vivisected to serve objectives most mundane. Yet among those such as the followers of ludd, it is sin beyond measure to even consider that the human mind may be; and even require similar exhumation. ",,,
+,,,,,
+XHAN_Gramada,SHIP,"A Lumbering dreadnought of immense bulk, capable of delivering truly ruinous long range firepower. The Gramada was Principally designed to engage orbital defense installations and subsequently lay siege to the worlds they had once defended. Capable of carrying an entire battalion of armed marines and housing the required deployment craft. The Gramada is also able to provide planetary supporting fire, with its main batteries targeting key infrastructure and defensive structures.
+
+The history of this craft is fraught with unbridled ambition and arrogance. Designed initially during a period of material abundance and economic success in Xhantechs history. Bearing witness to the efficacy of the Domains early heavy battleship doctrine, key engineers; emboldened by their influential positions within the Xhantech corporation sought to outdo even the Domain admiralties brightest. The design quickly ballooned in size, scope, and intended function. From relatively modest frontline warship to a hybrid troop carrier, all the way to a planetary siege implement, of at the time unprecedented scale. The projects costs grew in equal measure, as did development time. Xhantechs inner circle eventually tried of shouldering the expense, and shelved the design to focus on more profitable industrial projects of smaller scale.
+
+Yet the associated engineers refused to move on, having effectively formed a clique entirely their own within the corporation. Leveraging their support, they would continue to petition the Xhantech inner circle to resume the project. Within an entity as large as Xhantech, corporate clans and bloodlines were not uncommon and; specifically within Xhantech, were often doggedly loyal to the founding principles and stations held by their forebears. Descendants of these engineers and those within the clan would continue to pester the  inner circle for generations to come, often contributing successful designs simply as a platform to then push for the reinstatement of the Gramada project.
+
+The inner circle would eventually relent, and the corporate clan would set to work; animated with multi-generational fervor. The craft they would produce was a marvel of rugged construction, with firepower to rival even orbital defense stations. At this point however, it was a grand work of a bygone era. The Domains fleet doctrine was shifting to focus on faster, more flexible craft. The market for this behemoth had long since dried up. Indeed, why field such a monstrosity when equal investment could muster an entire strike group of smaller craft. The project floundered, what few production models that existed were relegated to use as little more than marketing implements for Xhantechs other more prescient and practical designs. Its commercial failure leading to the effective dissolution of the original engineers entire corporate clan. 
+
+Within the Xhan Empire however, the project has found new life as an implement of intimidation and suppression. If the stars are to belong to the Divine Emperor, the petty material concerns of the pre-collapse era needn't bother those dedicated to a mission of transcendent importance.",,,
 ,,,,,
 # Fighters,,,,,
 ,,,,,
@@ -289,7 +301,7 @@ xhan_blastflare,SHIP_SYSTEM,"XhanTech blast flares are packed with explosives. W
 ,,,,,
 XHAN_magneticimpulse,SHIP_SYSTEM,"By directing a a pulse of electromagnetic energy through a phase channel, a target ship can be instantly and violently magnetized. Pulling nearby ships and fighters toward the target, as well as causing some minor electromagnetic disruptions to the target and nearby craft. An interesting quirk of the system is that the larger the target ship, the stronger the magnetic effect.",Offensive,"Violently magnetizes the target ship for a brief moment. The larger the target, the stronger the magnetic effect.",
 ,,,,,
-XHAN_TemporalLock,SHIP_SYSTEM,"By projecting a powerful directed gravitic phase field, the target ship will be pulled constantly pulled between p-space and real-space. The flow of time is effectively paused onboard the target ship, if only for the brief duration of the effect. This also causes the targeted ship to become intangible in real-space.",Offensive,Freezes the target ship in time and renders it intangible by pulling it between p-space and real-space.,
+XHAN_TemporalLock,SHIP_SYSTEM,"By projecting a powerful directed gravitic phase field, the target ship will be constantly pulled between p-space and real-space. The flow of time is effectively paused onboard the target ship, if only for the brief duration of the effect. This also causes the targeted ship to become intangible in real-space.",Offensive,Freezes the target ship in time and renders it intangible by pulling it between p-space and real-space.,
 ,,,,,
 xhan_hyperforge,SHIP_SYSTEM,"Developed under the Domain Heroes project. The system functions much like a regular autoforge, turning specialized feedstock into usable missiles. However, it is capable of generating new feedstock through an extremely flux intensive energy to matter conversion process that shuts down both weapon and shield systems.",Special,Replenishes missile ammunition when used. Shuts down shield and weapon systems when in use.,
 ,,,,,
@@ -314,6 +326,10 @@ xhan_damper,SHIP_SYSTEM,Surrounds the ship with a gravitationally stabilized sup
 XHAN_ChronoPhase,SHIP_SYSTEM,"An experimental phase array with an accelerated timescale, its unique construction makes tinkering difficult even for experienced phase craft engineers.",Special,Moves the ship into an alternate dimension where time passes more quickly. Ship can not be hit by any weapons; builds up hard flux while active.,
 ,,,,,
 XHAN_MindControl,SHIP_SYSTEM,Overloads anything it cannot influence.,Special,Overloads anything it cannot influence.,
+,,,,,
+XHAN_TorchDrive,SHIP_SYSTEM,"Floods the ships engines with additional fuel, allowing it to cruise at high speed for a short while after a brief period of acceleration. The ships size and the stresses placed upon the engines after such a maneuver necessitate a lengthy cooldown period.",Movement,"Allows ship to cruise at high speed for a short while, but requires a lengthy cooldown period.",
+,,,,,
+XHAN_EmergencyRepairs,SHIP_SYSTEM,"Using a system of packaged foam armor feedstock and an army of assembly drones, the system can repair 30% of the ships maximum hull value. As well as repairing armor up to 75% of its maximum value. ",Defensive,"Repairs 30% of the ships maximum hull value, as well as repairing armor up to 75% of its maximum value.",
 ,,,,,
 #Worlds,,,,,
 ,,,,,

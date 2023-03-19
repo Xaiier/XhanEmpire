@@ -43,6 +43,7 @@
 	  "XHAN_Pharrek",
 	  "XHAN_Ouggom",
 	  "XHAN_Kassarek",
+	  "XHAN_Gramada",
     ],
   },
   "knownShips": {
@@ -54,6 +55,7 @@
 	  "XHAN_Pharrek",
 	  "XHAN_Ouggom",
 	  "XHAN_Kassarek",
+	  "XHAN_Gramada",
     ],
   },
   # listing ships here will make the faction mostly use them even if other hulls become available
@@ -66,6 +68,7 @@
 	  "XHAN_Pharrek",
 	  "XHAN_Ouggom",
 	  "XHAN_Kassarek",
+	  "XHAN_Gramada",
     ],
   },
   "knownFighters": {

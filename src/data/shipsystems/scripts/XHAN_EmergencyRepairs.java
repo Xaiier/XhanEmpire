@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class XHAN_EmergencyRepairs extends BaseShipSystemScript {
     public static final float KLAXON_ARC = 45f;
     public static final float KLAXON_ROT_SPEED = 3f; //degrees/frame
-    public static final float KLAXON_LIFETIME = 2f;
+    public static final float KLAXON_LIFETIME = 3f;
     public static final Color KLAXON_COLOR = Color.red;
     public static final float HULL_MULT = 0.3f; //fraction of hull repaired
     private static final float ARMOR_MULT = 0.15f; //fraction of total armor repaired (NOTE: this number will be lower than expected due to unhittable cells)
@@ -36,7 +36,7 @@ public class XHAN_EmergencyRepairs extends BaseShipSystemScript {
     private boolean klaxonsNeedToBeSpawned = true;
 
     public XHAN_EmergencyRepairs() {
-        GRAPHICSLIB_LOADED = Global.getSettings().getModManager().isModEnabled("shaderLib");
+ //       GRAPHICSLIB_LOADED = Global.getSettings().getModManager().isModEnabled("shaderLib");
 
         //slight variations in color
         ARMOR_COLORS[0] = new Color(255, 160, 0);

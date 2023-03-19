@@ -21,7 +21,7 @@ import java.awt.*;
 
 public class XHAN_TorchDriveStats extends BaseShipSystemScript {
 
-    private static final float SPEED_BOOST = 250f;
+    private static final float SPEED_BOOST = 220f;
     private static final float ACCEL_BOOST = 100f;
 
     public static final Color ENGINE_COLOR = new Color(255, 63, 0);
@@ -50,7 +50,7 @@ public class XHAN_TorchDriveStats extends BaseShipSystemScript {
     public static boolean GRAPHICSLIB_LOADED = false;
 
     public XHAN_TorchDriveStats(){
-        GRAPHICSLIB_LOADED = Global.getSettings().getModManager().isModEnabled("shaderLib");
+   //     GRAPHICSLIB_LOADED = Global.getSettings().getModManager().isModEnabled("shaderLib");
     }
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {

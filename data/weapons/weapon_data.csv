@@ -11,7 +11,7 @@ Bio-Chemical Flare,Xhan_ChemFlare_Launcher,,,,350,,10,100,,,,,0,,ENERGY,0,0,0,0.
 Szar Point Defense Laser,XHAN_Szar_Point_Defense,0,,600,500,90,,,0,360,4,,,,ENERGY,,80,0,0.25,,,,,,,3000,,,,,"PD, ANTI_FTR, SYSTEM","pd9, beam6",,Prime Divination,,Point Defense,,,,,,,,,,15.6
 Electron Rod,Xhan_ShockTail,0,,,360,,50,350,0,360,0,12,2,12,ENERGY,25,,0,0.16,1,,,,,,,10000,,,,"PD, ANTI_FTR, SYSTEM",25,,High Tech,,Unknown,,Point Defense,,,,Perfect,Fires an EMP arc at the nearest target close to the weapon's current facing. The arc always hits.,,,
 Eye Of Myria,Xhan_MyriaEye,0,,,650,,200,350,0,660,0,25,3.5,25,ENERGY,150,,0,0.13,1,,,,,,,10000,,,,"PD, ANTI_FTR, SYSTEM",25,,Transcendent Divination,,Unknown,,Point Defense,,,,Perfect,Fires an EMP arc at the nearest target close to the weapon's current facing. The arc always hits.,,,
-Gromm Artillery Battery,Xhan_Gromm,0,,3000,1400,,1500,,300,14,16,,,,HIGH_EXPLOSIVE,1500,,0,8,2,0.7,0,8,3,10,,1000,,,9000,"SYSTEM, NO_TURN_RATE_BOOST_WHEN_IDLE",he18,,Xhan Tech,,Anti Armor,,,,,,,,,,
+Gromm Artillery Battery,Xhan_Gromm,0,,3000,1400,,1350,,400,16,16,,,,HIGH_EXPLOSIVE,1350,,0,6,2,0.7,1,8,3,10,,1000,,,9000,"SYSTEM, NO_TURN_RATE_BOOST_WHEN_IDLE",he18,,Xhan Tech,,Anti Armor,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Pharrek Pulse Core,Xhan_Pharrekcore,,,3500,320,,300,0,40,80,0,,,,ENERGY,200,,0.4,2,1,,,,,,,600,,,100,"SYSTEM, PD",energy20,,Prime Divination,,Point Defense,,,,,,,,,,8.018
 Pharrek Frag gun,Xhan_pharrek_fraggun,,,1800,300,,50,,1,70,12,,,,FRAGMENTATION,4,,0,0.02,1,,0,10,2,10,,600,,,8,SYSTEM,,,Prime Divination,,Point Defense,,,,,,,,,,8.020
@@ -19,7 +19,7 @@ Pharrek Frag gun,Xhan_pharrek_fraggun,,,1800,300,,50,,1,70,12,,,,FRAGMENTATION,4
 Nous Field Discharge,Xhan_PsyBlast,,,3500,800,,500,2000,40,80,0,,,,ENERGY,1000,,8,75,1,,,,,,,600,,,100,"SYSTEM, DO_NOT_AIM, DO_NOT_CONSERVE",energy20,,Transcendent Divination,,Unknown,,,,,,,,,,8.018
 PsyDischarge,Xhan_PsyDischarge_gun,,,1200,1100,,500,2000,1,70,12,,,,ENERGY,4,,0,0.02,1,,0,10,2,10,,200,400,14.5,1000,SYSTEM,,,Transcendent Divination,,Point Defense,,,,,,,,,,8.020
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Stolb Demoliton Charge Launcher,Stolb_Demo_charge,3,0.5,6000,800,,900,,75,10,26,,,,HIGH_EXPLOSIVE,700,,0,6,3,0.5,0,15,10,6,,360,180,3,1200,,"he18, rare_bp",,Xhan Tech,,Area Denial,Fast,None,,,,,,,TRUE,8.003
+Stolb Demoliton Charge Launcher,Stolb_Demo_charge,3,0.5,6000,800,,900,,75,10,26,,,,HIGH_EXPLOSIVE,700,,0,6,3,0.5,0,15,10,6,,360,260,3,1200,,"he18, rare_bp",,Xhan Tech,,Area Denial,Fast,None,,,,,,,TRUE,8.003
 Gorel Plasma Projector,Gorel_Plas_Proj,3,0.5,7500,700,,1300,200,,20,30,,,,ENERGY,1300,,0.3,2.2,1,,,,,,,500,,0,4000,"STRIKE, USE_VS_FRIGATES","energy20, rare_bp",,Xhan Tech,,General,,,,,,,,,,8.004
 Zakrep Proximity Burst Autocannon,Zakrep_Prox_Burst,2,0.5,3500,900,,240,,10,25,20,,,,HIGH_EXPLOSIVE,250,,0,1.2,2,0.3,0,5,5,6,,950,,,400,,"he18, XhanWartech_bp",,Xhan Tech,,Anti Armor,,,,,,,,,,8.005
 Hezek Shredder Battery,Xhan_Hezek,2,0.6,3000,600,,180,,5,30,18,,,,FRAGMENTATION,65,,0,0.08,1,,1,10,2,10,,3000,,,50,,"he18, XhanWartech_bp",,Xhan Tech,,General,,,,,,,,,,8.015
@@ -29,7 +29,7 @@ Bloz Missile Heavy Autoloader,Xhan_Bloz_large,2,0.5,5200,1400,,1000,,40,10,22,90
 Tsebrek Heavy Kinetic Autocannon,Xhan_Tsebrek,2,0.5,3000,900,,425,,20,10,20,,,,KINETIC,525,,0,1.4,1,,0,6,2,10,,800,,,525,,"kinetic18, XhanWartech_bp",,Xhan Tech,,Anti Shield,,,,,Shells have a high explosive warhead that deals an additional %s damage on impact,80 HE,,,,7.25
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Steizok Autogun,Steizok_Autogun,2,0.75,2000,900,,90,,5,35,12,,,,HIGH_EXPLOSIVE,95,,0,0.8,3,0.15,0,4,2,5,,900,,,30,,"he16, LR, XhanDemolitions_bp",,Xhan Tech,,Anti Armor,,,,,,,,,,8.006
-Igol Saturation Point Defense,Igol_point_def,1,0.75,1500,500,,18,,1,70,12,,,,FRAGMENTATION,4,,0,0.02,1,,0,10,2,10,,1100,,,8,PD,"pd15, SR, XhanDemolitions_bp",,Xhan Tech,,Point Defense,,,,,,,,,,8.007
+Igol Saturation Point Defense,Igol_point_def,1,0.75,1500,500,,22,,1,70,12,,,,FRAGMENTATION,4,,0,0.02,1,,0,10,2,10,,1100,,,8,PD,"pd15, SR, XhanDemolitions_bp",,Xhan Tech,,Point Defense,,,,,,,,,,8.007
 Ugol Plasma Spitter,Ugol_Plas_Spit,2,0.75,1200,700,,70,,0,20,10,,,,ENERGY,70,,0.2,0.7,5,0.08,0,6,2,10,,750,,,,,"energy13, XhanWartech_bp",,Xhan Tech,,General,,,,,,,,,,8.008
 Sharik Heavy Demolition Torpedo,Sharik_Demo_Torp,3,0.2,4000,900,,8000,,200,10,10,2,,,HIGH_EXPLOSIVE,0,,0,28,1,,0,0,0,0,,160,50,6,1100,"DO_NOT_AIM, STRIKE","strike8, rocket3, rare_bp",,Xhan Tech,,Finisher,Fast,None,,,,,,,TRUE,8.009
 Yazer Neutron Destabilizer,Xhan_Yazer,3,0.2,4000,550,1800,,,0,18,15,10,,,ENERGY,,1350,0.05,0.5,2.2,15,,,,,3200,,,,,"USE_VS_FRIGATES, GROUP_ALTERNATING","energy14, beam10, rare_bp",,Xhan Tech,,Strike,,,,,,,,,,8.012
@@ -38,7 +38,7 @@ Bloz Missile Rack,Xhan_Bloz_medium,2,0.75,1200,1400,,1000,,40,10,10,24,,,FRAGMEN
 Zarukel Omni-Weapon,Xhan_Zarukel,3,0.2,4000,700,,107,100,0,40,15,,,,ENERGY,107,,0.15,0.3,1,,0,6,2,10,,950,,,,"PD, PD_ALSO","energy13, rare_bp",,Prime Divination,,Omni-Weapon,,,,,,,,,,8.008
 Luzna Incapacitator Missile,Xhan_Luzna,3,0.2,3200,2000,,650,2500,15,10,14,,,,ENERGY,0,,0,25,1,,0,0,0,,,450,50,18,400,"DO_NOT_AIM, HEATSEEKER","utility13, XhanWartech_bp",,Xhan Tech,,Anti Engine,Fast,Excellent,,,,,,,TRUE,12.2
 Kobraz Smart Needler,Xhan_Kobraz,2,0.75,4000,850,,90,,0,20,15,,,,ENERGY,90,,,2,6,0.1,18,18,10,10,,800,,,,,energy13,,Alvarium Doctrine,,General,,,,,,,,,,8.008
-Grokan Chem-Fusion Blaster,Xhan_Grokan,0,,1600,500,,450,,0,7,12,,,,ENERGY,1450,,0,2.5,,,,,,,,900,,,600,,energy12,,Alvarium Doctrine,,General,,,,,Blaster bolts deal an additional %s damage on impact,1000 Fragmentation,,,TRUE,22.125
+Grokan Chem-Fusion Blaster,Xhan_Grokan,0,,1600,500,,500,,0,7,12,,,,ENERGY,1450,,0,2.5,,,,,,,,900,,,600,,energy12,,Alvarium Doctrine,,General,,,,,Blaster bolts deal an additional %s damage on impact,1000 Fragmentation,,,TRUE,22.125
 Erlekhkeyt Gravitic Null Blaster,Xhan_Erlekhkeyt,0,0.2,8000,800,,500,150,0,14,18,,,,ENERGY,700,,0.5,1,,,,,,,,800,,,600,,"energy12, restricted",,Transcendent Divination,,General,,,,,Blaster bolts deal an additional %s damage on impact and kill enemy ship momentum,500 Fragmentation,,,TRUE,22.125
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Chok Point Defense,Chok_point_def,1,1,220,400,,60,,1,80,4,,,,FRAGMENTATION,20,,0,0.4,1,,0,8,2,15,,700,,,60,PD,"pd7, kinetic4, SR, XhanDemolitions_bp",,Xhan Tech,,Point Defense,,,,,,,,,,8.010
@@ -47,14 +47,14 @@ Palik Light Autolaser,Xhan_Palik,1,0.75,230,700,,20,,0,50,5,,,,ENERGY,20,,0.1,0.
 Drob Decimator,Xhan_Drob,2,0.5,700,600,,250,,40,25,7,,,,HIGH_EXPLOSIVE,300,,0,2.5,1,,30,30,4,10,,650,,,100,,"he6, XhanDemolitions_bp",,Xhan Tech,,Anti Armor,,,,,,,,,,3
 Bloz Missile Loader,Xhan_Bloz_small,2,0.5,300,1400,,1000,,40,10,4,6,,,FRAGMENTATION,0,,0,1.5,1,,0,0,0,0,,320,150,7,350,DO_NOT_AIM,"strike7, missile0, XhanDemolitions_bp",,Xhan Tech,,Anti Hull Missile,Fast,Good,,,,,,,TRUE,9.75
 Zhuk Plasma Torpedo,Xhan_Zhuk,1,,200,1300,,3250,,75,10,2,1,,,ENERGY,0,,0,5,1,,0,0,0,0,,450,150,4,600,STRIKE,"strike8, rocket3, XhanWartech_bp",,Xhan Tech,,Torpedo,Fast,None,,,,,,,TRUE,9
-Bogul Blaster,Xhan_bogul,2,0.5,700,550,,300,,15,35,7,,,,FRAGMENTATION,225,,0.1,0.9,1,,2,7,4,12,,700,,,100,,energy8,,Alvarium Doctrine,,General,,,,,Blaster bolts deal an additional %s damage on impact,100 Energy,,,TRUE,3
+Bogul Blaster,Xhan_bogul,2,0.5,700,550,,350,,15,35,7,,,,FRAGMENTATION,225,,0.1,0.9,1,,2,7,4,12,,700,,,100,,energy8,,Alvarium Doctrine,,General,,,,,Blaster bolts deal an additional %s damage on impact,100 Energy,,,TRUE,3
 Svech Gamma Saturator,Xhan_svech,1,,200,340,,15,55,1,130,2,,,,FRAGMENTATION,1,,0,0.08,1,,30,30,1,15,,3000,,,10,PD,"pd7, SR",,Alvarium Doctrine,,Point Defense,,,,,,,,,,1
 Zhun Supercharged Gamma Saturator,Xhan_Zhun,1,0.5,2000,650,,50,70,1,130,5,,,,FRAGMENTATION,10,,0,0.06,1,,18,18,1,15,,3000,,,10,PD,"pd7, SR, restricted",,Transcendent Divination,,Point Defense,,,,,,,,,,1
 Shpizak Particle Spear,Xhan_Shpizak,2,0.5,3000,900,,90,50,10,30,11,,,,KINETIC,90,,0.6,0.4,3,0.2,0,5,3,8,,1150,,,50,,restricted,,Transcendent Divination,,Anti Shield,,,,,Particle Spears deal an additional %s damage on impact,25 Energy,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #fighterweapons,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Igol Saturation Point Defense(F),XHAN_igol_fighter,0,,1800,400,,35,,1,70,12,,,,FRAGMENTATION,6,,0,0.08,1,,2,15,4,10,,1100,,,8,"PD, SYSTEM","pd15, SR",,Xhan Tech,,Point Defense (Area),,,,,,,,,,8.007
+Igol Saturation Point Defense(F),XHAN_igol_fighter,0,,1800,400,,45,,1,70,12,,,,FRAGMENTATION,6,,0,0.08,1,,2,15,4,10,,1100,,,8,"PD, SYSTEM","pd15, SR",,Xhan Tech,,Point Defense (Area),,,,,,,,,,8.007
 Gorel Plasma Projector(F),XHAN_gorel_fighter,0,,7500,700,,2400,200,,20,30,1,,,ENERGY,1250,,0.5,3,1,,,,,,,500,,0,4000,"STRIKE, USE_VS_FRIGATES, SYSTEM",energy20,,Xhan Tech,,General,,,,,,,,,,8.004
 Steizok Autogun(F),XHAN_Steizok_fighter,0,,2000,600,,75,,5,35,12,,,,HIGH_EXPLOSIVE,75,,0,0.6,2,0.15,0,10,2,5,,1300,,,30,SYSTEM,he16,,Xhan Tech,,Anti Armor,,,,,,,,,,8.006
 Vil Plasma Cutter,XHAN_VilCutter,0,,600,300,95,,,0,110,4,,,,ENERGY,,80,0,0.25,,,,,,,3000,,,,,"PD, ANTI_FTR, SYSTEM","pd9, beam6",,Alvarium Doctrine,,Point Defense,,,,,,,,,,15.6

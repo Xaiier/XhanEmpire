@@ -40,6 +40,6 @@ Nous Field Manipulator,XHAN_MindControl,,,,,,0.1,,,,0.25,,0.25,10,,,,,,,,,,,,,gr
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Turboburn,XHAN_TurboBurn,1,,,,,,,,,2,,1,10,TRUE,,,,,,,TRUE,TRUE,,,,graphics/icons/hullsys/burn_drive.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Emergency Repairs,XHAN_EmergencyRepairs,,,,,,,,3,,1,10,1,10,,,,,,,,,,,,,graphics/icons/hullsys/interdictor_array.png
+Emergency Repairs,XHAN_EmergencyRepairs,,,,,,,,3,,1,10,1,25,,,,,,,,,,,,,graphics/icons/hullsys/interdictor_array.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Torch Drive,XHAN_TorchDrive,1,,,,,,,,,2,3,1,20,FALSE,,,,,,TRUE,TRUE,,,,,graphics/icons/hullsys/burn_drive.png
+Torch Drive,XHAN_TorchDrive,1,,,,,,,,,4,3,1,40,FALSE,,,,,,TRUE,TRUE,,,,,graphics/icons/hullsys/burn_drive.png

@@ -17,6 +17,11 @@
             "Xhan_gridCellSmall":"graphics/fx/Xhan_gridCellSmall.png",
             "Xhan_flare":"graphics/fx/xhan_flare.png",
             "Xhan_klaxon":"graphics/fx/xhan_klaxon.png",
+			"Xhan_Gromm_Sparks1":"graphics/fx/Xhan_Gromm_sparks1.png",
+			"Xhan_Gromm_Sparks2":"graphics/fx/Xhan_Gromm_sparks2.png",
+			"Xhan_Gromm_Sparks3":"graphics/fx/Xhan_Gromm_sparks3.png",
+			"Xhan_Gromm_Smoke1":"graphics/fx/Xhan_Gromm_Smoke1.png",
+			"Xhan_Gromm_ring":"graphics/fx/Xhan_Gromm_ring.png",
 		},
 	"characters":{
                 "Xhan_Veka":"graphics/portraits/HVBP/Xhan_Veka.png",

@@ -19,7 +19,7 @@
 
 	"useSound":"XHAN_TORCHDRIVE_ACTIVATE",
 	"loopSound":"XHAN_TORCHDRIVE_LOOP",
-	"deactivateSound":"system_burn_drive_deactivate",
+	"deactivateSound":"",
 	"outOfUsesSound":"engine_disabled",
 
 	"aiHints":{
