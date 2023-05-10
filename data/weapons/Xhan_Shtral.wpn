@@ -3,6 +3,7 @@
   "specClass": "projectile",
   "projectileSpecId": "Xhan_Shtral_Shot",
   "type": "ENERGY",
+  "mountTypeOverride":"HYBRID",
   "size": "LARGE",
   "turretSprite": "graphics/weapons/Xhan_shtral_TURRET.png",
   "turretGlowSprite": "graphics/weapons/Xhan_shtral_TURRET_GLOW.png",

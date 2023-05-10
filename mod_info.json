@@ -4,7 +4,7 @@
 	"author":"Peplat",
 	"version":"2.5 Gramada",
 	"description":"The Xhan Empire.",
-	"gameVersion":"0.95.1a-RC6",
+	"gameVersion":"0.96a-RC6",
 	"jars":["jars/XhanEmpire.jar"],
 	"modPlugin":"data.scripts.XhanEmpireModPlugin",
 }

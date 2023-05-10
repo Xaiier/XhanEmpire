@@ -88,7 +88,7 @@ public class XhanEmpireModPlugin extends BaseModPlugin
 
         try
         {
-            Global.getSettings().getScriptClassLoader().loadClass("data.scripts.util.MagicTargeting");
+            Global.getSettings().getScriptClassLoader().loadClass("org.magiclib.util.MagicTargeting");
         }
         catch (ClassNotFoundException magic)
         {

@@ -93,6 +93,7 @@
 	  "Xhan_Yazer",
 	  "Xhan_Syr",
 	  "Xhan_Zarukel",
+	  "Xhan_Shtral",
     ],
   },
   "priorityWeapons": {
@@ -104,6 +105,7 @@
 	  "Xhan_Yazer",
 	  "Xhan_Syr",
 	  "Xhan_Zarukel",
+	  "Xhan_Shtral",
     ],
   },
   "knownHullMods": {

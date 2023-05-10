@@ -108,6 +108,8 @@ Xhan_PsyBlast,WEAPON,"""I will wipe it all away, the compounded folly of the sic
 ,,,,,
 Xhan_Gromm,WEAPON,"An archaic long range weapon battery originally developed as a planetary defense installation by the Xhantech corporation. Its experimental propellant charges were found to pose a significant ecological hazard when used in atmosphere, as such it has only seen use on some dedicated craft and defensive orbital platforms.",Anti Armor,,
 ,,,,,
+Xhan_Shtral,WEAPON,"An early form of modular energy weapon developed by the Xhantech corporation. The Shtral uses chemically catalyzed flash charges, allowing the weapon to be mounted even on older craft that cannot support newer energy weapons. Unfortunately the charges must be reloaded after they are spent, leading to an inconsistent rate of fire and lower overall damage output. ",General,,
+,,,,,
 # Ships,,,,,
 ,,,,,
 ,,,,,

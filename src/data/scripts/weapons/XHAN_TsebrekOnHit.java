@@ -13,7 +13,7 @@ code by Tomatopaste
 public class XHAN_TsebrekOnHit implements OnHitEffectPlugin {
     private static final float MAX_DURATION = 0.8f;
     private static final float RADIUS = 45f;
-    private static final float DAMAGE_AMOUNT = 80f;
+    private static final float DAMAGE_AMOUNT = 90f;
     private static final DamageType DAMAGE_TYPE = DamageType.HIGH_EXPLOSIVE;
     private static final Color EXPLOSION_COLOUR = new Color(255, 122, 64, 255);
 
