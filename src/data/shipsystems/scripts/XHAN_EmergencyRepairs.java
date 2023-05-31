@@ -36,7 +36,7 @@ public class XHAN_EmergencyRepairs extends BaseShipSystemScript {
     private boolean klaxonsNeedToBeSpawned = true;
 
     public XHAN_EmergencyRepairs() {
- //       GRAPHICSLIB_LOADED = Global.getSettings().getModManager().isModEnabled("shaderLib");
+        GRAPHICSLIB_LOADED = Global.getSettings().getModManager().isModEnabled("shaderLib");
 
         //slight variations in color
         ARMOR_COLORS[0] = new Color(255, 160, 0);
@@ -106,11 +106,11 @@ public class XHAN_EmergencyRepairs extends BaseShipSystemScript {
             stats.getCombatEngineRepairTimeMult().modifyMult("XHAN_EmergencyRepairs", ENGINE_REPAIR_MODIFY_MULT);
 
             //heal hull
-            addHull(ship, ship.getMaxHitpoints() * HULL_MULT / (ship.getPhaseCloak().getSpecAPI().getActive() * 60));
+            addHull(ship, ship.getMaxHitpoints() * HULL_MULT / (ship.getPhaseCloak().getSpecAPI().getActive() * (1f / Global.getCombatEngine().getElapsedInLastFrame())));
 
             //heal armor
             int cellCount = (ship.getArmorGrid().getLeftOf() + ship.getArmorGrid().getRightOf()) * (ship.getArmorGrid().getAbove() + ship.getArmorGrid().getBelow()); //these return linear counts in each cardinal direction from the center
-            addArmor(ship, ship.getArmorGrid().getMaxArmorInCell() * cellCount * ARMOR_MULT / (ship.getPhaseCloak().getSpecAPI().getActive() * 60));
+            addArmor(ship, ship.getArmorGrid().getMaxArmorInCell() * cellCount * ARMOR_MULT / (ship.getPhaseCloak().getSpecAPI().getActive() * (1f / Global.getCombatEngine().getElapsedInLastFrame())));
 
             /*
             //for debugging actual armor percentage (unhittable cells counted)

@@ -50,7 +50,7 @@ public class XHAN_TorchDriveStats extends BaseShipSystemScript {
     public static boolean GRAPHICSLIB_LOADED = false;
 
     public XHAN_TorchDriveStats(){
-   //     GRAPHICSLIB_LOADED = Global.getSettings().getModManager().isModEnabled("shaderLib");
+        GRAPHICSLIB_LOADED = Global.getSettings().getModManager().isModEnabled("shaderLib");
     }
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
