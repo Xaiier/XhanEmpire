@@ -1,5 +1,5 @@
 {
-    "plugins":{  "XHAN_MyrianousBattleEnder": "data.scripts.plugins.XHAN_MyrianousBattleEnder"   
+    "plugins":{  "XHAN_MyrianousBattleEnder": "org.xhan.plugins.XHAN_MyrianousBattleEnder"
     },
 	
 	"graphics":{

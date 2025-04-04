@@ -1,7 +1,7 @@
 {
   "id": "Xhan_PsyBlast",
   "specClass": "projectile",
-  "everyFrameEffect": "data.scripts.weapons.XHAN_PsyBlastEveryFrame",
+  "everyFrameEffect": "org.xhan.weapons.XHAN_PsyBlastEveryFrame",
   "projectileSpecId": "Xhan_Psy_pulse",
   "type": "MISSILE",
   "size": "LARGE",

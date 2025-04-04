@@ -2,9 +2,9 @@
 	"id":"XhanEmpire",
 	"name":"Xhan Empire",
 	"author":"Peplat",
-	"version":"2.5 Gramada",
+	"version":"2.51 Gramada",
 	"description":"The Xhan Empire.",
-	"gameVersion":"0.96a-RC6",
+	"gameVersion":"0.98a-RC7",
 	"jars":["jars/XhanEmpire.jar"],
-	"modPlugin":"data.scripts.XhanEmpireModPlugin",
+	"modPlugin":"org.xhan.XhanEmpireModPlugin",
 }

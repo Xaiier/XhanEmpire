@@ -2,7 +2,7 @@
 	"id":"Xhan_bogul_shot",
 	"specClass":"projectile",
 	"spawnType":"BALLISTIC_AS_BEAM",
-	"onHitEffect":"data.scripts.weapons.XHAN_BogulOnHit",
+	"onHitEffect":"org.xhan.weapons.XHAN_BogulOnHit",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
 	"length":40.0,

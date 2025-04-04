@@ -3,7 +3,7 @@
 	"type":"ENGINE_MOD",
 	"aiType":"MANEUVERING_JETS",
 	
-	"statsScript":"data.shipsystems.scripts.XhanManeuveringStats",
+	"statsScript":"org.xhan.shipsystems.XhanManeuveringStats",
 	
 	"engineGlowColor":[153,255,51,255],
 	"engineGlowContrailColor":[100,165,0,50],

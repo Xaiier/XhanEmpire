@@ -4,7 +4,7 @@
   "projectileSpecId": "Xhan_Gromm_Shot",
   "type": "BALLISTIC",
   "size": "LARGE",
-  "everyFrameEffect": "data.scripts.weapons.XHAN_GrommMuzzleFlashScript",
+  "everyFrameEffect": "org.xhan.weapons.XHAN_GrommMuzzleFlashScript",
   "displayArcRadius": 600,
   "turretSprite": "graphics/weapons/Xhan_Gramada_TURRET.png",
   "turretGunSprite": "graphics/weapons/Xhan_Gramada_TURRET_BARREL.png",

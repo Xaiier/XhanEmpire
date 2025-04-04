@@ -2,7 +2,7 @@
 	"id":"Xhan_Uogek_Toroid",
 	"specClass":"projectile",
 	"spawnType":"BALLISTIC_AS_BEAM",
-	"onHitEffect":"data.scripts.weapons.XHAN_UogekOnHit",
+	"onHitEffect":"org.xhan.weapons.XHAN_UogekOnHit",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
 	"length":46.0,

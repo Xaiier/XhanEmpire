@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"INTERDICTOR",
 
-	"statsScript":"data.scripts.shipsystems.XHAN_ElectroChargedShields",
+	"statsScript":"org.xhan.shipsystems.XHAN_ElectroChargedShields",
 	
 	"useSound":"system_emp_emitter_activate",
 	"loopSound":"system_emp_emitter_loop",

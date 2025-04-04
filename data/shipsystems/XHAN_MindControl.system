@@ -2,9 +2,9 @@
 	"id":"XHAN_MindControl",
 	"type":"STAT_MOD",
 	"aiType":"CUSTOM",
-    "aiScript":"data.shipsystems.scripts.ai.XHAN_MindControl_ShipSystemAI",
+    "aiScript":"org.xhan.shipsystems.ai.XHAN_MindControl_ShipSystemAI",
 
-	"statsScript":"data.shipsystems.scripts.XHAN_MindControl",
+	"statsScript":"org.xhan.shipsystems.XHAN_MindControl",
 
 	"canUseWhileRightClickSystemOn":true,
 

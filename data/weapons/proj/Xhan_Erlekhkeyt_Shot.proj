@@ -2,7 +2,7 @@
 	"id":"Xhan_Erlekhkeyt_Shot",
 	"specClass":"projectile",
 	"spawnType":"BALLISTIC_AS_BEAM",
-	"onHitEffect":"data.scripts.weapons.XHAN_ErlekhkeytOnHit",
+	"onHitEffect":"org.xhan.weapons.XHAN_ErlekhkeytOnHit",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
 	"length":25.0,

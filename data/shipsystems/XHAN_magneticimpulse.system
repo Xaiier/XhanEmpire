@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"ENTROPY_AMPLIFIER",
 	
-	"statsScript":"data.shipsystems.scripts.XHAN_MagneticImpulse",
+	"statsScript":"org.xhan.shipsystems.XHAN_MagneticImpulse",
 	
 	"fadeActivationSoundOnChargedown":true,
 	"useSound":"system_quantumdisruptor",

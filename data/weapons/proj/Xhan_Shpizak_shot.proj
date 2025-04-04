@@ -2,7 +2,7 @@
 	"id":"Xhan_Shpizak_shot",
 	"specClass":"projectile",
 	"spawnType":"BALLISTIC",
-	"onHitEffect":"data.scripts.weapons.XHAN_ShpizakOnHit",
+	"onHitEffect":"org.xhan.weapons.XHAN_ShpizakOnHit",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",	
 	#"spawnType":"BALLISTIC_AS_BEAM",

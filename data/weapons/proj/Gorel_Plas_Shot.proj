@@ -2,7 +2,7 @@
 	"id":"Gorel_Plas_Shot",
 	"specClass":"projectile",
 	"spawnType":"BALLISTIC_AS_BEAM",
-	"onHitEffect":"data.scripts.weapons.XHAN_GorelOnHit",
+	"onHitEffect":"org.xhan.weapons.XHAN_GorelOnHit",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
 	"length":50.0,

@@ -1,7 +1,7 @@
 {
 	"id":"Xhan_PsyDischarge",
 	"specClass":"missile",	
-	"onHitEffect":"data.scripts.weapons.XHAN_PsyDischargeOnHit",
+	"onHitEffect":"org.xhan.weapons.XHAN_PsyDischargeOnHit",
 	"missileType":"FLARE",
 	"sprite":"",
 	"size":[32,32],	

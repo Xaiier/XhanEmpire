@@ -4,7 +4,7 @@
 	#"aiType":"HIGH_ENERGY_FOCUS",
 	"aiType":"WEAPON_BOOST",
 	
-	"statsScript":"data.shipsystems.scripts.XHAN_EnergyOptiScript",
+	"statsScript":"org.xhan.shipsystems.XHAN_EnergyOptiScript",
 	
 	"weaponGlowColor":[66,245,167,255],
 	"weaponTypes":[ENERGY],

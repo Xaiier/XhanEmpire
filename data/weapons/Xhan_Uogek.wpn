@@ -4,7 +4,7 @@
   "projectileSpecId": "Xhan_Uogek_Toroid",
   "type": "ENERGY",
   "size": "LARGE",
-  "everyFrameEffect": "data.scripts.weapons.XHAN_UogekEveryFrame",
+  "everyFrameEffect": "org.xhan.weapons.XHAN_UogekEveryFrame",
   "turretSprite": "",
   "turretGlowSprite": "graphics/weapons/Xhan_Uogek_GLOW.png",
   "hardpointSprite": "",

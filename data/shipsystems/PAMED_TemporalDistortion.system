@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"TEMPORAL_SHELL",
 	
-	"statsScript":"data.scripts.shipsystems.PAMED_TemporalDistortion",
+	"statsScript":"org.xhan.shipsystems.PAMED_TemporalDistortion",
 	
 	# handled in the script instead of here
 	#"jitterUnderColor":[90,165,255,155],

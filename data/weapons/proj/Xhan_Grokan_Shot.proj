@@ -2,7 +2,7 @@
 	"id":"Xhan_Grokan_Shot",
 	"specClass":"projectile",
 	"spawnType":"BALLISTIC_AS_BEAM",
-	"onHitEffect":"data.scripts.weapons.XHAN_GrokanOnHit",
+	"onHitEffect":"org.xhan.weapons.XHAN_GrokanOnHit",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
 	"length":50.0,

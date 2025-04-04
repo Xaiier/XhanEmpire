@@ -3,7 +3,7 @@
 	"specClass":"projectile",
 	#"spawnType":"BEAM",
 	"spawnType":"BALLISTIC",
-	"onHitEffect":"data.scripts.weapons.XHAN_ShtralOnHit",
+	"onHitEffect":"org.xhan.weapons.XHAN_ShtralOnHit",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
 	"length":100.0,

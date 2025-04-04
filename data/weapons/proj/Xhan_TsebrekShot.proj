@@ -2,7 +2,7 @@
 	"id":"Xhan_TsebrekShot",
 	"specClass":"projectile",
 	"spawnType":"BALLISTIC",
-    "onHitEffect":"data.scripts.weapons.XHAN_TsebrekOnHit",
+    "onHitEffect":"org.xhan.weapons.XHAN_TsebrekOnHit",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
 	"length":75.0,
