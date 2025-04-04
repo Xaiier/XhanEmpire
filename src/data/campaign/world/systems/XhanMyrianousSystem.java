@@ -4,56 +4,27 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.characters.FullName;
 import com.fs.starfarer.api.characters.PersonAPI;
-import com.fs.starfarer.api.combat.BattleCreationContext;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.MusicPlayerPluginImpl;
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
-import com.fs.starfarer.api.impl.campaign.FleetEncounterContext;
-import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
-import com.fs.starfarer.api.impl.campaign.RuleBasedInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
 import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.impl.campaign.procgen.NebulaEditor;
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator;
-import com.fs.starfarer.api.impl.campaign.procgen.themes.RemnantSeededFleetManager;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.SalvageSpecialAssigner;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
-import com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin;
-import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.impl.campaign.terrain.AsteroidFieldTerrainPlugin.AsteroidFieldParams;
 import com.fs.starfarer.api.impl.campaign.terrain.BaseRingTerrain.RingParams;
+import com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin;
+import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.impl.campaign.terrain.MagneticFieldTerrainPlugin;
-import com.fs.starfarer.api.impl.campaign.world.ZigLeashAssignmentAI;
 import com.fs.starfarer.api.loading.VariantSource;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.campaign.MyriaLeashAssignmentAI;
 import org.lwjgl.util.vector.Vector2f;
-import com.fs.starfarer.api.impl.campaign.procgen.*;
 
-import com.fs.starfarer.api.campaign.CampaignFleetAPI;
-import com.fs.starfarer.api.campaign.CargoAPI;
-import com.fs.starfarer.api.campaign.CustomCampaignEntityAPI;
-import com.fs.starfarer.api.campaign.InteractionDialogAPI;
-import com.fs.starfarer.api.campaign.PlanetAPI;
-import com.fs.starfarer.api.campaign.SectorAPI;
-import com.fs.starfarer.api.campaign.SectorEntityToken;
-import com.fs.starfarer.api.campaign.StarSystemAPI;
-import com.fs.starfarer.api.impl.campaign.ids.Conditions;
-import com.fs.starfarer.api.impl.campaign.ids.Entities;
-import com.fs.starfarer.api.impl.campaign.ids.Factions;
-import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
-import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
-import com.fs.starfarer.api.impl.campaign.ids.Personalities;
-import com.fs.starfarer.api.impl.campaign.ids.Ranks;
-import com.fs.starfarer.api.impl.campaign.ids.Skills;
-import com.fs.starfarer.api.impl.campaign.ids.Tags;
-import com.fs.starfarer.api.impl.campaign.ids.Terrain;
-
-import java.awt.Color;
-import java.util.ArrayList;
-import java.util.Arrays;
-import static data.scripts.XhanEmpireModPlugin.*;
+import java.awt.*;
 
 public class XhanMyrianousSystem implements SectorGeneratorPlugin {
 
@@ -117,7 +88,6 @@ public class XhanMyrianousSystem implements SectorGeneratorPlugin {
         X_Golba.getMarket().addCondition(Conditions.VERY_HOT);
         X_Golba.getMarket().addCondition(Conditions.VOLATILES_DIFFUSE);
         X_Golba.getMarket().addCondition(Conditions.ORE_MODERATE);
-
 
 
         // some derelict ships around the Planet
@@ -293,7 +263,6 @@ public class XhanMyrianousSystem implements SectorGeneratorPlugin {
     }
 
     /**
-     *
      * @param system
      * @param variantId
      * @param condition

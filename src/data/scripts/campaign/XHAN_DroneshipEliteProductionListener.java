@@ -43,8 +43,9 @@ public class XHAN_DroneshipEliteProductionListener implements CampaignEventListe
             }
         }
 
-        Global.getLogger(XHAN_DroneshipEliteProductionListener.class).info("Economy month ended producing " + count +  "ship with variant id " + SHIP_VARIANT_ID);
+        Global.getLogger(XHAN_DroneshipEliteProductionListener.class).info("Economy month ended producing " + count + "ship with variant id " + SHIP_VARIANT_ID);
     }
+
     @Override
     public void reportPlayerOpenedMarket(MarketAPI market) {
 

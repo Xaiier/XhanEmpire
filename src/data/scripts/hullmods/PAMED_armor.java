@@ -5,7 +5,6 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 
 
-
 public class PAMED_armor extends BaseHullMod {
 
     public static final float MAX_DAMAGE_REDUCTION_BONUS = 1f;

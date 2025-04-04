@@ -3,8 +3,8 @@ package data.scripts.weapons;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
-import org.magiclib.util.MagicRender;
 import org.lwjgl.util.vector.Vector2f;
+import org.magiclib.util.MagicRender;
 
 import java.awt.*;
 
@@ -33,13 +33,13 @@ public class XHAN_GorelOnHit implements OnHitEffectPlugin {
             //Global.getSoundPlayer().playSound(SOUND_ID, 1f, 1f, point, ZERO);
 
             MagicRender.battlespace(
-                    Global.getSettings().getSprite("fx","xhan_Gorel_Splat"),
+                    Global.getSettings().getSprite("fx", "xhan_Gorel_Splat"),
                     point,
                     new Vector2f(),
-                    new Vector2f(100,100),
-                    new Vector2f(360,360),
+                    new Vector2f(100, 100),
+                    new Vector2f(360, 360),
                     //angle,
-                    360*(float)Math.random(),
+                    360 * (float) Math.random(),
                     0,
                     new Color(146, 255, 120, 215),
                     true,
@@ -48,13 +48,13 @@ public class XHAN_GorelOnHit implements OnHitEffectPlugin {
                     0.1f
             );
             MagicRender.battlespace(
-                    Global.getSettings().getSprite("fx","xhan_Gorel_Splat"),
+                    Global.getSettings().getSprite("fx", "xhan_Gorel_Splat"),
                     point,
                     new Vector2f(),
-                    new Vector2f(60,60),
-                    new Vector2f(240,240),
+                    new Vector2f(60, 60),
+                    new Vector2f(240, 240),
                     //angle,
-                    360*(float)Math.random(),
+                    360 * (float) Math.random(),
                     0,
                     new Color(127, 215, 106, 184),
                     true,
@@ -63,13 +63,13 @@ public class XHAN_GorelOnHit implements OnHitEffectPlugin {
                     0.15f
             );
             MagicRender.battlespace(
-                    Global.getSettings().getSprite("fx","xhan_Gorel_Splat"),
+                    Global.getSettings().getSprite("fx", "xhan_Gorel_Splat"),
                     point,
                     new Vector2f(),
-                    new Vector2f(160,160),
-                    new Vector2f(100,100),
+                    new Vector2f(160, 160),
+                    new Vector2f(100, 100),
                     //angle,
-                    360*(float)Math.random(),
+                    360 * (float) Math.random(),
                     0,
                     new Color(127, 215, 106, 163),
                     true,

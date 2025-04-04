@@ -10,10 +10,10 @@ import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.util.Misc;
-import org.magiclib.util.MagicAnim;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lwjgl.util.vector.Vector2f;
+import org.magiclib.util.MagicAnim;
 
 import java.awt.*;
 import java.util.List;
@@ -98,9 +98,7 @@ public class XHAN_MindControl extends BaseShipSystemScript {
                             }
 
                             //handle player taking over ship as it is mind controlled
-                            if (mindControlDataFinal.controlledShip == Global.getCombatEngine().getPlayerShip()
-                                    && !mindControlDataFinal.controlledShip.getFluxTracker().isOverloaded()
-                                    && mindControlDataFinal.controlledShip.getOwner() != 0) {
+                            if (mindControlDataFinal.controlledShip == Global.getCombatEngine().getPlayerShip() && !mindControlDataFinal.controlledShip.getFluxTracker().isOverloaded() && mindControlDataFinal.controlledShip.getOwner() != 0) {
                                 mindControlDataFinal.recursiveDisable(mindControlDataFinal.controlledShip);
                                 mindControlDataFinal.restoreOwnership();
                             }
@@ -108,14 +106,7 @@ public class XHAN_MindControl extends BaseShipSystemScript {
                             mindControlDataFinal.elapsedAfterInState += amount;
 
                             if (DEBUG) {
-                                Global.getCombatEngine().addFloatingText(mindControlDataFinal.controlledShip.getLocation(),
-                                        Math.floor((mindControlDataFinal.durationEnd - mindControlDataFinal.elapsedAfterInState)) + "s",
-                                        50f,
-                                        Color.white,
-                                        mindControlDataFinal.controlledShip,
-                                        0f,
-                                        2f
-                                );
+                                Global.getCombatEngine().addFloatingText(mindControlDataFinal.controlledShip.getLocation(), Math.floor((mindControlDataFinal.durationEnd - mindControlDataFinal.elapsedAfterInState)) + "s", 50f, Color.white, mindControlDataFinal.controlledShip, 0f, 2f);
                             }
 
                             float jitterLevel = 1.0f - (mindControlDataFinal.elapsedAfterInState / mindControlDataFinal.durationEnd);
@@ -287,13 +278,16 @@ public class XHAN_MindControl extends BaseShipSystemScript {
 
                 //cancel orders so the AI doesn't get confused
                 DeployedFleetMemberAPI member_a = Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship);
-                if (member_a != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(false).orderSearchAndDestroy(member_a, false);
+                if (member_a != null)
+                    Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(false).orderSearchAndDestroy(member_a, false);
 
                 DeployedFleetMemberAPI member_aa = Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship);
-                if (member_aa != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(true).orderSearchAndDestroy(member_aa, false);
+                if (member_aa != null)
+                    Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(true).orderSearchAndDestroy(member_aa, false);
 
                 DeployedFleetMemberAPI member_b = Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getDeployedFleetMember(ship);
-                if (member_b != null) Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getTaskManager(false).orderSearchAndDestroy(member_b, false);
+                if (member_b != null)
+                    Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getTaskManager(false).orderSearchAndDestroy(member_b, false);
 
                 ship.getShipAI().forceCircumstanceEvaluation();
             }

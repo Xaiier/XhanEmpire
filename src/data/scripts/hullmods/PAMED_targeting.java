@@ -21,26 +21,26 @@ public class PAMED_targeting extends BaseHullMod {
 //	}
 
 
-	@Override
-	public boolean isApplicableToShip(ShipAPI ship) {
-		return true;
-	}
+    @Override
+    public boolean isApplicableToShip(ShipAPI ship) {
+        return true;
+    }
 
-	public static float RANGE_BONUS = 10f;
-	
-	public String getDescriptionParam(int index, HullSize hullSize) {
-		if (index == 0) return "" + (int)Math.round(RANGE_BONUS) + "%";
-		//if (index == 0) return "" + (int)RANGE_THRESHOLD;
-		//if (index == 1) return "" + (int)((RANGE_MULT - 1f) * 100f);
-		//if (index == 1) return "" + new Float(VISION_BONUS).intValue();
-		return null;
-	}
-	
-	
-	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
-		stats.getBallisticWeaponRangeBonus().modifyPercent(id, RANGE_BONUS);
-		stats.getEnergyWeaponRangeBonus().modifyPercent(id, RANGE_BONUS);
+    public static float RANGE_BONUS = 10f;
 
-	}
-	
+    public String getDescriptionParam(int index, HullSize hullSize) {
+        if (index == 0) return Math.round(RANGE_BONUS) + "%";
+        //if (index == 0) return "" + (int)RANGE_THRESHOLD;
+        //if (index == 1) return "" + (int)((RANGE_MULT - 1f) * 100f);
+        //if (index == 1) return "" + new Float(VISION_BONUS).intValue();
+        return null;
+    }
+
+
+    public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
+        stats.getBallisticWeaponRangeBonus().modifyPercent(id, RANGE_BONUS);
+        stats.getEnergyWeaponRangeBonus().modifyPercent(id, RANGE_BONUS);
+
+    }
+
 }

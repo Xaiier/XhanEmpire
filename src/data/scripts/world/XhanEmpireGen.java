@@ -3,26 +3,17 @@ package data.scripts.world;
 import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.SectorAPI;
 import com.fs.starfarer.api.campaign.SectorGeneratorPlugin;
-import static com.fs.starfarer.api.impl.campaign.ids.Factions.DIKTAT;
-import static com.fs.starfarer.api.impl.campaign.ids.Factions.HEGEMONY;
-import static com.fs.starfarer.api.impl.campaign.ids.Factions.LIONS_GUARD;
-import static com.fs.starfarer.api.impl.campaign.ids.Factions.LUDDIC_PATH;
-import static com.fs.starfarer.api.impl.campaign.ids.Factions.PERSEAN;
-import static com.fs.starfarer.api.impl.campaign.ids.Factions.PIRATES;
-import static com.fs.starfarer.api.impl.campaign.ids.Factions.REMNANTS;
-import static com.fs.starfarer.api.impl.campaign.ids.Factions.TRITACHYON;
-import static com.fs.starfarer.api.impl.campaign.ids.Factions.INDEPENDENT;
-import static com.fs.starfarer.api.impl.campaign.ids.Factions.PLAYER;
-import static com.fs.starfarer.api.impl.campaign.shared.SharedData.getData;
-import static data.scripts.XhanEmpireModPlugin.XHAN_FACTION_ID;
-import static data.scripts.XhanEmpireModPlugin.PAMED_FACTION_ID;
-
-import data.scripts.world.systems.XhanSystem;
 import data.scripts.world.systems.PamedSystem;
+import data.scripts.world.systems.XhanSystem;
+
+import static com.fs.starfarer.api.impl.campaign.ids.Factions.*;
+import static com.fs.starfarer.api.impl.campaign.shared.SharedData.getData;
+import static data.scripts.XhanEmpireModPlugin.PAMED_FACTION_ID;
+import static data.scripts.XhanEmpireModPlugin.XHAN_FACTION_ID;
 
 public class XhanEmpireGen implements SectorGeneratorPlugin {
 
-    @Override 
+    @Override
     public void generate(SectorAPI sector) {
 
         new XhanSystem().generate(sector);
@@ -34,10 +25,10 @@ public class XhanEmpireGen implements SectorGeneratorPlugin {
         FactionAPI pamed = sector.getFaction(PAMED_FACTION_ID);
 
         // yes it's a huge fuckin drag but these should match your exerelin reps... so you'll need to update both at the same time when you change them
-        
+
         // Vanilla factions
         xhan.setRelationship(TRITACHYON, 0f);
-        
+
         xhan.setRelationship(REMNANTS, -0.6f);
         xhan.setRelationship(PIRATES, -0.6f);
         xhan.setRelationship(PERSEAN, -0.6f);
@@ -45,10 +36,10 @@ public class XhanEmpireGen implements SectorGeneratorPlugin {
         xhan.setRelationship(LIONS_GUARD, -0.6f);
         xhan.setRelationship(DIKTAT, -0.6f);
         xhan.setRelationship(LUDDIC_PATH, -0.8f);
-		xhan.setRelationship(INDEPENDENT, -0.15f);
-		xhan.setRelationship(PLAYER, -0.15f);
+        xhan.setRelationship(INDEPENDENT, -0.15f);
+        xhan.setRelationship(PLAYER, -0.15f);
 
-		//Pamed Vanilla
+        //Pamed Vanilla
         pamed.setRelationship(TRITACHYON, 0.6f);
 
         pamed.setRelationship(REMNANTS, -0.6f);
@@ -65,10 +56,10 @@ public class XhanEmpireGen implements SectorGeneratorPlugin {
         xhan.setRelationship("sylphon", 0f);
 
         xhan.setRelationship("Coalition", -0.15f);
-		xhan.setRelationship("tiandong", -0.15f);
+        xhan.setRelationship("tiandong", -0.15f);
         xhan.setRelationship("kadur_remnant", -0.6f);
         xhan.setRelationship("blackrock_driveyards", -0.6f);
-		xhan.setRelationship("interstellarimperium", -0.6f);
+        xhan.setRelationship("interstellarimperium", -0.6f);
 
         xhan.setRelationship("united_security", -0.35f);
         xhan.setRelationship("exigency", -0.35f);

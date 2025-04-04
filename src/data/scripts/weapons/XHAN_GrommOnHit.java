@@ -3,8 +3,8 @@ package data.scripts.weapons;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
-import org.magiclib.util.MagicRender;
 import org.lwjgl.util.vector.Vector2f;
+import org.magiclib.util.MagicRender;
 
 import java.awt.*;
 
@@ -34,13 +34,13 @@ public class XHAN_GrommOnHit implements OnHitEffectPlugin {
 
 
             MagicRender.battlespace(
-                    Global.getSettings().getSprite("fx","Xhan_Gromm_ring"),
+                    Global.getSettings().getSprite("fx", "Xhan_Gromm_ring"),
                     point,
                     new Vector2f(),
-                    new Vector2f(40,40),
-                    new Vector2f(1940,1940),
+                    new Vector2f(40, 40),
+                    new Vector2f(1940, 1940),
                     //angle,
-                    360*(float)Math.random(),
+                    360 * (float) Math.random(),
                     0,
                     new Color(255, 84, 54, 77),
                     true,
@@ -49,13 +49,13 @@ public class XHAN_GrommOnHit implements OnHitEffectPlugin {
                     0.2f
             );
             MagicRender.battlespace(
-                    Global.getSettings().getSprite("fx","Xhan_Gromm_Sparks2"),
+                    Global.getSettings().getSprite("fx", "Xhan_Gromm_Sparks2"),
                     point,
                     new Vector2f(),
-                    new Vector2f(40,40),
-                    new Vector2f(940,940),
+                    new Vector2f(40, 40),
+                    new Vector2f(940, 940),
                     //angle,
-                    360*(float)Math.random(),
+                    360 * (float) Math.random(),
                     0,
                     new Color(255, 129, 79, 255),
                     true,
@@ -64,13 +64,13 @@ public class XHAN_GrommOnHit implements OnHitEffectPlugin {
                     0.37f
             );
             MagicRender.battlespace(
-                    Global.getSettings().getSprite("fx","Xhan_Gromm_Sparks3"),
+                    Global.getSettings().getSprite("fx", "Xhan_Gromm_Sparks3"),
                     point,
                     new Vector2f(),
-                    new Vector2f(40,40),
-                    new Vector2f(1080,1080),
+                    new Vector2f(40, 40),
+                    new Vector2f(1080, 1080),
                     //angle,
-                    360*(float)Math.random(),
+                    360 * (float) Math.random(),
                     0,
                     new Color(253, 128, 79, 255),
                     true,
@@ -79,13 +79,13 @@ public class XHAN_GrommOnHit implements OnHitEffectPlugin {
                     0.32f
             );
             MagicRender.battlespace(
-                    Global.getSettings().getSprite("fx","Xhan_Gromm_Sparks1"),
+                    Global.getSettings().getSprite("fx", "Xhan_Gromm_Sparks1"),
                     point,
                     new Vector2f(),
-                    new Vector2f(40,40),
-                    new Vector2f(980,980),
+                    new Vector2f(40, 40),
+                    new Vector2f(980, 980),
                     //angle,
-                    360*(float)Math.random(),
+                    360 * (float) Math.random(),
                     0,
                     new Color(255, 0, 0, 255),
                     true,
@@ -94,13 +94,13 @@ public class XHAN_GrommOnHit implements OnHitEffectPlugin {
                     0.3f
             );
             MagicRender.battlespace(
-                    Global.getSettings().getSprite("fx","Xhan_Gromm_Sparks1"),
+                    Global.getSettings().getSprite("fx", "Xhan_Gromm_Sparks1"),
                     point,
                     new Vector2f(),
-                    new Vector2f(60,60),
-                    new Vector2f(890,890),
+                    new Vector2f(60, 60),
+                    new Vector2f(890, 890),
                     //angle,
-                    360*(float)Math.random(),
+                    360 * (float) Math.random(),
                     0,
                     new Color(255, 0, 0, 255),
                     true,
@@ -109,13 +109,13 @@ public class XHAN_GrommOnHit implements OnHitEffectPlugin {
                     0.4f
             );
             MagicRender.battlespace(
-                    Global.getSettings().getSprite("fx","Xhan_Gromm_Smoke1"),
+                    Global.getSettings().getSprite("fx", "Xhan_Gromm_Smoke1"),
                     point,
                     new Vector2f(),
-                    new Vector2f(80,80),
-                    new Vector2f(85,85),
+                    new Vector2f(80, 80),
+                    new Vector2f(85, 85),
                     //angle,
-                    360*(float)Math.random(),
+                    360 * (float) Math.random(),
                     0,
                     new Color(33, 22, 22, 223),
                     false,

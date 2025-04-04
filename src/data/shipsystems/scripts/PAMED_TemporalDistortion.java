@@ -1,19 +1,19 @@
 package data.scripts.shipsystems;
 
-import java.awt.Color;
-
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
+
+import java.awt.*;
 
 public class PAMED_TemporalDistortion extends BaseShipSystemScript {
     public static final float MAX_TIME_MULT = 8f;
     public static final float MIN_TIME_MULT = 0.1f;
     public static final float DAM_MULT = 0.1f;
 
-    public static final Color JITTER_COLOR = new Color(176, 114,255,55);
-    public static final Color JITTER_UNDER_COLOR = new Color(238, 134,255,155);
+    public static final Color JITTER_COLOR = new Color(176, 114, 255, 55);
+    public static final Color JITTER_UNDER_COLOR = new Color(238, 134, 255, 155);
 
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
@@ -62,7 +62,7 @@ public class PAMED_TemporalDistortion extends BaseShipSystemScript {
             Global.getCombatEngine().getTimeMult().unmodify(id);
         }
 
-        ship.getEngineController().fadeToOtherColor(this, JITTER_COLOR, new Color(0,0,0,0), effectLevel, 0.5f);
+        ship.getEngineController().fadeToOtherColor(this, JITTER_COLOR, new Color(0, 0, 0, 0), effectLevel, 0.5f);
         ship.getEngineController().extendFlame(this, -0.25f, -0.25f, -0.25f);
     }
 

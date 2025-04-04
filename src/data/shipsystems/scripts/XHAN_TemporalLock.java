@@ -61,8 +61,7 @@ public class XHAN_TemporalLock extends BaseShipSystemScript {
                 Global.getCombatEngine().getCustomData().put(targetKey, target);
             }
         } else if (effectLevel >= 1) {
-            if (foundTarget instanceof ShipAPI) {
-                ShipAPI target = (ShipAPI) foundTarget;
+            if (foundTarget instanceof ShipAPI target) {
                 if (target.getFluxTracker().isOverloadedOrVenting()) target = ship;
                 applyEffectToTarget(ship, target);
             }
@@ -151,7 +150,7 @@ public class XHAN_TemporalLock extends BaseShipSystemScript {
                 target.getMutableStats().getTimeMult().modifyMult("XHAN_TemporalLock", TARGET_TIME_MULT);
 
                 target.setJitterShields(false);
-                target.setJitterUnder(this, TARGET_JITTER_UNDER_COLOUR, 0.4f, 5,TARGET_JITTER_UNDER_RANGE);
+                target.setJitterUnder(this, TARGET_JITTER_UNDER_COLOUR, 0.4f, 5, TARGET_JITTER_UNDER_RANGE);
                 target.setJitter(this, TARGET_JITTER_COLOUR, 0.3f, 5, TARGET_JITTER_RANGE);
 
                 target.setCollisionClass(CollisionClass.NONE);

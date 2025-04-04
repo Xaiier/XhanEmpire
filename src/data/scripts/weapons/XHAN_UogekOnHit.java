@@ -30,6 +30,7 @@ public class XHAN_UogekOnHit implements OnHitEffectPlugin {
     private static final Color ARC_CORE_COLOUR = new Color(248, 232, 255, 251);
 
     private static final Map<ShipAPI.HullSize, Float> BASE_FORCE_PER_HULLSIZE = new HashMap<>();
+
     static {
         BASE_FORCE_PER_HULLSIZE.put(ShipAPI.HullSize.FIGHTER, 2000f);
         BASE_FORCE_PER_HULLSIZE.put(ShipAPI.HullSize.FRIGATE, 1000f);
@@ -87,20 +88,7 @@ public class XHAN_UogekOnHit implements OnHitEffectPlugin {
         }
 
         for (int i = 0; i < num; i++) {
-            engine.spawnEmpArcPierceShields(
-                    source,
-                    start,
-                    source,
-                    destination,
-                    DamageType.ENERGY,
-                    ARC_DAMAGE,
-                    ARC_EMP_DAMAGE,
-                    2000f,
-                    "XHAN_UOGEK_IMPACT_SOUND",
-                    thickness,
-                    fringe,
-                    ARC_CORE_COLOUR
-            );
+            engine.spawnEmpArcPierceShields(source, start, source, destination, DamageType.ENERGY, ARC_DAMAGE, ARC_EMP_DAMAGE, 2000f, "XHAN_UOGEK_IMPACT_SOUND", thickness, fringe, ARC_CORE_COLOUR);
         }
     }
 }

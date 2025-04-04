@@ -5,14 +5,17 @@ code by Xaiier
 package data.shipsystems.scripts;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.CombatEngineLayers;
+import com.fs.starfarer.api.combat.MutableShipStatsAPI;
+import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.ShipSystemAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
-import org.magiclib.util.MagicRender;
 import org.lazywizard.lazylib.CollisionUtils;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
+import org.magiclib.util.MagicRender;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -75,22 +78,8 @@ public class XHAN_EmergencyRepairs extends BaseShipSystemScript {
                         SpriteAPI sprote = Global.getSettings().getSprite("fx", "Xhan_klaxon");
 
                         //this will need to be updated based on whatever the sprite ends up being
-                        MagicRender.objectspace(sprote,
-                                ship,
-                                klaxonPosition,
-                                new Vector2f(),
-                                new Vector2f(256f, 128f),
-                                new Vector2f(),
-                                MathUtils.getRandomNumberInRange(0f, 360f),
-                                KLAXON_ROT_SPEED * 60f, //wants degrees/s
-                                true,
-                                KLAXON_COLOR,
-                                true,
-                                0.5f,
-                                KLAXON_LIFETIME,
-                                0.5f,
-                                true
-                        );
+                        MagicRender.objectspace(sprote, ship, klaxonPosition, new Vector2f(), new Vector2f(256f, 128f), new Vector2f(), MathUtils.getRandomNumberInRange(0f, 360f), KLAXON_ROT_SPEED * 60f, //wants degrees/s
+                                true, KLAXON_COLOR, true, 0.5f, KLAXON_LIFETIME, 0.5f, true);
                     }
                 }
 
@@ -213,28 +202,8 @@ public class XHAN_EmergencyRepairs extends BaseShipSystemScript {
             test = VectorUtils.rotate(test, ship.getFacing()); //rotate to ship facing in world
             test = Vector2f.add(test, ship.getLocation(), null); //shift to ship position in world
             if (CollisionUtils.isPointWithinBounds(test, ship)) { //test that cell center is within bounds
-                MagicRender.objectspace(Global.getSettings().getSprite("fx", "Xhan_gridCellLarge"),
-                        ship,
-                        offset,
-                        new Vector2f(),
-                        new Vector2f(ship.getArmorGrid().getCellSize(), ship.getArmorGrid().getCellSize()), //this results in half of actual cell size
-                        new Vector2f(),
-                        MathUtils.getRandomNumberInRange(0, 3) * 90f,
-                        0f,
-                        true,
-                        ARMOR_COLORS[MathUtils.getRandomNumberInRange(0, 3)],
-                        true,
-                        0f,
-                        0f,
-                        0.5f,
-                        1f,
-                        0.1f,
-                        0.1f,
-                        2f,
-                        0.1f,
-                        true,
-                        CombatEngineLayers.ABOVE_SHIPS_LAYER
-                );
+                MagicRender.objectspace(Global.getSettings().getSprite("fx", "Xhan_gridCellLarge"), ship, offset, new Vector2f(), new Vector2f(ship.getArmorGrid().getCellSize(), ship.getArmorGrid().getCellSize()), //this results in half of actual cell size
+                        new Vector2f(), MathUtils.getRandomNumberInRange(0, 3) * 90f, 0f, true, ARMOR_COLORS[MathUtils.getRandomNumberInRange(0, 3)], true, 0f, 0f, 0.5f, 1f, 0.1f, 0.1f, 2f, 0.1f, true, CombatEngineLayers.ABOVE_SHIPS_LAYER);
             }
         }
 
@@ -253,28 +222,8 @@ public class XHAN_EmergencyRepairs extends BaseShipSystemScript {
             test = VectorUtils.rotate(test, ship.getFacing());
             test = Vector2f.add(test, ship.getLocation(), null);
             if (CollisionUtils.isPointWithinBounds(test, ship)) {
-                MagicRender.objectspace(Global.getSettings().getSprite("fx", "Xhan_gridCellSmall"),
-                        ship,
-                        offset,
-                        new Vector2f(),
-                        new Vector2f(ship.getArmorGrid().getCellSize() / 2f, ship.getArmorGrid().getCellSize() / 2f), //this results in a quarter of actual cell size
-                        new Vector2f(),
-                        MathUtils.getRandomNumberInRange(0, 3) * 90f,
-                        0f,
-                        true,
-                        ARMOR_COLORS[MathUtils.getRandomNumberInRange(0, 3)],
-                        true,
-                        0f,
-                        0f,
-                        0.5f,
-                        1f,
-                        0.048f,
-                        0.1f,
-                        2f,
-                        0.1f,
-                        true,
-                        CombatEngineLayers.ABOVE_SHIPS_LAYER
-                );
+                MagicRender.objectspace(Global.getSettings().getSprite("fx", "Xhan_gridCellSmall"), ship, offset, new Vector2f(), new Vector2f(ship.getArmorGrid().getCellSize() / 2f, ship.getArmorGrid().getCellSize() / 2f), //this results in a quarter of actual cell size
+                        new Vector2f(), MathUtils.getRandomNumberInRange(0, 3) * 90f, 0f, true, ARMOR_COLORS[MathUtils.getRandomNumberInRange(0, 3)], true, 0f, 0f, 0.5f, 1f, 0.048f, 0.1f, 2f, 0.1f, true, CombatEngineLayers.ABOVE_SHIPS_LAYER);
             }
         }
 

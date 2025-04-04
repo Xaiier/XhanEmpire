@@ -8,13 +8,10 @@ infinite thanks to SafariJohn for working out this issue
 
 package data.shipsystems.scripts;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.ShipAPI;
 import org.dark.shaders.light.LightShader;
 import org.dark.shaders.light.StandardLight;
 import org.lwjgl.util.vector.Vector2f;
-
-import java.awt.*;
 
 class XHAN_EngineLightWrapper {
     static void addLight(ShipAPI ship) {

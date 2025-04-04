@@ -4,20 +4,6 @@ import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.PluginPick;
 import com.fs.starfarer.api.campaign.CampaignPlugin;
-import com.fs.starfarer.api.combat.CollisionClass;
-import com.fs.starfarer.api.combat.DamageType;
-import com.fs.starfarer.api.combat.MissileAIPlugin;
-import com.fs.starfarer.api.combat.MissileAPI;
-import com.fs.starfarer.api.loading.DamagingExplosionSpec;
-import java.awt.Color;
-
-import data.scripts.campaign.XHAN_DerelictShipsSpawner;
-import data.scripts.campaign.XHAN_DroneshipEliteProductionListener;
-import data.scripts.campaign.XHAN_DroneshipProductionListener;
-import data.scripts.world.XhanProcGen;
-import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.VectorUtils;
-import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.campaign.econ.EconomyAPI;
@@ -27,35 +13,38 @@ import com.fs.starfarer.api.campaign.econ.MarketAPI.SurveyLevel;
 import com.fs.starfarer.api.campaign.econ.MarketConditionAPI;
 import com.fs.starfarer.api.characters.ImportantPeopleAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
+import com.fs.starfarer.api.combat.MissileAIPlugin;
+import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.intel.deciv.DecivTracker;
+import data.scripts.campaign.XHAN_DerelictShipsSpawner;
+import data.scripts.campaign.XHAN_DroneshipEliteProductionListener;
+import data.scripts.campaign.XHAN_DroneshipProductionListener;
 import data.scripts.weapons.ai.Xhan_Mega_Buster_Bomb_AI;
 import data.scripts.weapons.ai.Xhan_Psy_Buster_Bomb_AI;
 import data.scripts.world.XhanEmperorAndMegastructureAdder;
-import static data.scripts.world.XhanEmperorAndMegastructureAdder.EMPEROR_PORTRAIT;
-import static data.scripts.world.XhanEmperorAndMegastructureAdder.GENERALISSIMO_PORTRAIT;
 import data.scripts.world.XhanEmpireGen;
+import data.scripts.world.XhanProcGen;
 import exerelin.campaign.SectorManager;
-import java.io.IOException;
-import static java.lang.Math.random;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import org.apache.log4j.Logger;
 import org.dark.shaders.light.LightData;
 import org.dark.shaders.util.ShaderLib;
 import org.dark.shaders.util.TextureData;
-import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-public class XhanEmpireModPlugin extends BaseModPlugin
-{
+import java.io.IOException;
+import java.util.*;
+
+import static data.scripts.world.XhanEmperorAndMegastructureAdder.EMPEROR_PORTRAIT;
+import static data.scripts.world.XhanEmperorAndMegastructureAdder.GENERALISSIMO_PORTRAIT;
+import static java.lang.Math.random;
+
+public class XhanEmpireModPlugin extends BaseModPlugin {
     // Missiles that use custom AI
     public static final String MEGA_BUSTER_BOMB_ID = "Xhan_Pharrek_pulse";
     public static final String PSY_BUSTER_BOMB_ID = "Xhan_Psy_pulse";
@@ -70,14 +59,10 @@ public class XhanEmpireModPlugin extends BaseModPlugin
     public static Set<String> EXERELIN_ACTIVE = new HashSet<>();
 
     @Override
-    public void onApplicationLoad() throws Exception
-    {
-        try
-        {
+    public void onApplicationLoad() throws Exception {
+        try {
             Global.getSettings().getScriptClassLoader().loadClass("org.lazywizard.lazylib.ModUtils");
-        }
-        catch (ClassNotFoundException lazy)
-        {
+        } catch (ClassNotFoundException lazy) {
             String message = System.lineSeparator()
                     + System.lineSeparator() + "LazyLib is required to run Xhan Empire."
                     + System.lineSeparator() + System.lineSeparator()
@@ -86,12 +71,9 @@ public class XhanEmpireModPlugin extends BaseModPlugin
             throw new ClassNotFoundException(message);
         }
 
-        try
-        {
+        try {
             Global.getSettings().getScriptClassLoader().loadClass("org.magiclib.util.MagicTargeting");
-        }
-        catch (ClassNotFoundException magic)
-        {
+        } catch (ClassNotFoundException magic) {
             String message = System.lineSeparator()
                     + System.lineSeparator() + "MagicLib is required to run Xhan Empire."
                     + System.lineSeparator() + System.lineSeparator()
@@ -101,15 +83,12 @@ public class XhanEmpireModPlugin extends BaseModPlugin
         }
 
         //Check ShaderLib for lights
-        try
-        {
+        try {
             Global.getSettings().getScriptClassLoader().loadClass("org.dark.shaders.util.ShaderLib");
             ShaderLib.init();
             LightData.readLightDataCSV("data/lights/xhan_light_data.csv");
             TextureData.readTextureDataCSV("data/lights/xhan_texture_data.csv");
-        }
-        catch (ClassNotFoundException ex)
-        {
+        } catch (ClassNotFoundException ex) {
         }
 
         EXERELIN_LOADED = Global.getSettings().getModManager().isModEnabled("nexerelin");
@@ -126,10 +105,8 @@ public class XhanEmpireModPlugin extends BaseModPlugin
     }
 
     @Override
-    public PluginPick<MissileAIPlugin> pickMissileAI(MissileAPI missile, ShipAPI launchingShip)
-    {
-        switch (missile.getProjectileSpecId())
-        {
+    public PluginPick<MissileAIPlugin> pickMissileAI(MissileAPI missile, ShipAPI launchingShip) {
+        switch (missile.getProjectileSpecId()) {
             case PSY_BUSTER_BOMB_ID:
                 return new PluginPick<MissileAIPlugin>(new Xhan_Psy_Buster_Bomb_AI(missile), CampaignPlugin.PickPriority.MOD_SET);
             case MEGA_BUSTER_BOMB_ID:
@@ -140,8 +117,7 @@ public class XhanEmpireModPlugin extends BaseModPlugin
     }
 
     @Override
-    public void onNewGameAfterTimePass()
-    {
+    public void onNewGameAfterTimePass() {
 
         log.info("new game started, adding scripts");
         Global.getSector().addScript(new XhanEmperorAndMegastructureAdder());
@@ -150,8 +126,7 @@ public class XhanEmpireModPlugin extends BaseModPlugin
     }
 
     @Override
-    public void onGameLoad(boolean newGame)
-    {
+    public void onGameLoad(boolean newGame) {
         {
             XHAN_DroneshipProductionListener listener = new XHAN_DroneshipProductionListener();
             Global.getSector().addTransientListener(listener);
@@ -168,30 +143,24 @@ public class XhanEmpireModPlugin extends BaseModPlugin
             Global.getLogger(XhanEmpireModPlugin.class).info("Added listener");
         }
 
-        try
-        {
+        try {
             Global.getSettings().loadTexture(EMPEROR_PORTRAIT);
             Global.getSettings().loadTexture(GENERALISSIMO_PORTRAIT);
-        }
-        catch (IOException ex)
-        {
+        } catch (IOException ex) {
             log.error("couldn't load divine emperor portrait :(");
         }
     }
 
-    private static void genSystem()
-    {
+    private static void genSystem() {
         new XhanEmpireGen().generate(Global.getSector());
     }
 
-    public static float randomRange(float min, float max)
-    {
+    public static float randomRange(float min, float max) {
         return (float) (random() * (max - min) + min);
     }
 
     public static MarketAPI addMarketplace(String factionID, SectorEntityToken primaryEntity, ArrayList<SectorEntityToken> connectedEntities, String name,
-            int size, ArrayList<String> marketConditions, ArrayList<String> submarkets, boolean WithJunkAndChatter, boolean PirateMode, boolean freePort)
-    {
+                                           int size, ArrayList<String> marketConditions, ArrayList<String> submarkets, boolean WithJunkAndChatter, boolean PirateMode, boolean freePort) {
 
         EconomyAPI globalEconomy = Global.getSector().getEconomy();
         String entityId = primaryEntity.getId();
@@ -202,34 +171,25 @@ public class XhanEmpireModPlugin extends BaseModPlugin
         newMarket.setPrimaryEntity(primaryEntity);
         newMarket.getTariff().modifyFlat("generator", newMarket.getFaction().getTariffFraction());
 
-        if (submarkets != null)
-        {
-            for (String market : submarkets)
-            {
+        if (submarkets != null) {
+            for (String market : submarkets) {
                 newMarket.addSubmarket(market);
             }
         }
 
         newMarket.addCondition("population_" + size);
-        if (marketConditions != null)
-        {
-            for (String condition : marketConditions)
-            {
-                try
-                {
+        if (marketConditions != null) {
+            for (String condition : marketConditions) {
+                try {
                     newMarket.addCondition(condition);
-                }
-                catch (RuntimeException e)
-                {
+                } catch (RuntimeException e) {
                     newMarket.addIndustry(condition);
                 }
             }
         }
 
-        if (connectedEntities != null)
-        {
-            for (SectorEntityToken entity : connectedEntities)
-            {
+        if (connectedEntities != null) {
+            for (SectorEntityToken entity : connectedEntities) {
                 newMarket.getConnectedEntities().add(entity);
             }
         }
@@ -240,17 +200,14 @@ public class XhanEmpireModPlugin extends BaseModPlugin
 
         createAdmin(newMarket);
 
-        if (connectedEntities != null)
-        {
-            for (SectorEntityToken entity : connectedEntities)
-            {
+        if (connectedEntities != null) {
+            for (SectorEntityToken entity : connectedEntities) {
                 entity.setMarket(newMarket);
                 entity.setFaction(factionID);
             }
         }
 
-        if (PirateMode)
-        {
+        if (PirateMode) {
             newMarket.setEconGroup(newMarket.getId());
             newMarket.setHidden(true);
             primaryEntity.setSensorProfile(1f);
@@ -261,8 +218,7 @@ public class XhanEmpireModPlugin extends BaseModPlugin
 
         newMarket.setFreePort(freePort);
 
-        for (MarketConditionAPI mc : newMarket.getConditions())
-        {
+        for (MarketConditionAPI mc : newMarket.getConditions()) {
             mc.setSurveyed(true);
         }
         newMarket.setSurveyLevel(SurveyLevel.FULL);
@@ -274,14 +230,12 @@ public class XhanEmpireModPlugin extends BaseModPlugin
         return newMarket;
     }
 
-    public static PersonAPI createAdmin(MarketAPI market)
-    {
+    public static PersonAPI createAdmin(MarketAPI market) {
         FactionAPI faction = market.getFaction();
         PersonAPI admin = faction.createRandomPerson();
         int size = market.getSize();
 
-        switch (size)
-        {
+        switch (size) {
             case 3:
             case 4:
                 admin.setRankId(Ranks.GROUND_CAPTAIN);
@@ -309,14 +263,11 @@ public class XhanEmpireModPlugin extends BaseModPlugin
         int defenses = 0;
         boolean military = market.getMemoryWithoutUpdate().getBoolean(MemFlags.MARKET_MILITARY);
 
-        for (Industry curr : market.getIndustries())
-        {
-            if (curr.isIndustry())
-            {
+        for (Industry curr : market.getIndustries()) {
+            if (curr.isIndustry()) {
                 industries++;
             }
-            if (curr.getSpec().hasTag(Industries.TAG_GROUNDDEFENSES))
-            {
+            if (curr.getSpec().hasTag(Industries.TAG_GROUNDDEFENSES)) {
                 defenses++;
             }
         }
@@ -324,36 +275,25 @@ public class XhanEmpireModPlugin extends BaseModPlugin
         admin.getStats().setSkipRefresh(true);
 
         int num = 0;
-        if (industries >= 2 || (industries == 1 && defenses == 1))
-        {
-            if (skills.contains(Skills.INDUSTRIAL_PLANNING))
-            {
+        if (industries >= 2 || (industries == 1 && defenses == 1)) {
+            if (skills.contains(Skills.INDUSTRIAL_PLANNING)) {
                 admin.getStats().setSkillLevel(Skills.INDUSTRIAL_PLANNING, 3);
             }
             num++;
         }
 
-        if (num == 0 || size >= 7)
-        {
-            if (military)
-            {
-                if (skills.contains(Skills.SPACE_OPERATIONS))
-                {
+        if (num == 0 || size >= 7) {
+            if (military) {
+                if (skills.contains(Skills.SPACE_OPERATIONS)) {
                     admin.getStats().setSkillLevel(Skills.SPACE_OPERATIONS, 3);
                 }
-            }
-            else if (defenses > 0)
-            {
-                if (skills.contains(Skills.PLANETARY_OPERATIONS))
-                {
+            } else if (defenses > 0) {
+                if (skills.contains(Skills.PLANETARY_OPERATIONS)) {
                     admin.getStats().setSkillLevel(Skills.PLANETARY_OPERATIONS, 3);
                 }
-            }
-            else
-            {
+            } else {
                 // nothing else suitable, so just make sure there's at least one skill, if this wasn't already set
-                if (skills.contains(Skills.INDUSTRIAL_PLANNING))
-                {
+                if (skills.contains(Skills.INDUSTRIAL_PLANNING)) {
                     admin.getStats().setSkillLevel(Skills.INDUSTRIAL_PLANNING, 3);
                 }
             }
@@ -375,28 +315,22 @@ public class XhanEmpireModPlugin extends BaseModPlugin
         return admin;
     }
 
-    public static String[] JSONArrayToStringArray(JSONArray jsonArray)
-    {
-        try
-        {
+    public static String[] JSONArrayToStringArray(JSONArray jsonArray) {
+        try {
             String[] ret = new String[jsonArray.length()];
-            for (int i = 0; i < jsonArray.length(); i++)
-            {
+            for (int i = 0; i < jsonArray.length(); i++) {
                 ret[i] = jsonArray.getString(i);
             }
             return ret;
-        }
-        catch (JSONException e)
-        {
+        } catch (JSONException e) {
             log.warn(e);
             return new String[]
-            {
-            };
+                    {
+                    };
         }
     }
 
-    public static String aOrAn(String input)
-    {
+    public static String aOrAn(String input) {
 
         ArrayList<String> vowels = new ArrayList<>(Arrays.asList(
                 "a",
@@ -407,12 +341,9 @@ public class XhanEmpireModPlugin extends BaseModPlugin
 
         String firstLetter = input.substring(0, 1).toLowerCase();
 
-        if (vowels.contains(firstLetter))
-        {
+        if (vowels.contains(firstLetter)) {
             return "an";
-        }
-        else
-        {
+        } else {
             return "a";
         }
     }

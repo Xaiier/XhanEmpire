@@ -1,12 +1,12 @@
 package data.scripts.hullmods;
 
 import com.fs.starfarer.api.combat.BaseHullMod;
-import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
+import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 
 public class XHAN_PsyShield extends BaseHullMod {
-    
+
     private final String INNERLARGE = "graphics/fx/Xhan_PsyShield_inner.png";
     private final String OUTERLARGE = "graphics/fx/Xhan_PsyShield_Rim.png";
     public static final float SHIELD_BONUS_TURN = 20f;
@@ -36,6 +36,7 @@ public class XHAN_PsyShield extends BaseHullMod {
     public String getUnapplicableReason(ShipAPI ship) {
         return "Ship has no shields";
     }
+
     @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
         ship.getShield().setRadius(ship.getShieldRadiusEvenIfNoShield(), INNERLARGE, OUTERLARGE);

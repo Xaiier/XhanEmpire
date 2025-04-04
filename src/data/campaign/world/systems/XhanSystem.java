@@ -1,57 +1,47 @@
 package data.scripts.world.systems;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.PlanetAPI;
-import com.fs.starfarer.api.campaign.JumpPointAPI;
-import com.fs.starfarer.api.campaign.SectorAPI;
-import com.fs.starfarer.api.campaign.SectorEntityToken;
-import com.fs.starfarer.api.campaign.SectorGeneratorPlugin;
-import com.fs.starfarer.api.campaign.StarSystemAPI;
+import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
-import com.fs.starfarer.api.impl.campaign.ids.Commodities;
-import com.fs.starfarer.api.impl.campaign.ids.Conditions;
-import com.fs.starfarer.api.impl.campaign.ids.Entities;
-import com.fs.starfarer.api.impl.campaign.ids.Factions;
-import com.fs.starfarer.api.impl.campaign.ids.Industries;
-import com.fs.starfarer.api.impl.campaign.ids.Items;
-import com.fs.starfarer.api.impl.campaign.ids.Terrain;
-import com.fs.starfarer.api.impl.campaign.ids.StarTypes;
-import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
+import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.impl.campaign.procgen.NebulaEditor;
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.SalvageSpecialAssigner;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
-import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.impl.campaign.terrain.AsteroidFieldTerrainPlugin.AsteroidFieldParams;
 import com.fs.starfarer.api.impl.campaign.terrain.BaseRingTerrain.RingParams;
 import com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin;
+import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.impl.campaign.terrain.MagneticFieldTerrainPlugin.MagneticFieldParams;
 import com.fs.starfarer.api.util.Misc;
-import static data.scripts.XhanEmpireModPlugin.XHAN_FACTION_ID;
-import static data.scripts.XhanEmpireModPlugin.addMarketplace;
-import java.awt.Color;
+
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
+import static data.scripts.XhanEmpireModPlugin.XHAN_FACTION_ID;
+import static data.scripts.XhanEmpireModPlugin.addMarketplace;
 
 public class XhanSystem implements SectorGeneratorPlugin {
 
     // orbit radii, collected here for ez movement
     private static final float ORBITAL_1_ORBIT = 1875;
     private static final float ORBITAL_1_ANGLE = 100;
-    
+
     private static final float CLUSTER_ORBIT = 4302;
     private static final float CLUSTER_ANGLE = 160;
-    
+
     private static final float MIDDLE_RING = 6305;
-    
+
     private static final float ORBITAL_3_ORBIT = 8042;
     private static final float ORBITAL_3_ANGLE = 220;
-    
+
     private static final float ORBITAL_4_ORBIT = 10512;
     private static final float ORBITAL_4_ANGLE = 280;
-    
+
     private static final float OUTER_RING = 13120;
 
     @Override
@@ -75,7 +65,7 @@ public class XhanSystem implements SectorGeneratorPlugin {
         // Orbital One, volcanic planet close to the sun
         PlanetAPI orbitalOne = system.addPlanet("orbitalOne", star, "Orbital One", "lava", ORBITAL_1_ANGLE, 100, ORBITAL_1_ORBIT, 88);
         orbitalOne.setCustomDescriptionId("xhan_orbital_one");
-        
+
         SectorEntityToken orbitalOneMagField = system.addTerrain(Terrain.MAGNETIC_FIELD,
                 new MagneticFieldParams(orbitalOne.getRadius() + 200f, // terrain effect band width 
                         (orbitalOne.getRadius() + 200f) / 2f, // terrain effect middle radius
@@ -116,11 +106,11 @@ public class XhanSystem implements SectorGeneratorPlugin {
                 true, // with junk and chatter?
                 false, // pirate mode? (i.e. hidden)
                 false); // freeport
-        
+
         // can't figure out how to add items inside my addmarketplace, too complicated, just brute force it separately
-        orbitalOneMarket.addIndustry(Industries.HEAVYBATTERIES, new ArrayList<>(Arrays.asList(Commodities.GAMMA_CORE)));
-        orbitalOneMarket.addIndustry(Industries.PATROLHQ, new ArrayList<>(Arrays.asList(Commodities.GAMMA_CORE)));
-        orbitalOneMarket.addIndustry(Industries.MINING, new ArrayList<>(Arrays.asList(Commodities.GAMMA_CORE)));
+        orbitalOneMarket.addIndustry(Industries.HEAVYBATTERIES, new ArrayList<>(List.of(Commodities.GAMMA_CORE)));
+        orbitalOneMarket.addIndustry(Industries.PATROLHQ, new ArrayList<>(List.of(Commodities.GAMMA_CORE)));
+        orbitalOneMarket.addIndustry(Industries.MINING, new ArrayList<>(List.of(Commodities.GAMMA_CORE)));
 
         // The Cluster, aka Orbital Two
         PlanetAPI clusterOrbital = system.addPlanet("clusterOrbital", star, "The Cluster", "xhan_cluster", CLUSTER_ANGLE, 200, CLUSTER_ORBIT, 365);
@@ -150,16 +140,16 @@ public class XhanSystem implements SectorGeneratorPlugin {
                 true, // with junk and chatter?
                 false, // pirate mode? (i.e. hidden)
                 false); // freeport
-        
+
         // can't figure out how to add items inside my addmarketplace, too complicated, just brute force it separately
-        clusterMarket.addIndustry(Industries.POPULATION, new ArrayList<>(Arrays.asList(Commodities.GAMMA_CORE)));
-        clusterMarket.addIndustry(Industries.MEGAPORT, new ArrayList<>(Arrays.asList(Commodities.GAMMA_CORE)));
-        clusterMarket.addIndustry(Industries.STARFORTRESS, new ArrayList<>(Arrays.asList(Commodities.ALPHA_CORE)));
-        clusterMarket.addIndustry(Industries.HEAVYBATTERIES, new ArrayList<>(Arrays.asList(Commodities.GAMMA_CORE)));
+        clusterMarket.addIndustry(Industries.POPULATION, new ArrayList<>(List.of(Commodities.GAMMA_CORE)));
+        clusterMarket.addIndustry(Industries.MEGAPORT, new ArrayList<>(List.of(Commodities.GAMMA_CORE)));
+        clusterMarket.addIndustry(Industries.STARFORTRESS, new ArrayList<>(List.of(Commodities.ALPHA_CORE)));
+        clusterMarket.addIndustry(Industries.HEAVYBATTERIES, new ArrayList<>(List.of(Commodities.GAMMA_CORE)));
         clusterMarket.addIndustry(Industries.ORBITALWORKS, new ArrayList<>(Arrays.asList(Commodities.GAMMA_CORE, Items.PRISTINE_NANOFORGE)));
-        clusterMarket.addIndustry(Industries.HIGHCOMMAND, new ArrayList<>(Arrays.asList(Commodities.GAMMA_CORE)));
-        clusterMarket.addIndustry(Industries.REFINING, new ArrayList<>(Arrays.asList(Commodities.GAMMA_CORE)));
-        
+        clusterMarket.addIndustry(Industries.HIGHCOMMAND, new ArrayList<>(List.of(Commodities.GAMMA_CORE)));
+        clusterMarket.addIndustry(Industries.REFINING, new ArrayList<>(List.of(Commodities.GAMMA_CORE)));
+
         // Cluster Checkpoint
         SectorEntityToken clusterCheckpoint = system.addCustomEntity("clusterCheckpoint", "Cluster Checkpoint Station", "Xhan_Cluster_Station", XHAN_FACTION_ID);
         clusterCheckpoint.setCircularOrbitPointingDown(clusterOrbital, 60, 450, 70);
@@ -177,8 +167,8 @@ public class XhanSystem implements SectorGeneratorPlugin {
         jumpPoint.setCircularOrbit(star, CLUSTER_ANGLE + 60, CLUSTER_ORBIT, 365);
         jumpPoint.setRelatedPlanet(clusterOrbital);
         jumpPoint.setStandardWormholeToHyperspaceVisual();
-        system.addEntity(jumpPoint);        
-        
+        system.addEntity(jumpPoint);
+
         // some decrepit anti-ship mines
         SectorEntityToken mineOne = system.addCustomEntity(null, null, "xhan_mine", Factions.NEUTRAL);
         mineOne.setCircularOrbit(jumpPoint, 120, 100, 40f);
@@ -190,11 +180,11 @@ public class XhanSystem implements SectorGeneratorPlugin {
         mineFour.setCircularOrbit(jumpPoint, 0, 250, 100f);
         SectorEntityToken mineFive = system.addCustomEntity(null, null, "xhan_mine", Factions.NEUTRAL);
         mineFive.setCircularOrbit(jumpPoint, 240, 300, 120f);
-        
+
         // L3 empty cryosleeper
         SectorEntityToken clusterSleeper = system.addCustomEntity("clusterSleeper", "Empty Cryosleeper", "xhan_empty_cryosleeper", Factions.NEUTRAL);
         clusterSleeper.setCircularOrbitWithSpin(star, CLUSTER_ANGLE + 180, CLUSTER_ORBIT, 365, 20, 40);
-        
+
         // some debris around the cryosleeper
         DebrisFieldTerrainPlugin.DebrisFieldParams params = new DebrisFieldTerrainPlugin.DebrisFieldParams(
                 300f, // field radius - should not go above 1000 for performance reasons
@@ -208,7 +198,7 @@ public class XhanSystem implements SectorGeneratorPlugin {
         debris.setSensorProfile(null);
         debris.setDiscoverable(null);
         debris.setCircularOrbit(star, CLUSTER_ANGLE + 180, CLUSTER_ORBIT, 365);
-        
+
         // some derelict ships around the cryosleeper
         SectorEntityToken niceBoulo = addDerelictShip(system, "Boulo_HeavyDemo", ShipRecoverySpecial.ShipCondition.AVERAGE, true);
         niceBoulo.setCircularOrbit(clusterSleeper, 69, 240, 69f);
@@ -221,7 +211,7 @@ public class XhanSystem implements SectorGeneratorPlugin {
         // Orbital Three
         PlanetAPI orbitalThree = system.addPlanet("orbitalThree", star, "Orbital Three", "arid", ORBITAL_3_ANGLE, 155, ORBITAL_3_ORBIT, 400);
         orbitalThree.setCustomDescriptionId("xhan_orbital_three");
-        
+
         orbitalThree.setFaction(XHAN_FACTION_ID);
         MarketAPI orbitalThreeMarket = addMarketplace(XHAN_FACTION_ID, orbitalThree, null,
                 "Orbital Three", // name of the market
@@ -248,9 +238,9 @@ public class XhanSystem implements SectorGeneratorPlugin {
                 false); // freeport
 
         // can't figure out how to add items inside my addmarketplace, too complicated, just brute force it separately
-        orbitalThreeMarket.addIndustry(Industries.MINING, new ArrayList<>(Arrays.asList(Commodities.GAMMA_CORE)));
-        orbitalThreeMarket.addIndustry(Industries.FARMING, new ArrayList<>(Arrays.asList(Commodities.GAMMA_CORE)));
-        
+        orbitalThreeMarket.addIndustry(Industries.MINING, new ArrayList<>(List.of(Commodities.GAMMA_CORE)));
+        orbitalThreeMarket.addIndustry(Industries.FARMING, new ArrayList<>(List.of(Commodities.GAMMA_CORE)));
+
         // Central asteroid belt
         system.addAsteroidBelt(star, 450, MIDDLE_RING - 100, 666, 100, 200, Terrain.ASTEROID_BELT, "Xhan Belt");
         system.addRingBand(star, "misc", "rings_dust0", 256f, 2, Color.CYAN.brighter().brighter(), 256f, MIDDLE_RING - 50, 400f, null, null);
@@ -267,7 +257,7 @@ public class XhanSystem implements SectorGeneratorPlugin {
         // Orbital Four, gas giant
         PlanetAPI orbitalFour = system.addPlanet("orbitalFour", star, "Orbital Four", "gas_giant", ORBITAL_4_ANGLE, 300, ORBITAL_4_ORBIT, 778);
         orbitalFour.setCustomDescriptionId("xhan_orbital_four");
-        
+
         PlanetAPI OrbitalFourA = system.addPlanet("OrbitalFourA", orbitalFour, "Orbital Four Alpha", "barren", 60, 60, 600, 28);
         OrbitalFourA.setCustomDescriptionId("xhan_orbital_four_alpha");
         Misc.initConditionMarket(OrbitalFourA);
@@ -278,7 +268,7 @@ public class XhanSystem implements SectorGeneratorPlugin {
         OrbitalFourA.getMarket().addCondition(Conditions.LOW_GRAVITY);
         OrbitalFourA.getMarket().addCondition(Conditions.METEOR_IMPACTS);
         OrbitalFourA.getMarket().addCondition(Conditions.RUINS_SCATTERED);
-        
+
         orbitalFour.setFaction(XHAN_FACTION_ID);
         MarketAPI OrbitalFourMarket = addMarketplace(XHAN_FACTION_ID, orbitalFour, null,
                 "Orbital Four", // name of the market
@@ -304,9 +294,9 @@ public class XhanSystem implements SectorGeneratorPlugin {
                 false); // freeport
 
         // can't figure out how to add items inside my addmarketplace, too complicated, just brute force it separately
-        OrbitalFourMarket.addIndustry(Industries.MINING, new ArrayList<>(Arrays.asList(Commodities.GAMMA_CORE)));
-        OrbitalFourMarket.addIndustry(Industries.FUELPROD, new ArrayList<>(Arrays.asList(Commodities.GAMMA_CORE)));
-        
+        OrbitalFourMarket.addIndustry(Industries.MINING, new ArrayList<>(List.of(Commodities.GAMMA_CORE)));
+        OrbitalFourMarket.addIndustry(Industries.FUELPROD, new ArrayList<>(List.of(Commodities.GAMMA_CORE)));
+
         // Orbital Four L4 and L5 trojans
         SectorEntityToken m4L4 = system.addTerrain(Terrain.ASTEROID_FIELD,
                 new AsteroidFieldParams(
@@ -348,9 +338,8 @@ public class XhanSystem implements SectorGeneratorPlugin {
         editor.clearArc(system.getLocation().x, system.getLocation().y, 0, radius + minRadius, 0, 360f);
         editor.clearArc(system.getLocation().x, system.getLocation().y, 0, radius + minRadius, 0, 360f, 0.25f);
     }
-    
+
     /**
-     *
      * @param system
      * @param variantId
      * @param condition
@@ -358,9 +347,9 @@ public class XhanSystem implements SectorGeneratorPlugin {
      * @return
      */
     private SectorEntityToken addDerelictShip(StarSystemAPI system,
-            String variantId,
-            ShipRecoverySpecial.ShipCondition condition,
-            boolean recoverable) {
+                                              String variantId,
+                                              ShipRecoverySpecial.ShipCondition condition,
+                                              boolean recoverable) {
         DerelictShipEntityPlugin.DerelictShipData params = new DerelictShipEntityPlugin.DerelictShipData(new ShipRecoverySpecial.PerShipData(variantId, condition), false);
         SectorEntityToken ship = BaseThemeGenerator.addSalvageEntity(system, Entities.WRECK, Factions.NEUTRAL, params);
         ship.setDiscoverable(true);

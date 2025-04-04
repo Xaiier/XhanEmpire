@@ -28,6 +28,7 @@ public class XHAN_MagneticImpulse extends BaseShipSystemScript {
     private static final int MIN_ARCS_FIGHTER = 1;
 
     private static final Map<ShipAPI.HullSize, Float> BASE_FORCE_PER_HULLSIZE = new HashMap<>();
+
     static {
         BASE_FORCE_PER_HULLSIZE.put(ShipAPI.HullSize.FIGHTER, 8000f);
         BASE_FORCE_PER_HULLSIZE.put(ShipAPI.HullSize.FRIGATE, 4000f);
@@ -105,25 +106,11 @@ public class XHAN_MagneticImpulse extends BaseShipSystemScript {
         }
 
         for (int i = 0; i < num; i++) {
-            engine.spawnEmpArcPierceShields(
-                    source,
-                    source.getLocation(),
-                    source,
-                    destination,
-                    DamageType.ENERGY,
-                    ARC_DAMAGE,
-                    ARC_EMP_DAMAGE,
-                    2000f,
-                    "tachyon_lance_emp_impact",
-                    thickness,
-                    fringe,
-                    ARC_CORE_COLOUR
-            );
+            engine.spawnEmpArcPierceShields(source, source.getLocation(), source, destination, DamageType.ENERGY, ARC_DAMAGE, ARC_EMP_DAMAGE, 2000f, "tachyon_lance_emp_impact", thickness, fringe, ARC_CORE_COLOUR);
         }
     }
 
     //copied this method from AcausalDisruptorStats.java in starsector api
-
 
 
     private ShipAPI findTarget(ShipAPI ship) {

@@ -18,7 +18,7 @@ public class XHAN_UogekEveryFrame implements EveryFrameWeaponEffectPlugin {
     private static final float CHARGEUP_PARTICLE_DISTANCE_MIN = 10f;
     private static final float CHARGEUP_PARTICLE_DISTANCE_MAX = 65f;
     private static final float CHARGEUP_PARTICLE_VEL_MAX = 400f;
-    private static final float CHARGEUP_PARTICLE_SIZE_MAX= 20f;
+    private static final float CHARGEUP_PARTICLE_SIZE_MAX = 20f;
     private static final float CHARGEUP_PARTICLE_SIZE_MIN = 3f;
     private static final float CHARGEUP_PARTICLE_DURATION = 0.2f;
 
@@ -26,7 +26,7 @@ public class XHAN_UogekEveryFrame implements EveryFrameWeaponEffectPlugin {
     private static final Color MUZZLE_GLOW_COLOUR_EXTRA = new Color(182, 22, 235, 255);
     private static final float MUZZLE_GLOW_SIZE = 95f;
 
-    private IntervalUtil particleInterval = new IntervalUtil(0.05f, 0.01f);
+    private final IntervalUtil particleInterval = new IntervalUtil(0.05f, 0.01f);
     private boolean hasFired = false;
     private float oldChargeLevel = 0f;
     private float oldCooldown = 0f;
@@ -59,7 +59,7 @@ public class XHAN_UogekEveryFrame implements EveryFrameWeaponEffectPlugin {
 
                     float size = CHARGEUP_PARTICLE_SIZE_MIN + (chargeLevel * (CHARGEUP_PARTICLE_SIZE_MAX - CHARGEUP_PARTICLE_SIZE_MIN));
 
-                    engine.addSmoothParticle(loc, vel, size,10f, CHARGEUP_PARTICLE_DURATION, CHARGEUP_GLOW_COLOUR);
+                    engine.addSmoothParticle(loc, vel, size, 10f, CHARGEUP_PARTICLE_DURATION, CHARGEUP_GLOW_COLOUR);
                 }
             }
         }

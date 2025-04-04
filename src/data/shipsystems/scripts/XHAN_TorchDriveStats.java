@@ -12,10 +12,10 @@ import com.fs.starfarer.api.combat.ShipEngineControllerAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
-import org.magiclib.util.MagicRender;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
+import org.magiclib.util.MagicRender;
 
 import java.awt.*;
 
@@ -49,7 +49,7 @@ public class XHAN_TorchDriveStats extends BaseShipSystemScript {
 
     public static boolean GRAPHICSLIB_LOADED = false;
 
-    public XHAN_TorchDriveStats(){
+    public XHAN_TorchDriveStats() {
         GRAPHICSLIB_LOADED = Global.getSettings().getModManager().isModEnabled("shaderLib");
     }
 
@@ -81,7 +81,7 @@ public class XHAN_TorchDriveStats extends BaseShipSystemScript {
 
             //draw extra smoke
             for (ShipEngineControllerAPI.ShipEngineAPI engine : ship.getEngineController().getShipEngines()) {
-                for (int x = 0; x < (Math.round( EXTRA_SMOKE_COUNT * effectLevel)); x++) {
+                for (int x = 0; x < (Math.round(EXTRA_SMOKE_COUNT * effectLevel)); x++) {
                     SpriteAPI sprite = Global.getSettings().getSprite("misc", "nebula_particles");
                     float growth = MathUtils.getRandomNumberInRange(PARTICLE_MIN_GROWTH, PARTICLE_MAX_GROWTH);
                     MagicRender.battlespace(sprite,

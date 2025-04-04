@@ -17,8 +17,8 @@ class XHAN_RepairKlaxon {
     private static final float LIGHT_INTENSITY = 2f;
     private static final float LIGHT_SIZE = 64f;
 
-    private StandardLight lightA;
-    private StandardLight lightB;
+    private final StandardLight lightA;
+    private final StandardLight lightB;
     private float rot = 0f;
 
     public XHAN_RepairKlaxon(ShipAPI attach, Vector2f offset) {

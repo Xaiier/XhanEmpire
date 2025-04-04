@@ -1,16 +1,11 @@
 package data.scripts.campaign;
 
-import java.awt.Color;
-
-import org.lwjgl.util.vector.Vector2f;
-
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.FleetAssignment;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.campaign.ai.CampaignFleetAIAPI;
 import com.fs.starfarer.api.campaign.ai.ModularFleetAIAPI;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseAssignmentAI;
-import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 
 public class MyriaLeashAssignmentAI extends BaseAssignmentAI {
@@ -52,25 +47,14 @@ public class MyriaLeashAssignmentAI extends BaseAssignmentAI {
                     fleet.getAI().getCurrentAssignmentType() == FleetAssignment.ORBIT_AGGRESSIVE) {
                 fleet.addAssignmentAtStart(FleetAssignment.ORBIT_PASSIVE, toGuard, 1f, null);
                 CampaignFleetAIAPI ai = fleet.getAI();
-                if (ai instanceof ModularFleetAIAPI) {
+                if (ai instanceof ModularFleetAIAPI m) {
                     // needed to interrupt an in-progress pursuit
-                    ModularFleetAIAPI m = (ModularFleetAIAPI) ai;
                     m.getStrategicModule().getDoNotAttack().add(m.getTacticalModule().getTarget(), 1f);
                     m.getTacticalModule().setTarget(null);
                 }
             }
         }
-}
-
-
-
-
-
-
-
-
-
-
+    }
 
 
 }

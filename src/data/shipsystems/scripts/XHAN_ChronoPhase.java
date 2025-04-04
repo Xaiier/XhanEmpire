@@ -1,15 +1,13 @@
 package data.shipsystems.scripts;
 
-import java.awt.Color;
-
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
-import com.fs.starfarer.api.combat.PhaseCloakSystemAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipSystemAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
-import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
+
+import java.awt.*;
 
 
 public class XHAN_ChronoPhase extends BaseShipSystemScript {
@@ -84,17 +82,13 @@ public class XHAN_ChronoPhase extends BaseShipSystemScript {
             ship.setPhased(true);
             levelForAlpha = level;
         } else if (state == State.OUT) {
-            if (level > 0.5f) {
-                ship.setPhased(true);
-            } else {
-                ship.setPhased(false);
-            }
+            ship.setPhased(level > 0.5f);
             levelForAlpha = level;
         }
 
 
-        ship.setJitter(id,JITTER_COLOR,0.4f*effectLevel, 2, 10f);
-        ship.setJitterUnder(id, JITTER_COLOR, 0.8f*effectLevel, 10, 20f);
+        ship.setJitter(id, JITTER_COLOR, 0.4f * effectLevel, 2, 10f);
+        ship.setJitterUnder(id, JITTER_COLOR, 0.8f * effectLevel, 10, 20f);
 
         ship.setExtraAlphaMult(1f - (1f - SHIP_ALPHA_MULT) * levelForAlpha);
         ship.setApplyExtraAlphaToEngines(true);
@@ -110,13 +104,11 @@ public class XHAN_ChronoPhase extends BaseShipSystemScript {
         }
 
 
-
-        stats.getMaxSpeed().modifyFlat(id, 50f*effectLevel);
-        stats.getTurnAcceleration().modifyFlat(id, 50f*effectLevel);
-        stats.getAcceleration().modifyFlat(id, 50f*effectLevel);
-        stats.getDeceleration().modifyFlat(id, 50f*effectLevel);
-        stats.getMaxTurnRate().modifyFlat(id, 40f*effectLevel);
-
+        stats.getMaxSpeed().modifyFlat(id, 50f * effectLevel);
+        stats.getTurnAcceleration().modifyFlat(id, 50f * effectLevel);
+        stats.getAcceleration().modifyFlat(id, 50f * effectLevel);
+        stats.getDeceleration().modifyFlat(id, 50f * effectLevel);
+        stats.getMaxTurnRate().modifyFlat(id, 40f * effectLevel);
 
 
     }

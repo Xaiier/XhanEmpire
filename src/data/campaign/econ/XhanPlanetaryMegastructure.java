@@ -7,7 +7,7 @@ public class XhanPlanetaryMegastructure extends BaseMarketConditionPlugin {
 
     public static final float STABILITY_BONUS = 2f;
     public static final float DEFENSE_MULT = 3f;
-    
+
     @Override
     public void apply(String id) {
         market.getStability().modifyFlat(id, STABILITY_BONUS, this.getName());

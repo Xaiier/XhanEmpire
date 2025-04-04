@@ -1,12 +1,13 @@
 package data.scripts.campaign;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.*;
-import com.fs.starfarer.api.campaign.comm.IntelManagerAPI;
+import com.fs.starfarer.api.campaign.OrbitAPI;
+import com.fs.starfarer.api.campaign.SectorAPI;
+import com.fs.starfarer.api.campaign.SectorEntityToken;
+import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
 import com.fs.starfarer.api.impl.campaign.ids.Entities;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
-import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.procgen.DefenderDataOverride;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.LocationType;
@@ -19,7 +20,10 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.lazywizard.lazylib.MathUtils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Random;
 
 /**
  * Script to generate a whole bunch of teaser ships in random orbits throughout the sector
@@ -30,6 +34,7 @@ public class XHAN_DerelictShipsSpawner {
 
     //List of teaser ships to spawn and their count
     private static final List<Pair<String, Integer>> SHIP_SPAWNS = new ArrayList<>();
+
     static {
         SHIP_SPAWNS.add(new Pair<>("XHAN_Uvello_Matrix", 2));
         SHIP_SPAWNS.add(new Pair<>("XHAN_Velloun_Alvus", 2));
@@ -40,12 +45,14 @@ public class XHAN_DerelictShipsSpawner {
 
     //Systems that can never get a teaser ship spawned in them
     public static final List<String> BLACKLISTED_SYSTEMS = new ArrayList<>();
+
     static {
         BLACKLISTED_SYSTEMS.add("spookysecretsystem_omega");
     }
 
     //Systems with any of these tags can never get a teaser ship spawned in them
     public static final List<String> BLACKLISTED_SYSTEM_TAGS = new ArrayList<>();
+
     static {
         BLACKLISTED_SYSTEM_TAGS.add("theme_breakers");
         BLACKLISTED_SYSTEM_TAGS.add("theme_breakers_main");
@@ -58,6 +65,7 @@ public class XHAN_DerelictShipsSpawner {
 
     //Weights for the different types of locations our teasers can spawn in
     private static final LinkedHashMap<LocationType, Float> WEIGHTS = new LinkedHashMap<>();
+
     static {
         WEIGHTS.put(LocationType.GAS_GIANT_ORBIT, 4f);
         WEIGHTS.put(LocationType.IN_ASTEROID_BELT, 1f);
@@ -71,9 +79,10 @@ public class XHAN_DerelictShipsSpawner {
 
     /**
      * Spawns all the teaser ships into the sector: should be run once on sector generation
+     *
      * @param sector the sector to spawn the ships in
      */
-    public static void spawnXhanDerelicts (SectorAPI sector) {
+    public static void spawnXhanDerelicts(SectorAPI sector) {
         for (Pair<String, Integer> spawnData : SHIP_SPAWNS) {
             int numberOfSpawns = 0;
             while (numberOfSpawns < spawnData.two) {
@@ -101,12 +110,12 @@ public class XHAN_DerelictShipsSpawner {
 
 
     /**
-     *  Utility function for getting a random system, with blacklist functionality in case some systems really shouldn't
-     *  be included.
+     * Utility function for getting a random system, with blacklist functionality in case some systems really shouldn't
+     * be included.
      *
-     *  @param blacklist A list of all the systems we are forbidden from picking
-     *  @param tagBlacklist A list of all the system tags that prevent a system from being picked
-     *  @param sector The SectorAPI to check for systems in
+     * @param blacklist    A list of all the systems we are forbidden from picking
+     * @param tagBlacklist A list of all the system tags that prevent a system from being picked
+     * @param sector       The SectorAPI to check for systems in
      **/
     private static StarSystemAPI getRandomSystemWithBlacklist(List<String> blacklist, List<String> tagBlacklist, SectorAPI sector) {
         //First, get all the valid systems and put them in a separate list
@@ -135,7 +144,7 @@ public class XHAN_DerelictShipsSpawner {
 
         //Otherwise, get a random element in it and return that
         else {
-            int rand = MathUtils.getRandomNumberInRange(0, validSystems.size()-1);
+            int rand = MathUtils.getRandomNumberInRange(0, validSystems.size() - 1);
             return validSystems.get(rand);
         }
     }
@@ -143,7 +152,7 @@ public class XHAN_DerelictShipsSpawner {
 
     //Mini-function for generating derelicts
     private static SectorEntityToken addDerelict(StarSystemAPI system, String variantId, OrbitAPI orbit,
-                                                ShipRecoverySpecial.ShipCondition condition, boolean recoverable,
+                                                 ShipRecoverySpecial.ShipCondition condition, boolean recoverable,
                                                  @Nullable DefenderDataOverride defenders) {
 
         DerelictShipEntityPlugin.DerelictShipData params = new DerelictShipEntityPlugin.DerelictShipData(new ShipRecoverySpecial.PerShipData(variantId, condition), false);

@@ -28,6 +28,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
 
     */
     private static final List<String> USED_IDS = new ArrayList<>();
+
     static {
         USED_IDS.add("SMOKE_1");
         USED_IDS.add("SMOKE_3");
@@ -40,6 +41,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
     //  -For projectile weapons, this is when the projectile is actually fired
     //  -For beam weapons, this is when the beam has reached maximum brightness
     private static final Map<String, Integer> ON_SHOT_PARTICLE_COUNT = new HashMap<>();
+
     static {
         ON_SHOT_PARTICLE_COUNT.put("default", 25);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_FRINGE_1", 1);
@@ -49,12 +51,14 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
 
     //How many particles are spawned each second the weapon is firing, on average
     private static final Map<String, Float> PARTICLES_PER_SECOND = new HashMap<>();
+
     static {
         PARTICLES_PER_SECOND.put("default", 0f);
     }
 
     //Does the PARTICLES_PER_SECOND field get multiplied by the weapon's current chargeLevel?
     private static final Map<String, Boolean> AFFECTED_BY_CHARGELEVEL = new HashMap<>();
+
     static {
         AFFECTED_BY_CHARGELEVEL.put("default", false);
     }
@@ -62,6 +66,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
     //When are the particles spawned (only used for PARTICLES_PER_SECOND)? Valid values are "CHARGEUP", "FIRING", "CHARGEDOWN", "READY" (not on cooldown or firing) and "COOLDOWN".
     //  Multiple of these values can be combined via "-" inbetween; "CHARGEUP-CHARGEDOWN" is for example valid
     private static final Map<String, String> PARTICLE_SPAWN_MOMENT = new HashMap<>();
+
     static {
         PARTICLE_SPAWN_MOMENT.put("default", "FIRING");
     }
@@ -69,6 +74,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
     //If this is set to true, the particles spawn with regard to *barrel*, not *center*. Only works for ALTERNATING barrel types on weapons: for LINKED barrels you
     //  should instead set up their coordinates manually with PARTICLE_SPAWN_POINT_TURRET and PARTICLE_SPAWN_POINT_HARDPOINT
     private static final Map<String, Boolean> SPAWN_POINT_ANCHOR_ALTERNATION = new HashMap<>();
+
     static {
         SPAWN_POINT_ANCHOR_ALTERNATION.put("default", true);
     }
@@ -76,6 +82,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
     //The position the particles are spawned (or at least where their arc originates when using offsets) compared to their weapon's center [or shot offset, see
     //SPAWN_POINT_ANCHOR_ALTERNATION above], if the weapon is a turret (or HIDDEN)
     private static final Map<String, Vector2f> PARTICLE_SPAWN_POINT_TURRET = new HashMap<>();
+
     static {
         PARTICLE_SPAWN_POINT_TURRET.put("default", new Vector2f(0f, 0f));
     }
@@ -83,12 +90,14 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
     //The position the particles are spawned (or at least where their arc originates when using offsets) compared to their weapon's center [or shot offset, see
     //SPAWN_POINT_ANCHOR_ALTERNATION above], if the weapon is a hardpoint
     private static final Map<String, Vector2f> PARTICLE_SPAWN_POINT_HARDPOINT = new HashMap<>();
+
     static {
         PARTICLE_SPAWN_POINT_HARDPOINT.put("default", new Vector2f(0f, 0f));
     }
 
     //Which kind of particle is spawned (valid values are "SMOOTH", "BRIGHT" and "SMOKE")
     private static final Map<String, String> PARTICLE_TYPE = new HashMap<>();
+
     static {
         PARTICLE_TYPE.put("default", "SMOKE");
         PARTICLE_TYPE.put("FLASH_FRINGE_1", "BRIGHT");
@@ -97,15 +106,17 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
 
     //What color does the particles have?
     private static final Map<String, Color> PARTICLE_COLOR = new HashMap<>();
+
     static {
-        PARTICLE_COLOR.put("default", new Color(87,81,75, 125));
-        PARTICLE_COLOR.put("SMOKE_3", new Color(90,80,80, 105));
+        PARTICLE_COLOR.put("default", new Color(87, 81, 75, 125));
+        PARTICLE_COLOR.put("SMOKE_3", new Color(90, 80, 80, 105));
         PARTICLE_COLOR.put("FLASH_FRINGE_1", new Color(255, 50, 50));
         PARTICLE_COLOR.put("FLASH_CORE_1", new Color(255, 224, 202));
     }
 
     //What's the smallest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MIN = new HashMap<>();
+
     static {
         PARTICLE_SIZE_MIN.put("default", 8f);
         PARTICLE_SIZE_MIN.put("FLASH_FRINGE_1", 160f);
@@ -114,6 +125,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
 
     //What's the largest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MAX = new HashMap<>();
+
     static {
         PARTICLE_SIZE_MAX.put("default", 20f);
         PARTICLE_SIZE_MAX.put("FLASH_FRINGE_1", 160f);
@@ -122,6 +134,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
 
     //What's the lowest velocity a particle can spawn with (can be negative)?
     private static final Map<String, Float> PARTICLE_VELOCITY_MIN = new HashMap<>();
+
     static {
         PARTICLE_VELOCITY_MIN.put("default", 0f);
         PARTICLE_VELOCITY_MIN.put("FLASH_FRINGE_1", 0f);
@@ -130,6 +143,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
 
     //What's the highest velocity a particle can spawn with (can be negative)?
     private static final Map<String, Float> PARTICLE_VELOCITY_MAX = new HashMap<>();
+
     static {
         PARTICLE_VELOCITY_MAX.put("default", 40f);
         PARTICLE_VELOCITY_MAX.put("FLASH_FRINGE_1", 0f);
@@ -139,6 +153,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
 
     //The shortest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MIN = new HashMap<>();
+
     static {
         PARTICLE_DURATION_MIN.put("default", 1f);
         PARTICLE_DURATION_MIN.put("FLASH_FRINGE_1", 0.25f);
@@ -147,6 +162,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
 
     //The longest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MAX = new HashMap<>();
+
     static {
         PARTICLE_DURATION_MAX.put("default", 2f);
         PARTICLE_DURATION_MAX.put("FLASH_FRINGE_1", 0.2f);
@@ -155,6 +171,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
 
     //The shortest along their velocity vector any individual particle is allowed to spawn (can be negative to spawn behind their origin point)
     private static final Map<String, Float> PARTICLE_OFFSET_MIN = new HashMap<>();
+
     static {
         PARTICLE_OFFSET_MIN.put("default", 0f);
         PARTICLE_OFFSET_MIN.put("FLASH_FRINGE_1", 0f);
@@ -163,6 +180,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
 
     //The furthest along their velocity vector any individual particle is allowed to spawn (can be negative to spawn behind their origin point)
     private static final Map<String, Float> PARTICLE_OFFSET_MAX = new HashMap<>();
+
     static {
         PARTICLE_OFFSET_MAX.put("default", 65f);
         PARTICLE_OFFSET_MAX.put("SMOKE_3", 75f);
@@ -173,6 +191,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
 
     //The width of the "arc" the particles spawn in; affects both offset and velocity. 360f = full circle, 0f = straight line
     private static final Map<String, Float> PARTICLE_ARC = new HashMap<>();
+
     static {
         PARTICLE_ARC.put("default", 20f);
         PARTICLE_ARC.put("SMOKE_3", 10f);
@@ -184,6 +203,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
     //The offset of the "arc" the particles spawn in, compared to the weapon's forward facing.
     //  For example: 90f = the center of the arc is 90 degrees clockwise around the weapon, 0f = the same arc center as the weapon's facing.
     private static final Map<String, Float> PARTICLE_ARC_FACING = new HashMap<>();
+
     static {
         PARTICLE_ARC_FACING.put("default", 0f);
     }
@@ -192,6 +212,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
     //too low values will cause pop-in of particles. Generally, the longer the particle's lifetime, the higher this
     //value should be
     private static final Map<String, Float> PARTICLE_SCREENSPACE_CULL_DISTANCE = new HashMap<>();
+
     static {
         PARTICLE_SCREENSPACE_CULL_DISTANCE.put("default", 600f);
     }
@@ -206,11 +227,14 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
     private boolean shouldOffsetBarrelExtra = false;
 
     //Instantiator
-    public XHAN_GrommMuzzleFlashScript() {}
+    public XHAN_GrommMuzzleFlashScript() {
+    }
 
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
         //Don't run while paused, or without a weapon
-        if (weapon == null || amount <= 0f) {return;}
+        if (weapon == null || amount <= 0f) {
+            return;
+        }
 
         //Saves handy variables used later
         float chargeLevel = weapon.getChargeLevel();
@@ -229,7 +253,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
 
         //Adjustment for burst beams, since they are a pain
         if (weapon.isBurstBeam() && sequenceState.contains("CHARGEDOWN")) {
-            chargeLevel = Math.max(0f, Math.min(Math.abs(weapon.getCooldownRemaining()-weapon.getCooldown()) / weapon.getSpec().getDerivedStats().getBurstFireDuration(), 1f));
+            chargeLevel = Math.max(0f, Math.min(Math.abs(weapon.getCooldownRemaining() - weapon.getCooldown()) / weapon.getSpec().getDerivedStats().getBurstFireDuration(), 1f));
         }
 
         //The sequenceStates "CHARGEDOWN" and "COOLDOWN" counts its barrel as 1 earlier than usual, due to code limitations
@@ -239,65 +263,105 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
         for (String ID : USED_IDS) {
             //Screenspace check: simplified but should do the trick 99% of the time
             float screenspaceCullingDistance = PARTICLE_SCREENSPACE_CULL_DISTANCE.get("default");
-            if (PARTICLE_SCREENSPACE_CULL_DISTANCE.keySet().contains(ID)) { screenspaceCullingDistance = PARTICLE_SCREENSPACE_CULL_DISTANCE.get(ID); }
-            if (!engine.getViewport().isNearViewport(weapon.getLocation(), screenspaceCullingDistance)) {continue;}
+            if (PARTICLE_SCREENSPACE_CULL_DISTANCE.containsKey(ID)) {
+                screenspaceCullingDistance = PARTICLE_SCREENSPACE_CULL_DISTANCE.get(ID);
+            }
+            if (!engine.getViewport().isNearViewport(weapon.getLocation(), screenspaceCullingDistance)) {
+                continue;
+            }
             //Store all the values used for this check, and use default values if we don't have specific values for our ID specified
             //Note that particle count, specifically, is not declared here and is only used in more local if-cases
             boolean affectedByChargeLevel = AFFECTED_BY_CHARGELEVEL.get("default");
-            if (AFFECTED_BY_CHARGELEVEL.keySet().contains(ID)) { affectedByChargeLevel = AFFECTED_BY_CHARGELEVEL.get(ID); }
+            if (AFFECTED_BY_CHARGELEVEL.containsKey(ID)) {
+                affectedByChargeLevel = AFFECTED_BY_CHARGELEVEL.get(ID);
+            }
 
             String particleSpawnMoment = PARTICLE_SPAWN_MOMENT.get("default");
-            if (PARTICLE_SPAWN_MOMENT.keySet().contains(ID)) { particleSpawnMoment = PARTICLE_SPAWN_MOMENT.get(ID); }
+            if (PARTICLE_SPAWN_MOMENT.containsKey(ID)) {
+                particleSpawnMoment = PARTICLE_SPAWN_MOMENT.get(ID);
+            }
 
             boolean spawnPointAnchorAlternation = SPAWN_POINT_ANCHOR_ALTERNATION.get("default");
-            if (SPAWN_POINT_ANCHOR_ALTERNATION.keySet().contains(ID)) { spawnPointAnchorAlternation = SPAWN_POINT_ANCHOR_ALTERNATION.get(ID); }
+            if (SPAWN_POINT_ANCHOR_ALTERNATION.containsKey(ID)) {
+                spawnPointAnchorAlternation = SPAWN_POINT_ANCHOR_ALTERNATION.get(ID);
+            }
 
             //Here, we only store one value, depending on if we're a hardpoint or not
             Vector2f particleSpawnPoint = PARTICLE_SPAWN_POINT_TURRET.get("default");
             if (weapon.getSlot().isHardpoint()) {
                 particleSpawnPoint = PARTICLE_SPAWN_POINT_HARDPOINT.get("default");
-                if (PARTICLE_SPAWN_POINT_HARDPOINT.keySet().contains(ID)) { particleSpawnPoint = PARTICLE_SPAWN_POINT_HARDPOINT.get(ID); }
+                if (PARTICLE_SPAWN_POINT_HARDPOINT.containsKey(ID)) {
+                    particleSpawnPoint = PARTICLE_SPAWN_POINT_HARDPOINT.get(ID);
+                }
             } else {
-                if (PARTICLE_SPAWN_POINT_TURRET.keySet().contains(ID)) { particleSpawnPoint = PARTICLE_SPAWN_POINT_TURRET.get(ID); }
+                if (PARTICLE_SPAWN_POINT_TURRET.containsKey(ID)) {
+                    particleSpawnPoint = PARTICLE_SPAWN_POINT_TURRET.get(ID);
+                }
             }
 
             String particleType = PARTICLE_TYPE.get("default");
-            if (PARTICLE_TYPE.keySet().contains(ID)) { particleType = PARTICLE_TYPE.get(ID); }
+            if (PARTICLE_TYPE.containsKey(ID)) {
+                particleType = PARTICLE_TYPE.get(ID);
+            }
 
             Color particleColor = PARTICLE_COLOR.get("default");
-            if (PARTICLE_COLOR.keySet().contains(ID)) { particleColor = PARTICLE_COLOR.get(ID); }
+            if (PARTICLE_COLOR.containsKey(ID)) {
+                particleColor = PARTICLE_COLOR.get(ID);
+            }
 
             float particleSizeMin = PARTICLE_SIZE_MIN.get("default");
-            if (PARTICLE_SIZE_MIN.keySet().contains(ID)) { particleSizeMin = PARTICLE_SIZE_MIN.get(ID); }
+            if (PARTICLE_SIZE_MIN.containsKey(ID)) {
+                particleSizeMin = PARTICLE_SIZE_MIN.get(ID);
+            }
             float particleSizeMax = PARTICLE_SIZE_MAX.get("default");
-            if (PARTICLE_SIZE_MAX.keySet().contains(ID)) { particleSizeMax = PARTICLE_SIZE_MAX.get(ID); }
+            if (PARTICLE_SIZE_MAX.containsKey(ID)) {
+                particleSizeMax = PARTICLE_SIZE_MAX.get(ID);
+            }
 
             float particleVelocityMin = PARTICLE_VELOCITY_MIN.get("default");
-            if (PARTICLE_VELOCITY_MIN.keySet().contains(ID)) { particleVelocityMin = PARTICLE_VELOCITY_MIN.get(ID); }
+            if (PARTICLE_VELOCITY_MIN.containsKey(ID)) {
+                particleVelocityMin = PARTICLE_VELOCITY_MIN.get(ID);
+            }
             float particleVelocityMax = PARTICLE_VELOCITY_MAX.get("default");
-            if (PARTICLE_VELOCITY_MAX.keySet().contains(ID)) { particleVelocityMax = PARTICLE_VELOCITY_MAX.get(ID); }
+            if (PARTICLE_VELOCITY_MAX.containsKey(ID)) {
+                particleVelocityMax = PARTICLE_VELOCITY_MAX.get(ID);
+            }
 
             float particleDurationMin = PARTICLE_DURATION_MIN.get("default");
-            if (PARTICLE_DURATION_MIN.keySet().contains(ID)) { particleDurationMin = PARTICLE_DURATION_MIN.get(ID); }
+            if (PARTICLE_DURATION_MIN.containsKey(ID)) {
+                particleDurationMin = PARTICLE_DURATION_MIN.get(ID);
+            }
             float particleDurationMax = PARTICLE_DURATION_MAX.get("default");
-            if (PARTICLE_DURATION_MAX.keySet().contains(ID)) { particleDurationMax = PARTICLE_DURATION_MAX.get(ID); }
+            if (PARTICLE_DURATION_MAX.containsKey(ID)) {
+                particleDurationMax = PARTICLE_DURATION_MAX.get(ID);
+            }
 
             float particleOffsetMin = PARTICLE_OFFSET_MIN.get("default");
-            if (PARTICLE_OFFSET_MIN.keySet().contains(ID)) { particleOffsetMin = PARTICLE_OFFSET_MIN.get(ID); }
+            if (PARTICLE_OFFSET_MIN.containsKey(ID)) {
+                particleOffsetMin = PARTICLE_OFFSET_MIN.get(ID);
+            }
             float particleOffsetMax = PARTICLE_OFFSET_MAX.get("default");
-            if (PARTICLE_OFFSET_MAX.keySet().contains(ID)) { particleOffsetMax = PARTICLE_OFFSET_MAX.get(ID); }
+            if (PARTICLE_OFFSET_MAX.containsKey(ID)) {
+                particleOffsetMax = PARTICLE_OFFSET_MAX.get(ID);
+            }
 
             float particleArc = PARTICLE_ARC.get("default");
-            if (PARTICLE_ARC.keySet().contains(ID)) { particleArc = PARTICLE_ARC.get(ID); }
+            if (PARTICLE_ARC.containsKey(ID)) {
+                particleArc = PARTICLE_ARC.get(ID);
+            }
             float particleArcFacing = PARTICLE_ARC_FACING.get("default");
-            if (PARTICLE_ARC_FACING.keySet().contains(ID)) { particleArcFacing = PARTICLE_ARC_FACING.get(ID); }
+            if (PARTICLE_ARC_FACING.containsKey(ID)) {
+                particleArcFacing = PARTICLE_ARC_FACING.get(ID);
+            }
             //---------------------------------------END OF DECLARATIONS-----------------------------------------
 
             //First, spawn "on full firing" particles, since those ignore sequence state
             if (chargeLevel >= 1f && !hasFiredThisCharge) {
                 //Count spawned particles: only trigger if the spawned particles are more than 0
                 float particleCount = ON_SHOT_PARTICLE_COUNT.get("default");
-                if (ON_SHOT_PARTICLE_COUNT.keySet().contains(ID)) { particleCount = ON_SHOT_PARTICLE_COUNT.get(ID); }
+                if (ON_SHOT_PARTICLE_COUNT.containsKey(ID)) {
+                    particleCount = ON_SHOT_PARTICLE_COUNT.get(ID);
+                }
 
                 if (particleCount > 0) {
                     spawnParticles(engine, weapon, particleCount, particleType, spawnPointAnchorAlternation, particleSpawnPoint, particleColor, particleSizeMin, particleSizeMax, particleVelocityMin, particleVelocityMax,
@@ -309,10 +373,16 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
             if (particleSpawnMoment.contains(sequenceState)) {
                 //Get how many particles should be spawned this frame
                 float particleCount = PARTICLES_PER_SECOND.get("default");
-                if (PARTICLES_PER_SECOND.keySet().contains(ID)) { particleCount = PARTICLES_PER_SECOND.get(ID); }
+                if (PARTICLES_PER_SECOND.containsKey(ID)) {
+                    particleCount = PARTICLES_PER_SECOND.get(ID);
+                }
                 particleCount *= amount;
-                if (affectedByChargeLevel && (sequenceState.contains("CHARGEUP") || sequenceState.contains("CHARGEDOWN"))) { particleCount *= chargeLevel; }
-                if (affectedByChargeLevel && sequenceState.contains("COOLDOWN")) { particleCount *= (weapon.getCooldownRemaining()/weapon.getCooldown()); }
+                if (affectedByChargeLevel && (sequenceState.contains("CHARGEUP") || sequenceState.contains("CHARGEDOWN"))) {
+                    particleCount *= chargeLevel;
+                }
+                if (affectedByChargeLevel && sequenceState.contains("COOLDOWN")) {
+                    particleCount *= (weapon.getCooldownRemaining() / weapon.getCooldown());
+                }
 
                 //Then, if the particle count is greater than 0, we actually spawn the particles
                 if (particleCount > 0f) {
@@ -350,27 +420,35 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
 
 
     //Shorthand function for actually spawning the particles
-    private void spawnParticles (CombatEngineAPI engine, WeaponAPI weapon, float count, String type, boolean anchorAlternation, Vector2f spawnPoint, Color color, float sizeMin, float sizeMax,
-                                 float velocityMin, float velocityMax, float durationMin, float durationMax,
-                                 float offsetMin, float offsetMax, float arc, float arcFacing) {
+    private void spawnParticles(CombatEngineAPI engine, WeaponAPI weapon, float count, String type, boolean anchorAlternation, Vector2f spawnPoint, Color color, float sizeMin, float sizeMax,
+                                float velocityMin, float velocityMax, float durationMin, float durationMax,
+                                float offsetMin, float offsetMax, float arc, float arcFacing) {
         //First, ensure we take barrel position into account if we use Anchor Alternation (note that the spawn location is actually rotated 90 degrees wrong, so we invert their x and y values)
         Vector2f trueCenterLocation = new Vector2f(spawnPoint.y, spawnPoint.x);
         float trueArcFacing = arcFacing;
         int trueCurrentBarrel = currentBarrel;
-        if (currentBarrel > 0 && shouldOffsetBarrelExtra) { trueCurrentBarrel -= 1; }
+        if (currentBarrel > 0 && shouldOffsetBarrelExtra) {
+            trueCurrentBarrel -= 1;
+        }
         if (anchorAlternation) {
             if (weapon.getSlot().isHardpoint()) {
-                if (currentBarrel <= 0 && shouldOffsetBarrelExtra) { trueCurrentBarrel = weapon.getSpec().getHardpointAngleOffsets().size()-1; }
+                if (currentBarrel <= 0 && shouldOffsetBarrelExtra) {
+                    trueCurrentBarrel = weapon.getSpec().getHardpointAngleOffsets().size() - 1;
+                }
                 trueCenterLocation.x += weapon.getSpec().getHardpointFireOffsets().get(currentBarrel).x;
                 trueCenterLocation.y += weapon.getSpec().getHardpointFireOffsets().get(currentBarrel).y;
                 trueArcFacing += weapon.getSpec().getHardpointAngleOffsets().get(currentBarrel);
             } else if (weapon.getSlot().isTurret()) {
-                if (currentBarrel <= 0 && shouldOffsetBarrelExtra) { trueCurrentBarrel = weapon.getSpec().getTurretAngleOffsets().size()-1; }
+                if (currentBarrel <= 0 && shouldOffsetBarrelExtra) {
+                    trueCurrentBarrel = weapon.getSpec().getTurretAngleOffsets().size() - 1;
+                }
                 trueCenterLocation.x += weapon.getSpec().getTurretFireOffsets().get(currentBarrel).x;
                 trueCenterLocation.y += weapon.getSpec().getTurretFireOffsets().get(currentBarrel).y;
                 trueArcFacing += weapon.getSpec().getTurretAngleOffsets().get(currentBarrel);
             } else {
-                if (currentBarrel <= 0 && shouldOffsetBarrelExtra) { trueCurrentBarrel = weapon.getSpec().getHiddenAngleOffsets().size()-1; }
+                if (currentBarrel <= 0 && shouldOffsetBarrelExtra) {
+                    trueCurrentBarrel = weapon.getSpec().getHiddenAngleOffsets().size() - 1;
+                }
                 trueCenterLocation.x += weapon.getSpec().getHiddenFireOffsets().get(currentBarrel).x;
                 trueCenterLocation.y += weapon.getSpec().getHiddenFireOffsets().get(currentBarrel).y;
                 trueArcFacing += weapon.getSpec().getHiddenAngleOffsets().get(currentBarrel);
@@ -390,7 +468,7 @@ public class XHAN_GrommMuzzleFlashScript implements EveryFrameWeaponEffectPlugin
             counter--;
 
             //Gets a velocity for the particle
-            float arcPoint = MathUtils.getRandomNumberInRange(trueArcFacing-(arc/2f), trueArcFacing+(arc/2f));
+            float arcPoint = MathUtils.getRandomNumberInRange(trueArcFacing - (arc / 2f), trueArcFacing + (arc / 2f));
             Vector2f velocity = MathUtils.getPointOnCircumference(weapon.getShip().getVelocity(), MathUtils.getRandomNumberInRange(velocityMin, velocityMax),
                     arcPoint);
 

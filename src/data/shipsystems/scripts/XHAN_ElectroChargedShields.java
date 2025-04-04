@@ -50,8 +50,8 @@ public class XHAN_ElectroChargedShields extends BaseShipSystemScript {
         }
         ShieldAPI shield = ship.getShield();
         shield.toggleOn();
-            if (shield.isOff()) {
-                ship.getSystem().deactivate();
+        if (shield.isOff()) {
+            ship.getSystem().deactivate();
         }
 
         shield.setInnerColor(SHIELD_CHARGED_COLOUR);

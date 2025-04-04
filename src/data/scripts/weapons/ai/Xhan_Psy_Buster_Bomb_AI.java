@@ -1,18 +1,18 @@
 package data.scripts.weapons.ai;
- 
+
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CollisionClass;
 import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.MissileAIPlugin;
 import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
-import java.awt.Color;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
- 
-public class Xhan_Psy_Buster_Bomb_AI implements MissileAIPlugin
-{
+
+import java.awt.*;
+
+public class Xhan_Psy_Buster_Bomb_AI implements MissileAIPlugin {
     private static final int FRAG_COUNT = 120;
     private static final float FRAG_VELOCITY_MOD_MAX = 400f;
     private static final float FRAG_VELOCITY_MOD_MIN = 20f;
@@ -31,36 +31,33 @@ public class Xhan_Psy_Buster_Bomb_AI implements MissileAIPlugin
     private static final String SOUND_ID = "XHAN_PSYBLAST_FIRE_SOUND";
     private float timeLive = 0f;
     private final MissileAPI missile;
- 
+
     public static final String PSY_BUSTER_BOMB_ID = "Xhan_Psy_pulse";
-    public Xhan_Psy_Buster_Bomb_AI(MissileAPI missile)
-    {
+
+    public Xhan_Psy_Buster_Bomb_AI(MissileAPI missile) {
         this.missile = missile;
     }
- 
+
     @Override
-    public void advance(float amount)
-    {
- 
+    public void advance(float amount) {
+
         timeLive += amount;  // This ticks our timer down
- 
+
         // Has our timer expired?
-        if (timeLive >= TIMER_LENGTH)
-        {
+        if (timeLive >= TIMER_LENGTH) {
             timeLive = -99999f;
             explode();
         }
     }
- 
-    private void explode()
-    {
+
+    private void explode() {
         // This removes the bomb
         Global.getCombatEngine().removeEntity(missile);
- 
+
         // This spawns some custom vfx stacked with the "normal" ones done by spawnDamagingExplosion
         Global.getCombatEngine().spawnExplosion(missile.getLocation(), new Vector2f(), VFX_COLOR, EXPLOSION_SIZE_INNER, EXPLOSION_DURATION);
         Global.getCombatEngine().spawnExplosion(missile.getLocation(), new Vector2f(), VFX_COLOR, EXPLOSION_SIZE_OUTER, EXPLOSION_DURATION);
- 
+
         // This spawns the damaging explosion
         /*
                 float duration
@@ -99,8 +96,7 @@ public class Xhan_Psy_Buster_Bomb_AI implements MissileAIPlugin
 
         // This spawns the frag, also distributing them in a nice even 360 degree arc
         Vector2f vel = new Vector2f();
-        for (int i = 0; i < FRAG_COUNT; i++)
-        {
+        for (int i = 0; i < FRAG_COUNT; i++) {
             float angle = missile.getFacing() + i * 360f / FRAG_COUNT + (float) Math.random() * 180f / FRAG_COUNT;
             angle %= 360f;
             vel.set((float) Math.random() * FRAG_VELOCITY_MOD_MAX - FRAG_VELOCITY_MOD_MIN, 1f);

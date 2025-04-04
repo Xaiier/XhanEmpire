@@ -30,7 +30,7 @@ public class XHAN_PsyBlastEveryFrame implements EveryFrameWeaponEffectPlugin {
     private static final String CHARGE_SOUND = "XHAN_NOUS_CHARGE_SOUND";
     private static final String EMP_SOUND = "realitydisruptor_emp_impact";
 
-    private IntervalUtil particleInterval = new IntervalUtil(0.000001f, 0.000001f);
+    private final IntervalUtil particleInterval = new IntervalUtil(0.000001f, 0.000001f);
     private boolean hasFired = false;
     private boolean hasCharged = false;
     private float oldChargeLevel = 0f;
@@ -83,19 +83,7 @@ public class XHAN_PsyBlastEveryFrame implements EveryFrameWeaponEffectPlugin {
                         );
                         */
                         if (MathUtils.getRandomNumberInRange(0f, EMP_RATE) < chargeLevel) {
-                            EmpArcEntityAPI e = engine.spawnEmpArcPierceShields(weapon.getShip(),
-                                    weapon.getShip().getAllWeapons().get(MathUtils.getRandomNumberInRange(0, weapon.getShip().getAllWeapons().size() - 1)).getLocation(),
-                                    weapon.getShip(),
-                                    weapon.getShip(),
-                                    DamageType.OTHER,
-                                    0f,
-                                    0f,
-                                    99999f,
-                                    EMP_SOUND,
-                                    chargeLevel * EMP_THICKNESS_SCALE,
-                                    MUZZLE_GLOW_COLOUR_EXTRA,
-                                    Color.white
-                            );
+                            EmpArcEntityAPI e = engine.spawnEmpArcPierceShields(weapon.getShip(), weapon.getShip().getAllWeapons().get(MathUtils.getRandomNumberInRange(0, weapon.getShip().getAllWeapons().size() - 1)).getLocation(), weapon.getShip(), weapon.getShip(), DamageType.OTHER, 0f, 0f, 99999f, EMP_SOUND, chargeLevel * EMP_THICKNESS_SCALE, MUZZLE_GLOW_COLOUR_EXTRA, Color.white);
                             e.setSingleFlickerMode();
                         }
 
