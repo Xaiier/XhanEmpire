@@ -1,4 +1,4 @@
-package org.xhan.world;
+package org.xhan.campaign.world;
 
 import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.SectorAPI;

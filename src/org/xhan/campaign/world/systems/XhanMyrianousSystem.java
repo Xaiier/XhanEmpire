@@ -1,4 +1,4 @@
-package org.xhan.world.systems;
+package org.xhan.campaign.world.systems;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;

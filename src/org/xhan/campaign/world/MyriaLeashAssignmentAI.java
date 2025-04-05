@@ -1,4 +1,4 @@
-package org.xhan.campaign.procgen.themes;
+package org.xhan.campaign.world;
 
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.FleetAssignment;
