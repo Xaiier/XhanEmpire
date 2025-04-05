@@ -155,6 +155,8 @@ public class XhanSystem implements SectorGeneratorPlugin {
         clusterCheckpoint.setCircularOrbitPointingDown(clusterOrbital, 60, 450, 70);
         clusterCheckpoint.setMarket(clusterMarket);
 
+        clusterMarket.getConnectedEntities().add(clusterCheckpoint); //thanks Histidine
+
         // L4 relay  (initial position in degrees, distance in pixels, orbit speed in days)
         SectorEntityToken relay = system.addCustomEntity("cluster_relay", // unique id
                 "Cluster Relay", // name - if null, defaultName from custom_entities.json will be used
