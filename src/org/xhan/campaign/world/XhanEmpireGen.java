@@ -3,8 +3,8 @@ package org.xhan.campaign.world;
 import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.SectorAPI;
 import com.fs.starfarer.api.campaign.SectorGeneratorPlugin;
-import org.xhan.world.systems.PamedSystem;
-import org.xhan.world.systems.XhanSystem;
+import org.xhan.campaign.world.systems.PamedSystem;
+import org.xhan.campaign.world.systems.XhanSystem;
 
 import static com.fs.starfarer.api.impl.campaign.ids.Factions.*;
 import static com.fs.starfarer.api.impl.campaign.shared.SharedData.getData;

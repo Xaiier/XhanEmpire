@@ -26,9 +26,9 @@ import org.xhan.campaign.XHAN_DroneshipEliteProductionListener;
 import org.xhan.campaign.XHAN_DroneshipProductionListener;
 import org.xhan.weapons.ai.Xhan_Mega_Buster_Bomb_AI;
 import org.xhan.weapons.ai.Xhan_Psy_Buster_Bomb_AI;
-import org.xhan.world.XhanEmperorAndMegastructureAdder;
-import org.xhan.world.XhanEmpireGen;
-import org.xhan.world.XhanProcGen;
+import org.xhan.campaign.world.XhanEmperorAndMegastructureAdder;
+import org.xhan.campaign.world.XhanEmpireGen;
+import org.xhan.campaign.world.XhanProcGen;
 import exerelin.campaign.SectorManager;
 import org.apache.log4j.Logger;
 import org.dark.shaders.light.LightData;
@@ -40,8 +40,8 @@ import org.json.JSONException;
 import java.io.IOException;
 import java.util.*;
 
-import static org.xhan.world.XhanEmperorAndMegastructureAdder.EMPEROR_PORTRAIT;
-import static org.xhan.world.XhanEmperorAndMegastructureAdder.GENERALISSIMO_PORTRAIT;
+import static org.xhan.campaign.world.XhanEmperorAndMegastructureAdder.EMPEROR_PORTRAIT;
+import static org.xhan.campaign.world.XhanEmperorAndMegastructureAdder.GENERALISSIMO_PORTRAIT;
 import static java.lang.Math.random;
 
 public class XhanEmpireModPlugin extends BaseModPlugin {

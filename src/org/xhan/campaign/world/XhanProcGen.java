@@ -2,7 +2,7 @@ package org.xhan.campaign.world;
 
 import com.fs.starfarer.api.campaign.SectorAPI;
 import com.fs.starfarer.api.campaign.SectorGeneratorPlugin;
-import org.xhan.world.systems.XhanMyrianousSystem;
+import org.xhan.campaign.world.systems.XhanMyrianousSystem;
 
 
 @SuppressWarnings("unchecked")

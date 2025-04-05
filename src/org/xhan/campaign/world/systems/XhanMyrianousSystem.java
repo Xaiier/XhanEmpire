@@ -21,7 +21,7 @@ import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.impl.campaign.terrain.MagneticFieldTerrainPlugin;
 import com.fs.starfarer.api.loading.VariantSource;
 import com.fs.starfarer.api.util.Misc;
-import org.xhan.campaign.procgen.themes.MyriaLeashAssignmentAI;
+import org.xhan.campaign.world.MyriaLeashAssignmentAI;
 import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
