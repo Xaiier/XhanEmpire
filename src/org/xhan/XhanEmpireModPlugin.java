@@ -60,28 +60,6 @@ public class XhanEmpireModPlugin extends BaseModPlugin {
 
     @Override
     public void onApplicationLoad() throws Exception {
-        try {
-            Global.getSettings().getScriptClassLoader().loadClass("org.lazywizard.lazylib.ModUtils");
-        } catch (ClassNotFoundException lazy) {
-            String message = System.lineSeparator()
-                    + System.lineSeparator() + "LazyLib is required to run Xhan Empire."
-                    + System.lineSeparator() + System.lineSeparator()
-                    + "You can download LazyLib at http://fractalsoftworks.com/forum/index.php?topic=5444"
-                    + System.lineSeparator();
-            throw new ClassNotFoundException(message);
-        }
-
-        try {
-            Global.getSettings().getScriptClassLoader().loadClass("org.magiclib.util.MagicTargeting");
-        } catch (ClassNotFoundException magic) {
-            String message = System.lineSeparator()
-                    + System.lineSeparator() + "MagicLib is required to run Xhan Empire."
-                    + System.lineSeparator() + System.lineSeparator()
-                    + "You can download MagicLib at http://fractalsoftworks.com/forum/index.php?topic=13718.0"
-                    + System.lineSeparator();
-            throw new ClassNotFoundException(message);
-        }
-
         //Check ShaderLib for lights
         try {
             Global.getSettings().getScriptClassLoader().loadClass("org.dark.shaders.util.ShaderLib");
@@ -97,8 +75,7 @@ public class XhanEmpireModPlugin extends BaseModPlugin {
 
     @Override
     public void onNewGame() {
-        boolean haveNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
-        if (!haveNexerelin || SectorManager.getManager().isCorvusMode()) {
+        if (!EXERELIN_LOADED || SectorManager.getManager().isCorvusMode()) {
             new XhanEmpireGen().generate(Global.getSector());
         }
         new XhanProcGen().generate(Global.getSector());
@@ -118,11 +95,9 @@ public class XhanEmpireModPlugin extends BaseModPlugin {
 
     @Override
     public void onNewGameAfterTimePass() {
-
         log.info("new game started, adding scripts");
         Global.getSector().addScript(new XhanEmperorAndMegastructureAdder());
         XHAN_DerelictShipsSpawner.spawnXhanDerelicts(Global.getSector());
-
     }
 
     @Override
