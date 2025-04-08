@@ -9,7 +9,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="XhanEmpire" level="project" />
     <orderEntry type="library" name="XhanEmpire" level="project" />
-    <orderEntry type="library" name="commons-compiler-jdk" level="project" />
+    <orderEntry type="library" name="starsector-core" level="project" />
     <orderEntry type="library" name="LazyLib" level="project" />
     <orderEntry type="library" name="MagicLib" level="project" />
     <orderEntry type="library" name="ExerelinCore" level="project" />

@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="commons-compiler-jdk">
+  <library name="starsector-core">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../starsector-core/commons-compiler-jdk.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../starsector-core/commons-compiler.jar!/" />
