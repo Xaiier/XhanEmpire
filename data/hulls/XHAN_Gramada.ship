@@ -12,7 +12,7 @@
   "shieldRadius": 344,
   "viewOffset": 0,
   "builtInMods": [
-    "XHAN_targeting_mast",
+    "XHAN_TargetingMast",
     "XHAN_Gen1_armor",
 	"advanced_ground_support",
     "hbi"

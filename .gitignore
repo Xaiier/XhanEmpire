@@ -149,3 +149,5 @@ gradle-app.setting
 
 ./idea/csv-plugin.xml
 *.pdn
+.idea/csv-editor.xml
+.idea/csv-plugin.xml

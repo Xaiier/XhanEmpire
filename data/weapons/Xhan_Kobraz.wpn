@@ -4,7 +4,7 @@
   "projectileSpecId": "Xhan_Kobraz_shot",
   "type": "ENERGY",
   "size": "MEDIUM",
-  "everyFrameEffect": "org.xhan.weapons.Xhan_KobrazWeaponScript",
+  "everyFrameEffect": "org.xhan.weapons.XHAN_KobrazWeaponScript",
   "displayArcRadius": 700,
   "turretSprite": "graphics/weapons/Xhan_Plasteen_Kobraz_TURRET.png",
   "hardpointSprite": "graphics/weapons/Xhan_Plasteen_Kobraz_HARDPOINT.png",

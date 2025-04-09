@@ -5,7 +5,7 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 
-public class XHAN_targeting_mast extends BaseHullMod {
+public class XHAN_TargetingMast extends BaseHullMod {
 
 //	public static final float BONUS = 100f;
 //	

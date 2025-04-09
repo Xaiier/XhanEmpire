@@ -3,8 +3,8 @@
 //HOW TO USE:
 //	Copy this file where you want it and rename+adjust values
 //	Find the projectile to guide using any method you want (everyframe script, weapon-mounted everyframe script, mine-spawning etc.)
-//	run "engine.addPlugin(Xhan_KobrazProjScript(proj, target));" with:
-//		Xhan_KobrazProjScript being replaced with your new class name
+//	run "engine.addPlugin(XHAN_KobrazProjScript(proj, target));" with:
+//		XHAN_KobrazProjScript being replaced with your new class name
 //		proj being the projectile to guide
 //		target being the initial target (if any)
 //	You're done!
@@ -28,7 +28,7 @@ import org.lwjgl.util.vector.Vector2f;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Xhan_KobrazProjScript extends BaseEveryFrameCombatPlugin {
+public class XHAN_KobrazProjScript extends BaseEveryFrameCombatPlugin {
 	//---Settings: adjust to fill the needs of your implementation---
     //Sets guidance mode for the projectile when a target is fed to the script (or, in the case of ONE_TURN_DUMB, always).
     //Note that interceptor-style projectiles use notably more memory than the other types (as they practically run missile AI), so they should be used sparingly
@@ -148,7 +148,7 @@ public class Xhan_KobrazProjScript extends BaseEveryFrameCombatPlugin {
      * @param target The target missile/asteroid/ship for the script's guidance.
      *               Can be null, if the script does not follow a target ("ONE_TURN_DUMB") or to instantly activate secondary guidance mode.
      */
-    public Xhan_KobrazProjScript(@NotNull DamagingProjectileAPI proj, CombatEntityAPI target) {
+    public XHAN_KobrazProjScript(@NotNull DamagingProjectileAPI proj, CombatEntityAPI target) {
         this.proj = proj;
         this.target = target;
         lastTargetPos = target != null ? target.getLocation() : new Vector2f(proj.getLocation());

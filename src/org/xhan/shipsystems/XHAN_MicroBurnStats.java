@@ -4,7 +4,7 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
 
-public class XhanMicroBurnStats extends BaseShipSystemScript {
+public class XHAN_MicroBurnStats extends BaseShipSystemScript {
 
     @Override
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {

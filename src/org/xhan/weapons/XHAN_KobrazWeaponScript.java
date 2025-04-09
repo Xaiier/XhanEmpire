@@ -6,7 +6,7 @@ import org.lazywizard.lazylib.combat.CombatUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Xhan_KobrazWeaponScript implements EveryFrameWeaponEffectPlugin {
+public class XHAN_KobrazWeaponScript implements EveryFrameWeaponEffectPlugin {
 
     private final List<DamagingProjectileAPI> alreadyRegisteredProjectiles = new ArrayList<DamagingProjectileAPI>();
 
@@ -28,7 +28,7 @@ public class Xhan_KobrazWeaponScript implements EveryFrameWeaponEffectPlugin {
 
         for (DamagingProjectileAPI proj : CombatUtils.getProjectilesWithinRange(weapon.getLocation(), 200f)) {
             if (proj.getWeapon() == weapon && !alreadyRegisteredProjectiles.contains(proj) && engine.isEntityInPlay(proj) && !proj.didDamage()) {
-                engine.addPlugin(new Xhan_KobrazProjScript(proj, target));
+                engine.addPlugin(new XHAN_KobrazProjScript(proj, target));
                 alreadyRegisteredProjectiles.add(proj);
             }
         }

@@ -13,7 +13,7 @@ import org.dark.shaders.distortion.DistortionShader;
 import org.dark.shaders.distortion.RippleDistortion;
 import org.lwjgl.util.vector.Vector2f;
 
-class DistortionWrapper {
+class XHAN_DistortionWrapper {
     static void addDistortion(ShipAPI ship, float DURATION, float FADE_TIME, float ACTUAL_RADIUS) {
         RippleDistortion ripple = new RippleDistortion(ship.getShieldCenterEvenIfNoShield(), new Vector2f());
 

@@ -78,7 +78,7 @@ public class XHAN_BubbleShield extends BaseHullMod {
                     }
 
                     if (GRAPHICSLIB_LOADED) {
-                        DistortionWrapper.addDistortion(ship, DURATION, FADE_TIME, ACTUAL_RADIUS);
+                        XHAN_DistortionWrapper.addDistortion(ship, DURATION, FADE_TIME, ACTUAL_RADIUS);
                     }
                 }
                 if (GRAPHICSLIB_LOADED && ship.getCustomData().get("bubbleripple") != null) {

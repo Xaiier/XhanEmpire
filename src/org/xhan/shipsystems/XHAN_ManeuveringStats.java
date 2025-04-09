@@ -7,7 +7,7 @@ import com.fs.starfarer.api.combat.ShipEngineControllerAPI.ShipEngineAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
 
-public class XhanManeuveringStats extends BaseShipSystemScript {
+public class XHAN_ManeuveringStats extends BaseShipSystemScript {
 
     @Override
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {

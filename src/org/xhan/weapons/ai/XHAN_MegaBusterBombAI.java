@@ -12,29 +12,29 @@ import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
 
-public class Xhan_Psy_Buster_Bomb_AI implements MissileAIPlugin {
-    private static final int FRAG_COUNT = 120;
-    private static final float FRAG_VELOCITY_MOD_MAX = 400f;
-    private static final float FRAG_VELOCITY_MOD_MIN = 20f;
-    private static final float EXPLOSION_SIZE_OUTER = 2500f;
-    private static final float EXPLOSION_SIZE_INNER = 400f;
-    private static final float EXPLOSION_DAMAGE_MAX = 6000f;
+public class XHAN_MegaBusterBombAI implements MissileAIPlugin {
+    private static final int FRAG_COUNT = 150;
+    private static final float FRAG_VELOCITY_MOD_MAX = 40f;
+    private static final float FRAG_VELOCITY_MOD_MIN = 40f;
+    private static final float EXPLOSION_SIZE_OUTER = 400f;
+    private static final float EXPLOSION_SIZE_INNER = 200f;
+    private static final float EXPLOSION_DAMAGE_MAX = 500f;
     private static final float EXPLOSION_DAMAGE_MIN = 1f;
-    private static final float EXPLOSION_DURATION = 10.2f;
-    private static final float PARTICLE_DURATION = 10.2f;
+    private static final float EXPLOSION_DURATION = 0.1f;
+    private static final float PARTICLE_DURATION = 0.2f;
     private static final int PARTICLE_COUNT = 50;
-    private static final int PARTICLE_SIZE_MIN = 5;
-    private static final int PARTICLE_SIZE_RANGE = 20;
-    private static final String FRAG_WEAPON_ID = "Xhan_PsyDischarge_gun";
+    private static final int PARTICLE_SIZE_MIN = 1;
+    private static final int PARTICLE_SIZE_RANGE = 10;
+    private static final String FRAG_WEAPON_ID = "Xhan_pharrek_fraggun";
     private static final float TIMER_LENGTH = 0.001f;
-    private static final Color VFX_COLOR = new Color(255, 23, 89, 198);
-    private static final String SOUND_ID = "XHAN_PSYBLAST_FIRE_SOUND";
+    private static final Color VFX_COLOR = new Color(153, 255, 51, 150);
+    private static final String SOUND_ID = "XHAN_PHARREK_PULSE_SOUND";
     private float timeLive = 0f;
     private final MissileAPI missile;
 
-    public static final String PSY_BUSTER_BOMB_ID = "Xhan_Psy_pulse";
+    public static final String MEGA_BUSTER_BOMB_ID = "Xhan_Pharrek_pulse";
 
-    public Xhan_Psy_Buster_Bomb_AI(MissileAPI missile) {
+    public XHAN_MegaBusterBombAI(MissileAPI missile) {
         this.missile = missile;
     }
 
@@ -55,8 +55,7 @@ public class Xhan_Psy_Buster_Bomb_AI implements MissileAIPlugin {
         Global.getCombatEngine().removeEntity(missile);
 
         // This spawns some custom vfx stacked with the "normal" ones done by spawnDamagingExplosion
-        Global.getCombatEngine().spawnExplosion(missile.getLocation(), new Vector2f(), VFX_COLOR, EXPLOSION_SIZE_INNER, EXPLOSION_DURATION);
-        Global.getCombatEngine().spawnExplosion(missile.getLocation(), new Vector2f(), VFX_COLOR, EXPLOSION_SIZE_OUTER, EXPLOSION_DURATION);
+        Global.getCombatEngine().spawnExplosion(missile.getLocation(), missile.getVelocity(), VFX_COLOR, EXPLOSION_SIZE_INNER, EXPLOSION_DURATION);
 
         // This spawns the damaging explosion
         /*
@@ -76,7 +75,7 @@ public class Xhan_Psy_Buster_Bomb_AI implements MissileAIPlugin {
          */
         DamagingExplosionSpec boom = new DamagingExplosionSpec(
                 EXPLOSION_DURATION,
-                EXPLOSION_SIZE_OUTER / 2f,
+                EXPLOSION_SIZE_OUTER,
                 EXPLOSION_SIZE_INNER,
                 EXPLOSION_DAMAGE_MAX,
                 EXPLOSION_DAMAGE_MIN,
@@ -89,8 +88,8 @@ public class Xhan_Psy_Buster_Bomb_AI implements MissileAIPlugin {
                 VFX_COLOR,
                 VFX_COLOR
         );
-        boom.setDamageType(DamageType.KINETIC);
-        boom.setShowGraphic(false);
+        boom.setDamageType(DamageType.ENERGY);
+        boom.setShowGraphic(true);
         boom.setSoundSetId(SOUND_ID);
         Global.getCombatEngine().spawnDamagingExplosion(boom, missile.getSource(), missile.getLocation(), false);
 
@@ -99,7 +98,7 @@ public class Xhan_Psy_Buster_Bomb_AI implements MissileAIPlugin {
         for (int i = 0; i < FRAG_COUNT; i++) {
             float angle = missile.getFacing() + i * 360f / FRAG_COUNT + (float) Math.random() * 180f / FRAG_COUNT;
             angle %= 360f;
-            vel.set((float) Math.random() * FRAG_VELOCITY_MOD_MAX - FRAG_VELOCITY_MOD_MIN, 1f);
+            vel.set((float) Math.random() * FRAG_VELOCITY_MOD_MAX - FRAG_VELOCITY_MOD_MIN, 0f);
             VectorUtils.rotate(vel, angle, vel);
             Vector2f location = MathUtils.getPointOnCircumference(missile.getLocation(), 3f, angle);
             Global.getCombatEngine().spawnProjectile(missile.getSource(), missile.getWeapon(), FRAG_WEAPON_ID, location, angle, vel);
