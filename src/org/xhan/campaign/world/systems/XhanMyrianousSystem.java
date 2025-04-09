@@ -44,6 +44,10 @@ public class XhanMyrianousSystem implements SectorGeneratorPlugin {
     public void generate(SectorAPI sector) {
 
         StarSystemAPI system = sector.createStarSystem("Uvas");
+        //make sure no procgen, MagicBounty, etc. can choose here
+        system.addTag(Tags.THEME_UNSAFE);
+        system.addTag(Tags.THEME_HIDDEN);
+        system.addTag(Tags.THEME_SPECIAL);
         system.getLocation().set(-68000, 41000);
         system.setBackgroundTextureFilename("graphics/backgrounds/background_galatia.jpg");
         system.getMemoryWithoutUpdate().set(MusicPlayerPluginImpl.MUSIC_SET_MEM_KEY, "music_campaign_alpha_site");
