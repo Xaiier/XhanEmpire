@@ -1,7 +1,19 @@
 {
+	# multiplier for how often hulls show up in the faction's fleets
+	"hullFrequency": {
+		"tags": {
+		},
+		"hulls": {
+			"XHAN_Olkzan_export": 0.1,
+			"XHAN_Ketsil_export": 0.1,
+			"XHAN_Ennik_export": 0.1,
+			"XHAN_Vukan": 0.1,
+			"XHAN_Brakad": 0.1,
+		},
+	},
 	# ships the faction gets access to when importing S&W out-of-faction
 	"shipsWhenImporting":{
-		"tags":["XHAN_Olkzan_export"],
+		"tags":[],
 		"hulls": [
 	  "XHAN_Olkzan_export",
 	  "XHAN_Ketsil_export",
@@ -11,7 +23,7 @@
     ],
 	},
 		"knownShips":{
-		"tags":["XHAN_Olkzan_export"],
+		"tags":[],
 	    "hulls": [
 	  "XHAN_Olkzan_export",
 	  "XHAN_Ketsil_export",
