@@ -5,7 +5,6 @@ import com.fs.starfarer.api.campaign.SectorGeneratorPlugin;
 import org.xhan.campaign.world.systems.XhanMyrianousSystem;
 
 
-@SuppressWarnings("unchecked")
 public class XhanProcGen implements SectorGeneratorPlugin {
     @Override
     public void generate(SectorAPI sector) {
