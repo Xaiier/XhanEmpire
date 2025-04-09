@@ -24,8 +24,8 @@ import com.fs.starfarer.api.impl.campaign.intel.deciv.DecivTracker;
 import org.xhan.campaign.procgen.XHAN_DerelictShipsSpawner;
 import org.xhan.campaign.XHAN_DroneshipEliteProductionListener;
 import org.xhan.campaign.XHAN_DroneshipProductionListener;
-import org.xhan.weapons.ai.Xhan_Mega_Buster_Bomb_AI;
-import org.xhan.weapons.ai.Xhan_Psy_Buster_Bomb_AI;
+import org.xhan.weapons.ai.XHAN_MegaBusterBombAI;
+import org.xhan.weapons.ai.XHAN_PsyBusterBombAI;
 import org.xhan.campaign.world.XhanEmperorAndMegastructureAdder;
 import org.xhan.campaign.world.XhanEmpireGen;
 import org.xhan.campaign.world.XhanProcGen;
@@ -85,9 +85,9 @@ public class XhanEmpireModPlugin extends BaseModPlugin {
     public PluginPick<MissileAIPlugin> pickMissileAI(MissileAPI missile, ShipAPI launchingShip) {
         switch (missile.getProjectileSpecId()) {
             case PSY_BUSTER_BOMB_ID:
-                return new PluginPick<MissileAIPlugin>(new Xhan_Psy_Buster_Bomb_AI(missile), CampaignPlugin.PickPriority.MOD_SET);
+                return new PluginPick<MissileAIPlugin>(new XHAN_PsyBusterBombAI(missile), CampaignPlugin.PickPriority.MOD_SET);
             case MEGA_BUSTER_BOMB_ID:
-                return new PluginPick<MissileAIPlugin>(new Xhan_Mega_Buster_Bomb_AI(missile), CampaignPlugin.PickPriority.MOD_SET);
+                return new PluginPick<MissileAIPlugin>(new XHAN_MegaBusterBombAI(missile), CampaignPlugin.PickPriority.MOD_SET);
             default:
                 return null;
         }
