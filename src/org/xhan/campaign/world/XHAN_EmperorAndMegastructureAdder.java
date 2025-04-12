@@ -12,17 +12,16 @@ import static com.fs.starfarer.api.Global.getSector;
 import static com.fs.starfarer.api.campaign.econ.MarketAPI.SurveyLevel.FULL;
 import static com.fs.starfarer.api.impl.campaign.ids.Ranks.POST_FACTION_LEADER;
 import static com.fs.starfarer.api.impl.campaign.ids.Skills.INDUSTRIAL_PLANNING;
-import static com.fs.starfarer.api.impl.campaign.ids.Skills.PLANETARY_OPERATIONS;
 import static com.fs.starfarer.api.util.Misc.getFactionMarkets;
 import static org.xhan.XhanEmpireModPlugin.*;
 
-public class XhanEmperorAndMegastructureAdder implements EveryFrameScript {
+public class XHAN_EmperorAndMegastructureAdder implements EveryFrameScript {
 
     public static final String EMPEROR_PORTRAIT = "graphics/portraits/DivineEmperor.png";
     public static final String GENERALISSIMO_PORTRAIT = "graphics/portraits/PamedGeneralissimo.png";
     public static final String MEGASTRUCTURE = "xhan_planetary_megastructure";
 
-    public static Logger log = getLogger(XhanEmperorAndMegastructureAdder.class);
+    public static Logger log = getLogger(XHAN_EmperorAndMegastructureAdder.class);
     private boolean done = false;
 
     @Override
@@ -59,8 +58,7 @@ public class XhanEmperorAndMegastructureAdder implements EveryFrameScript {
 
         if (picked != null) {
             PersonAPI divine = createAdmin(picked);
-            divine.getStats().setSkillLevel(INDUSTRIAL_PLANNING, 3);
-            divine.getStats().setSkillLevel(PLANETARY_OPERATIONS, 3);
+            divine.getStats().setSkillLevel(INDUSTRIAL_PLANNING, 1);
             divine.setPortraitSprite(EMPEROR_PORTRAIT);
             divine.setPostId(POST_FACTION_LEADER);
             divine.setRankId(POST_FACTION_LEADER);
@@ -87,8 +85,7 @@ public class XhanEmperorAndMegastructureAdder implements EveryFrameScript {
 
         if (picked != null) {
             PersonAPI pamedg = createAdmin(picked);
-            pamedg.getStats().setSkillLevel(INDUSTRIAL_PLANNING, 3);
-            pamedg.getStats().setSkillLevel(PLANETARY_OPERATIONS, 2);
+            pamedg.getStats().setSkillLevel(INDUSTRIAL_PLANNING, 1);
             pamedg.setPortraitSprite(GENERALISSIMO_PORTRAIT);
             pamedg.setPostId(POST_FACTION_LEADER);
             pamedg.setRankId(POST_FACTION_LEADER);

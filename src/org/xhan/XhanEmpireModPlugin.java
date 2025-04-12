@@ -26,7 +26,7 @@ import org.xhan.campaign.XHAN_DroneshipEliteProductionListener;
 import org.xhan.campaign.XHAN_DroneshipProductionListener;
 import org.xhan.weapons.ai.XHAN_MegaBusterBombAI;
 import org.xhan.weapons.ai.XHAN_PsyBusterBombAI;
-import org.xhan.campaign.world.XhanEmperorAndMegastructureAdder;
+import org.xhan.campaign.world.XHAN_EmperorAndMegastructureAdder;
 import org.xhan.campaign.world.XhanEmpireGen;
 import org.xhan.campaign.world.XhanProcGen;
 import exerelin.campaign.SectorManager;
@@ -40,8 +40,8 @@ import org.json.JSONException;
 import java.io.IOException;
 import java.util.*;
 
-import static org.xhan.campaign.world.XhanEmperorAndMegastructureAdder.EMPEROR_PORTRAIT;
-import static org.xhan.campaign.world.XhanEmperorAndMegastructureAdder.GENERALISSIMO_PORTRAIT;
+import static org.xhan.campaign.world.XHAN_EmperorAndMegastructureAdder.EMPEROR_PORTRAIT;
+import static org.xhan.campaign.world.XHAN_EmperorAndMegastructureAdder.GENERALISSIMO_PORTRAIT;
 import static java.lang.Math.random;
 
 public class XhanEmpireModPlugin extends BaseModPlugin {
@@ -96,7 +96,7 @@ public class XhanEmpireModPlugin extends BaseModPlugin {
     @Override
     public void onNewGameAfterTimePass() {
         log.info("new game started, adding scripts");
-        Global.getSector().addScript(new XhanEmperorAndMegastructureAdder());
+        Global.getSector().addScript(new XHAN_EmperorAndMegastructureAdder());
         XHAN_DerelictShipsSpawner.spawnXhanDerelicts(Global.getSector());
     }
 

@@ -3,7 +3,7 @@ package org.xhan.campaign.econ;
 import com.fs.starfarer.api.impl.campaign.econ.BaseMarketConditionPlugin;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 
-public class XhanPlanetaryMegastructure extends BaseMarketConditionPlugin {
+public class XHAN_PlanetaryMegastructure extends BaseMarketConditionPlugin {
 
     public static final float STABILITY_BONUS = 2f;
     public static final float DEFENSE_MULT = 3f;

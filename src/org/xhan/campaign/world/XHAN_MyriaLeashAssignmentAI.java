@@ -8,14 +8,14 @@ import com.fs.starfarer.api.campaign.ai.ModularFleetAIAPI;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseAssignmentAI;
 import com.fs.starfarer.api.util.Misc;
 
-public class MyriaLeashAssignmentAI extends BaseAssignmentAI {
+public class XHAN_MyriaLeashAssignmentAI extends BaseAssignmentAI {
 
     protected float elapsed = 0f;
     protected float dur = 30f + (float) Math.random() * 20f;
     protected SectorEntityToken toGuard;
 
 
-    public MyriaLeashAssignmentAI(CampaignFleetAPI fleet, SectorEntityToken toGuard) {
+    public XHAN_MyriaLeashAssignmentAI(CampaignFleetAPI fleet, SectorEntityToken toGuard) {
         super();
         this.fleet = fleet;
         this.toGuard = toGuard;

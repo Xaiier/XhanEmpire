@@ -21,7 +21,7 @@ import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.impl.campaign.terrain.MagneticFieldTerrainPlugin;
 import com.fs.starfarer.api.loading.VariantSource;
 import com.fs.starfarer.api.util.Misc;
-import org.xhan.campaign.world.MyriaLeashAssignmentAI;
+import org.xhan.campaign.world.XHAN_MyriaLeashAssignmentAI;
 import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
@@ -228,7 +228,7 @@ public class XhanMyrianousSystem implements SectorGeneratorPlugin {
         fleet.setLocation(loc.x, loc.y);
         MyriaStation.getContainingLocation().addEntity(fleet);
 
-        fleet.addScript(new MyriaLeashAssignmentAI(fleet, MyriaStation));
+        fleet.addScript(new XHAN_MyriaLeashAssignmentAI(fleet, MyriaStation));
 
     }
 
