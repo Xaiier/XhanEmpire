@@ -7,7 +7,7 @@ Vil,XHAN_Vil,,Alvarium Doctrine,,,190,65,350,,100,0,,310,500,450,180,360,18,NONE
 Oiehou-M1,XHAN_OieHou,Heavy Frigate,Xhan Tech,damper,6,2200,550,2200,2188,175,40,,125,110,100,45,80,300,OMNI,,90,0.4,1,,,30,50,70,25,1,25,10,10000,8,10,300,0.25,4,4,,XhanMidtech_bp,,0.4,2,2,89001
 Boulo,XHAN_Boulo,Frigate,Xhan Tech,xhan_microburn,5,1600,300,2250,1875,150,45,,145,140,100,50,100,250,FRONT,,90,0.4,0.8,,,15,30,55,20,1,20,10,12000,10,20,200,0.25,5,5,,XhanMidtech_bp,,0.5,2,2,89002
 Ubellop,XHAN_Ubellop,Phase Frigate,Xhan Tech,damper,11,1500,450,3000,5000,400,50,,130,120,100,45,90,265,PHASE,xhan_phasecloak,90,,,0.03,0.04,5,10,25,50,1,50,10,42000,10,20,200,0.25,8,8,PHASE,rare_bp,,0.5,2,2,89008
-Pharrek,XHAN_Pharrek,Vivisector,Prime Divination,xhan_skipdrive,20,2500,300,6000,4000,500,50,,150,140,140,100,400,400,FRONT,,360,0.6,1,,,1,1,0,10,1,10,10,240000,8,30,360,0.25,25,25,,,0.5,100,16,20,89012
+Pharrek,XHAN_Pharrek,Vivisector,Prime Divination,xhan_skipdrive,20,2500,300,6000,4000,500,50,,150,140,140,100,400,400,FRONT,,360,0.6,1,,,1,1,0,10,1,10,10,240000,8,30,360,0.25,25,25,HIDE_IN_CODEX,,0.5,100,16,20,89012
 Odonata,PAMED_odonata,Phase Frigate,UTONA Shipyards,PAMED_holodecoy,12,1000,200,2500,5000,400,60,,180,120,120,65,120,200,PHASE,phasecloak,90,,,0.03,0.03,4,6,5,15,1,15,10,72000,10,20,190,0.25,12,12,PHASE,,,0.85,4,7,89022
 Anuran,PAMED_anuran,Heavy Frigate,UTONA Shipyards,PAMED_Teleport,11,2300,250,2000,1875,400,60,,130,120,100,60,120,300,OMNI,,180,0.4,0.6,,,35,45,10,20,1,20,10,62000,7,20,225,0.25,11,11,,,,0.7,2,2,89023
 ULTRA 233,PAMED_ultra233,Experimental Frigate,UTONA Shipyards,XHAN_ElectroChargedShields,16,2000,100,8000,1875,550,70,,120,110,100,50,110,300,FRONT,,280,0.4,0.6,,,10,15,0,5,1,5,10,165000,7,20,300,0.25,18,18,,,,1,10,15,89024
@@ -42,7 +42,7 @@ Ennik,XHAN_Ennik,Cruiser,Xhan Tech,xhan_empflare,14,7800,1200,9000,10500,485,140
 Ennik(E),XHAN_Ennik_export,Cruiser,Xhan Tech,xhan_empflare,14,7500,1100,9000,10500,485,140,,75,32,22,15,22,1120,OMNI,,90,0.4,0.9,,,150,250,150,100,3,33,8,110000,3,12,525,0.25,20,20,,,,0.5,2,3,89017
 Uvello,XHAN_Uvello,Hiveship,Alvarium Doctrine,highenergyfocus,14,8000,800,6000,6000,300,75,2,60,50,45,20,25,800,OMNI,,180,0.5,0.7,,,120,250,415,90,3,30,9,250000,5,12,460,0.15,20,20,"CARRIER, HIDE_IN_CODEX",,0.5,0.5,2,3,89033
 Brakad,XHAN_Brakad,Defense Cruiser,Low Tech,xhan_FlareReserves,15,7500,1600,10000,9000,405,145,,32,20,15,12,15,1850,OMNI,,90,0.4,1.1,,,95,120,80,125,5,25,8,118000,4,12,540,0.25,22,22,,,,0.3,2,3,404
-Brakad(S),XHAN_Brakad_S,Defense Cruiser,Low Tech,xhan_FlareReserves,15,7600,1650,10000,9000,415,150,,34,20,15,12,15,1850,OMNI,,90,0.4,1.1,,,95,120,80,125,5,25,8,118000,4,12,540,0.25,22,22,,,,0.3,2,3,404
+Brakad(S),XHAN_Brakad_S,Defense Cruiser,Low Tech,xhan_FlareReserves,15,7600,1650,10000,9000,415,150,,34,20,15,12,15,1850,OMNI,,90,0.4,1.1,,,95,120,80,125,5,25,8,118000,4,12,540,0.25,22,22,HIDE_IN_CODEX,,,0.3,2,3,404
 Carillon,PAMED_carillon,Cruiser,UTONA Shipyards,PAMED_TemporalDistortion,28,9000,600,14000,16000,1100,175,,70,50,40,30,25,1800,OMNI,,360,0.5,0.6,,,75,200,150,90,3,30,8,365000,4,20,560,0.25,40,40,,,,0.6,2,3,89028
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
