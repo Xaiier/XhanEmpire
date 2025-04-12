@@ -8,6 +8,7 @@ import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
 import com.fs.starfarer.api.impl.campaign.ids.Entities;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
+import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.procgen.DefenderDataOverride;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.LocationType;
@@ -54,6 +55,12 @@ public class XHAN_DerelictShipsSpawner {
     public static final List<String> BLACKLISTED_SYSTEM_TAGS = new ArrayList<>();
 
     static {
+        BLACKLISTED_SYSTEM_TAGS.add(Tags.THEME_HIDDEN);
+        BLACKLISTED_SYSTEM_TAGS.add(Tags.THEME_SPECIAL);
+
+        //Seeker
+        BLACKLISTED_SYSTEM_TAGS.add("theme_plaguebearers");
+        //DME
         BLACKLISTED_SYSTEM_TAGS.add("theme_breakers");
         BLACKLISTED_SYSTEM_TAGS.add("theme_breakers_main");
         BLACKLISTED_SYSTEM_TAGS.add("theme_breakers_secondary");
@@ -61,6 +68,23 @@ public class XHAN_DerelictShipsSpawner {
         BLACKLISTED_SYSTEM_TAGS.add("theme_breakers_destroyed");
         BLACKLISTED_SYSTEM_TAGS.add("theme_breakers_suppressed");
         BLACKLISTED_SYSTEM_TAGS.add("theme_breakers_resurgent");
+        BLACKLISTED_SYSTEM_TAGS.add("theme_breakers_homeworld");
+
+        //Magellan
+        BLACKLISTED_SYSTEM_TAGS.add("theme_magellan_leveller");
+        BLACKLISTED_SYSTEM_TAGS.add("theme_magellan_leveller_home_nebula");
+
+        BLACKLISTED_SYSTEM_TAGS.add("theme_oci");
+        BLACKLISTED_SYSTEM_TAGS.add("theme_oci_small");
+        BLACKLISTED_SYSTEM_TAGS.add("theme_oci_large");
+        BLACKLISTED_SYSTEM_TAGS.add("theme_oci_core");
+
+        //HMI
+        BLACKLISTED_SYSTEM_TAGS.add("theme_domres");
+        BLACKLISTED_SYSTEM_TAGS.add("theme_hmi_nightmare");
+        BLACKLISTED_SYSTEM_TAGS.add("theme_hmi_mess_remnant");
+        BLACKLISTED_SYSTEM_TAGS.add("theme_messrem");
+        BLACKLISTED_SYSTEM_TAGS.add("theme_domresboss");
     }
 
     //Weights for the different types of locations our teasers can spawn in
