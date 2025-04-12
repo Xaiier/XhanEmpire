@@ -252,25 +252,14 @@ public class XhanEmpireModPlugin extends BaseModPlugin {
         int num = 0;
         if (industries >= 2 || (industries == 1 && defenses == 1)) {
             if (skills.contains(Skills.INDUSTRIAL_PLANNING)) {
-                admin.getStats().setSkillLevel(Skills.INDUSTRIAL_PLANNING, 3);
+                admin.getStats().setSkillLevel(Skills.INDUSTRIAL_PLANNING, 1);
             }
             num++;
         }
 
         if (num == 0 || size >= 7) {
-            if (military) {
-                if (skills.contains(Skills.SPACE_OPERATIONS)) {
-                    admin.getStats().setSkillLevel(Skills.SPACE_OPERATIONS, 3);
-                }
-            } else if (defenses > 0) {
-                if (skills.contains(Skills.PLANETARY_OPERATIONS)) {
-                    admin.getStats().setSkillLevel(Skills.PLANETARY_OPERATIONS, 3);
-                }
-            } else {
-                // nothing else suitable, so just make sure there's at least one skill, if this wasn't already set
-                if (skills.contains(Skills.INDUSTRIAL_PLANNING)) {
-                    admin.getStats().setSkillLevel(Skills.INDUSTRIAL_PLANNING, 3);
-                }
+            if (skills.contains(Skills.INDUSTRIAL_PLANNING)) {
+                admin.getStats().setSkillLevel(Skills.INDUSTRIAL_PLANNING, 1);
             }
         }
 
