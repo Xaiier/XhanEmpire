@@ -4,14 +4,13 @@
 		"tags": {
 		},
 		"hulls": {
-			"XHAN_Brakad": 0.1,
+			"XHAN_Brakad": 1,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
 	"shipsWhenImporting":{
 		"tags":[],
 		"hulls": [
-	  "XHAN_Brakad",
     ],
 	},
 		"knownShips":{

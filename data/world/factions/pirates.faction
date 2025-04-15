@@ -4,14 +4,13 @@
 		"tags": {
 		},
 		"hulls": {
-			"XHAN_Olkzan_pirate": 0.1,
+			"XHAN_Olkzan_pirate": 1,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
 	"shipsWhenImporting":{
 		"tags":[],
 		"hulls": [
-	  "XHAN_Olkzan_pirate",
     ],
 	},
 		"knownShips":{

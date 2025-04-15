@@ -4,22 +4,17 @@
 		"tags": {
 		},
 		"hulls": {
-			"XHAN_Olkzan_export": 0.1,
-			"XHAN_Ketsil_export": 0.1,
-			"XHAN_Ennik_export": 0.1,
-			"XHAN_Vukan": 0.1,
-			"XHAN_Brakad": 0.1,
+			"XHAN_Olkzan_export": 1,
+			"XHAN_Ketsil_export": 1,
+			"XHAN_Ennik_export": 1,
+			"XHAN_Vukan": 1,
+			"XHAN_Brakad": 1,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
 	"shipsWhenImporting":{
 		"tags":[],
 		"hulls": [
-	  "XHAN_Olkzan_export",
-	  "XHAN_Ketsil_export",
-	  "XHAN_Ennik_export",
-	  "XHAN_Vukan",
-	  "XHAN_Brakad",
     ],
 	},
 		"knownShips":{

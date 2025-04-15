@@ -4,14 +4,13 @@
 		"tags": {
 		},
 		"hulls": {
-			"XHAN_Vukan": 0.1,
+			"XHAN_Vukan": 1,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
 	"shipsWhenImporting":{
 		"tags":[],
 		"hulls": [
-	  "XHAN_Vukan",
     ],
 	},
 		"knownShips":{
