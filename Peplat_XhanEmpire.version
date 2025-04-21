@@ -45,7 +45,7 @@
   # OPTIONAL
   # A download link directly to the latest version of your mod.
   # This is used by mod managers/version checkers (eg SMOL, MOSS, LunaLib) to let users quickly update/download without visiting your mod page.
-  "directDownloadURL": "https://drive.google.com/u/0/uc?id=1J7Rmg8O_tpt75Uxwxoutbwuq5U3950KN&export=download",
+  "directDownloadURL": "https://github.com/Xaiier/XhanEmpire/releases/download/v3.0.0/XhanEmpire_v3.0.0.zip",
 
   # OPTIONAL
   # A link to your changelog.
