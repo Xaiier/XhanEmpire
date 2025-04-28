@@ -332,21 +332,21 @@ public class XHAN_KobrazProjScript extends BaseEveryFrameCombatPlugin {
         List<CombatEntityAPI> potentialTargets = new ArrayList<>();
         if (VALID_TARGET_TYPES.contains("ASTEROID")) {
             for (CombatEntityAPI potTarget : CombatUtils.getAsteroidsWithinRange(centerOfDetection, TARGET_REACQUIRE_RANGE)) {
-                if (potTarget.getOwner() != proj.getOwner() && Math.abs(VectorUtils.getAngle(proj.getLocation(), potTarget.getLocation()) - proj.getFacing()) < TARGET_REACQUIRE_ANGLE) {
+                if (potTarget.getOwner() != proj.getOwner() && Math.abs(MathUtils.getShortestRotation(VectorUtils.getAngle(proj.getLocation(), potTarget.getLocation()), proj.getFacing())) < TARGET_REACQUIRE_ANGLE) {
                     potentialTargets.add(potTarget);
                 }
             }
         }
         if (VALID_TARGET_TYPES.contains("MISSILE")) {
             for (CombatEntityAPI potTarget : CombatUtils.getMissilesWithinRange(centerOfDetection, TARGET_REACQUIRE_RANGE)) {
-                if (potTarget.getOwner() != proj.getOwner() && Math.abs(VectorUtils.getAngle(proj.getLocation(), potTarget.getLocation()) - proj.getFacing()) < TARGET_REACQUIRE_ANGLE) {
+                if (potTarget.getOwner() != proj.getOwner() && Math.abs(MathUtils.getShortestRotation(VectorUtils.getAngle(proj.getLocation(), potTarget.getLocation()), proj.getFacing())) < TARGET_REACQUIRE_ANGLE) {
                     potentialTargets.add(potTarget);
                 }
             }
         }
         for (ShipAPI potTarget : CombatUtils.getShipsWithinRange(centerOfDetection, TARGET_REACQUIRE_RANGE)) {
             if (potTarget.getOwner() == proj.getOwner()
-                    || Math.abs(VectorUtils.getAngle(proj.getLocation(), potTarget.getLocation()) - proj.getFacing()) > TARGET_REACQUIRE_ANGLE
+                    || Math.abs(MathUtils.getShortestRotation(VectorUtils.getAngle(proj.getLocation(), potTarget.getLocation()), proj.getFacing())) > TARGET_REACQUIRE_ANGLE
                     || potTarget.isHulk()) {
                 continue;
             }
